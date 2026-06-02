@@ -1,0 +1,1711 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>12. Comparación Final &#8212; Predicción Espacio-Temporal de la Incidencia de Dengue en los Departamentos de Colombia Mediante Técnicas de Deep Learning</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '12_Comparación_Final';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="13. Discusión Crítica" href="13_Discusi%C3%B3n_Cr%C3%ADtica.html" />
+    <link rel="prev" title="11. Modelo Final: D-DCRNN (Dynamic Diffusion Convolutional RNN)" href="11_DDCRNN_Dengue.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Predicción Espacio-Temporal de la Incidencia de Dengue en los Departamentos de Colombia Mediante Técnicas de Deep Learning</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Predicción Espacio-Temporal de la Incidencia de Dengue en los Departamentos de Colombia Mediante Técnicas de Deep Learning
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="1_Cargue_Datos.html"><strong>1. Cargue Base de Datos</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="2_EDA.html"><strong>2. Análisis Exploratorio de Datos</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="3_ESTADO_DEL_ARTE.html"><strong>3. Revisión del Estado del Arte</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="4_Modelo_LSTM.html"><strong>4. LSTM</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="5_Modelo_ConvLSTM.html"><strong>5. ConvLSTM</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="6_Modelo_STGNN.html"><strong>6. STGNN</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="7_Modelo_GRU.html"><strong>7. GRU</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="8_Modelo_Transformer.html"><strong>8. Transformer</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="9_Comparando_Modelos.html"><strong>9. Comparando Modelos Benchmark</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="10_PF_PAPER_GUIA.html"><strong>10. Paper guía</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="11_DDCRNN_Dengue.html"><strong>11. Modelo Final: D-DCRNN (Dynamic Diffusion Convolutional RNN)</strong></a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#"><strong>12. Comparación Final</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="13_Discusi%C3%B3n_Cr%C3%ADtica.html"><strong>13. Discusión Crítica</strong></a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/12_Comparación_Final.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>12. Comparación Final</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#librerias"><strong>12.1. Librerias</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cargando-los-resultados"><strong>12.2.Cargando los Resultados</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metricas-globales"><strong>12.3. Metricas Globales</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metricas-por-semilla"><strong>12.4. Métricas por Semilla</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#anova"><strong>12.5. ANOVA</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#supuestos"><strong>12.5.1. Supuestos</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#normalidad"><strong>12.5.1.1. Normalidad</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#homocedasticidad"><strong>12.5.1.2. Homocedasticidad</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#independencia-de-observaciones"><strong>12.5.1.3. Independencia de Observaciones</strong></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aplicando-anova"><strong>12.5.2. Aplicando ANOVA</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tukey-hsd"><strong>12.6. TUKEY HSD</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluando-robustez"><strong>12.7. Evaluando Robustez</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#medias-desviaciones"><strong>12.7.1. Medias &amp; Desviaciones</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#coeficiente-de-variacion"><strong>12.7.2. Coeficiente de Variación</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overfitting-underfitting"><strong>12.8. Overfitting/underfitting</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion"><strong>12.9. Conclusión</strong></a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="comparacion-final">
+<h1><strong>12. Comparación Final</strong><a class="headerlink" href="#comparacion-final" title="Permalink to this heading">#</a></h1>
+<section id="librerias">
+<h2><strong>12.1. Librerias</strong><a class="headerlink" href="#librerias" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy</span><span class="w"> </span><span class="kn">import</span> <span class="n">stats</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy.stats</span><span class="w"> </span><span class="kn">import</span> <span class="n">shapiro</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">statsmodels.stats.multicomp</span><span class="w"> </span><span class="kn">import</span> <span class="n">pairwise_tukeyhsd</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy.stats</span><span class="w"> </span><span class="kn">import</span> <span class="n">levene</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">itertools</span><span class="w"> </span><span class="kn">import</span> <span class="n">combinations</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="cargando-los-resultados">
+<h2><strong>12.2.Cargando los Resultados</strong><a class="headerlink" href="#cargando-los-resultados" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">BASE_DIR</span> <span class="o">=</span> <span class="s2">&quot;/home/guirlessa/Dl_Proyecto_Dengue/Modelos&quot;</span> 
+
+<span class="n">MODELOS</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;LSTM&quot;</span><span class="p">,</span> <span class="s2">&quot;CONVLSTM&quot;</span><span class="p">,</span> <span class="s2">&quot;STGNN&quot;</span><span class="p">,</span> <span class="s2">&quot;GRU&quot;</span><span class="p">,</span> <span class="s2">&quot;Transformer&quot;</span><span class="p">,</span><span class="s2">&quot;DDCRNN&quot;</span><span class="p">]</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">load_metrics</span><span class="p">(</span><span class="n">model_path</span><span class="p">):</span>
+    <span class="n">file_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">model_path</span><span class="p">,</span> <span class="s2">&quot;metrics_stgnn.csv&quot;</span><span class="p">)</span>
+
+    <span class="c1"># fallback si el nombre cambia por modelo</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">file_path</span><span class="p">):</span>
+        <span class="n">candidates</span> <span class="o">=</span> <span class="p">[</span><span class="n">f</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">model_path</span><span class="p">)</span> <span class="k">if</span> <span class="s2">&quot;metrics&quot;</span> <span class="ow">in</span> <span class="n">f</span> <span class="ow">and</span> <span class="n">f</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;.csv&quot;</span><span class="p">)]</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">candidates</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">None</span>
+        <span class="n">file_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">model_path</span><span class="p">,</span> <span class="n">candidates</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">df</span>
+
+<span class="n">all_metrics</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">model</span> <span class="ow">in</span> <span class="n">MODELOS</span><span class="p">:</span>
+    <span class="n">model_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">BASE_DIR</span><span class="p">,</span> <span class="n">model</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">model_path</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;No existe carpeta: </span><span class="si">{</span><span class="n">model_path</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">continue</span>
+
+    <span class="n">df</span> <span class="o">=</span> <span class="n">load_metrics</span><span class="p">(</span><span class="n">model_path</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">df</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;No metrics found for </span><span class="si">{</span><span class="n">model</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">continue</span>
+
+    <span class="n">df</span><span class="p">[</span><span class="s2">&quot;Model&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">model</span>
+    <span class="n">all_metrics</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+
+<span class="c1"># concatenar todo</span>
+<span class="n">metrics_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">all_metrics</span><span class="p">,</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">metrics_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>seed</th>
+      <th>RMSE</th>
+      <th>MAE</th>
+      <th>R2</th>
+      <th>Model</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>42</td>
+      <td>7.643459</td>
+      <td>4.205040</td>
+      <td>0.048068</td>
+      <td>LSTM</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>123</td>
+      <td>7.069677</td>
+      <td>3.966179</td>
+      <td>0.002728</td>
+      <td>LSTM</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2024</td>
+      <td>7.050868</td>
+      <td>3.969128</td>
+      <td>0.008028</td>
+      <td>LSTM</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>42</td>
+      <td>0.677770</td>
+      <td>0.489266</td>
+      <td>0.438390</td>
+      <td>CONVLSTM</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>123</td>
+      <td>0.652954</td>
+      <td>0.469355</td>
+      <td>0.454739</td>
+      <td>CONVLSTM</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="metricas-globales">
+<h2><strong>12.3. Metricas Globales</strong><a class="headerlink" href="#metricas-globales" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">summary</span> <span class="o">=</span> <span class="n">metrics_df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;Model&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span>
+    <span class="s2">&quot;RMSE&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;mean&quot;</span><span class="p">,</span> <span class="s2">&quot;std&quot;</span><span class="p">],</span>
+    <span class="s2">&quot;MAE&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;mean&quot;</span><span class="p">,</span> <span class="s2">&quot;std&quot;</span><span class="p">],</span>
+    <span class="s2">&quot;R2&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;mean&quot;</span><span class="p">,</span> <span class="s2">&quot;std&quot;</span><span class="p">]</span>
+<span class="p">})</span>
+
+<span class="n">summary</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;RMSE_mean&quot;</span><span class="p">,</span> <span class="s2">&quot;RMSE_std&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;MAE_mean&quot;</span><span class="p">,</span> <span class="s2">&quot;MAE_std&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;R2_mean&quot;</span><span class="p">,</span> <span class="s2">&quot;R2_std&quot;</span>
+<span class="p">]</span>
+
+<span class="n">summary</span> <span class="o">=</span> <span class="n">summary</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+
+<span class="n">summary</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Model</th>
+      <th>RMSE_mean</th>
+      <th>RMSE_std</th>
+      <th>MAE_mean</th>
+      <th>MAE_std</th>
+      <th>R2_mean</th>
+      <th>R2_std</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>CONVLSTM</td>
+      <td>0.658141</td>
+      <td>0.017618</td>
+      <td>0.473016</td>
+      <td>0.014764</td>
+      <td>0.457593</td>
+      <td>0.020778</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>DDCRNN</td>
+      <td>0.406530</td>
+      <td>0.002373</td>
+      <td>0.286674</td>
+      <td>0.003909</td>
+      <td>0.804324</td>
+      <td>0.006929</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>GRU</td>
+      <td>7.272854</td>
+      <td>0.315501</td>
+      <td>4.038056</td>
+      <td>0.092422</td>
+      <td>0.025908</td>
+      <td>0.083521</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>LSTM</td>
+      <td>7.254668</td>
+      <td>0.336835</td>
+      <td>4.046782</td>
+      <td>0.137063</td>
+      <td>0.019608</td>
+      <td>0.024789</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>STGNN</td>
+      <td>7.237096</td>
+      <td>0.089629</td>
+      <td>4.048328</td>
+      <td>0.060917</td>
+      <td>-0.003409</td>
+      <td>0.093412</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Transformer</td>
+      <td>4.054371</td>
+      <td>0.304159</td>
+      <td>2.102692</td>
+      <td>0.131240</td>
+      <td>0.681954</td>
+      <td>0.067499</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Los resultados obtenidos muestran que la arquitectura D-DCRNN alcanzó el mejor desempeño global entre los modelos evaluados, registrando los menores valores de error (RMSE = 0.4065; MAE = 0.2867) y el mayor coeficiente de determinación (R² = 0.8043). Asimismo, presentó la menor variabilidad entre ejecuciones, reflejada en desviaciones estándar considerablemente inferiores a las observadas en las demás arquitecturas. Aunque el Transformer constituyó la segunda alternativa con mejor capacidad predictiva (R² = 0.6820), sus errores fueron sustancialmente mayores y mostró una mayor sensibilidad a la inicialización. Por su parte, ConvLSTM alcanzó un desempeño intermedio, mientras que GRU, LSTM y STGNN exhibieron valores de R² cercanos a cero o negativos, indicando una limitada capacidad para representar la variabilidad de la incidencia.</p>
+</section>
+<section id="metricas-por-semilla">
+<h2><strong>12.4. Métricas por Semilla</strong><a class="headerlink" href="#metricas-por-semilla" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">seed_analysis</span> <span class="o">=</span> <span class="n">metrics_df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">&quot;Model&quot;</span><span class="p">,</span> <span class="s2">&quot;seed&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span>
+    <span class="s2">&quot;RMSE&quot;</span><span class="p">:</span> <span class="s2">&quot;mean&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;MAE&quot;</span><span class="p">:</span> <span class="s2">&quot;mean&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;R2&quot;</span><span class="p">:</span> <span class="s2">&quot;mean&quot;</span>
+<span class="p">})</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+
+<span class="n">seed_analysis</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Model</th>
+      <th>seed</th>
+      <th>RMSE</th>
+      <th>MAE</th>
+      <th>R2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>CONVLSTM</td>
+      <td>42</td>
+      <td>0.677770</td>
+      <td>0.489266</td>
+      <td>0.438390</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>CONVLSTM</td>
+      <td>123</td>
+      <td>0.652954</td>
+      <td>0.469355</td>
+      <td>0.454739</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>CONVLSTM</td>
+      <td>2024</td>
+      <td>0.643700</td>
+      <td>0.460427</td>
+      <td>0.479651</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>DDCRNN</td>
+      <td>42</td>
+      <td>0.403859</td>
+      <td>0.283470</td>
+      <td>0.811572</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>DDCRNN</td>
+      <td>123</td>
+      <td>0.407338</td>
+      <td>0.285521</td>
+      <td>0.797765</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>DDCRNN</td>
+      <td>2024</td>
+      <td>0.408394</td>
+      <td>0.291029</td>
+      <td>0.803635</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>GRU</td>
+      <td>42</td>
+      <td>6.945436</td>
+      <td>3.931795</td>
+      <td>0.037472</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>GRU</td>
+      <td>123</td>
+      <td>7.574906</td>
+      <td>4.099742</td>
+      <td>0.103044</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>GRU</td>
+      <td>2024</td>
+      <td>7.298220</td>
+      <td>4.082630</td>
+      <td>-0.062792</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>LSTM</td>
+      <td>42</td>
+      <td>7.643459</td>
+      <td>4.205040</td>
+      <td>0.048068</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>LSTM</td>
+      <td>123</td>
+      <td>7.069677</td>
+      <td>3.966179</td>
+      <td>0.002728</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>LSTM</td>
+      <td>2024</td>
+      <td>7.050868</td>
+      <td>3.969128</td>
+      <td>0.008028</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>STGNN</td>
+      <td>42</td>
+      <td>7.334999</td>
+      <td>4.101241</td>
+      <td>-0.073531</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>STGNN</td>
+      <td>123</td>
+      <td>7.159085</td>
+      <td>3.981733</td>
+      <td>0.102631</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>STGNN</td>
+      <td>2024</td>
+      <td>7.217204</td>
+      <td>4.062011</td>
+      <td>-0.039327</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Al analizar los resultados por semilla, la arquitectura D-DCRNN mantiene un comportamiento notablemente estable, con valores de RMSE comprendidos entre 0.4039 y 0.4084, MAE entre 0.2835 y 0.2910 y R² entre 0.7978 y 0.8116. Esta baja variabilidad indica que el proceso de entrenamiento converge sistemáticamente hacia soluciones muy similares independientemente de la inicialización aleatoria. En comparación con Transformer, cuyo desempeño promedio fue el segundo mejor entre los modelos evaluados (RMSE = 4.05 y R² = 0.682 en escala real), D-DCRNN alcanza una capacidad explicativa sustancialmente superior (R² ≈ 0.80 en escala logarítmica) junto con una dispersión entre semillas considerablemente menor (R² std = 0.0069 frente a 0.0675), lo que evidencia una mayor robustez y reproducibilidad de los resultados obtenidos.</p>
+<p>La diferencia es aún más marcada respecto a las arquitecturas recurrentes tradicionales y al modelo STGNN. GRU, LSTM y STGNN presentan una elevada sensibilidad a la semilla de inicialización, reflejada en oscilaciones importantes de R² e incluso valores negativos en algunas ejecuciones, lo que indica dificultades para generalizar de manera consistente.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">stability</span> <span class="o">=</span> <span class="n">metrics_df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;Model&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span>
+    <span class="s2">&quot;RMSE&quot;</span><span class="p">:</span> <span class="s2">&quot;std&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;MAE&quot;</span><span class="p">:</span> <span class="s2">&quot;std&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;R2&quot;</span><span class="p">:</span> <span class="s2">&quot;std&quot;</span>
+<span class="p">})</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span>
+    <span class="s2">&quot;RMSE&quot;</span><span class="p">:</span> <span class="s2">&quot;RMSE_variability&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;MAE&quot;</span><span class="p">:</span> <span class="s2">&quot;MAE_variability&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;R2&quot;</span><span class="p">:</span> <span class="s2">&quot;R2_variability&quot;</span>
+<span class="p">})</span>
+
+<span class="n">stability</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>RMSE_variability</th>
+      <th>MAE_variability</th>
+      <th>R2_variability</th>
+    </tr>
+    <tr>
+      <th>Model</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>CONVLSTM</th>
+      <td>0.017618</td>
+      <td>0.014764</td>
+      <td>0.020778</td>
+    </tr>
+    <tr>
+      <th>DDCRNN</th>
+      <td>0.002373</td>
+      <td>0.003909</td>
+      <td>0.006929</td>
+    </tr>
+    <tr>
+      <th>GRU</th>
+      <td>0.315501</td>
+      <td>0.092422</td>
+      <td>0.083521</td>
+    </tr>
+    <tr>
+      <th>LSTM</th>
+      <td>0.336835</td>
+      <td>0.137063</td>
+      <td>0.024789</td>
+    </tr>
+    <tr>
+      <th>STGNN</th>
+      <td>0.089629</td>
+      <td>0.060917</td>
+      <td>0.093412</td>
+    </tr>
+    <tr>
+      <th>Transformer</th>
+      <td>0.304159</td>
+      <td>0.131240</td>
+      <td>0.067499</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Desde la perspectiva de la estabilidad entre ejecuciones, D-DCRNN presenta la menor variabilidad de todos los modelos evaluados, con desviaciones estándar de apenas 0.0024 en RMSE, 0.0039 en MAE y 0.0069 en R². En comparación, Transformer, aunque constituye el segundo mejor modelo en términos de desempeño predictivo, exhibe una sensibilidad considerablemente mayor a la semilla de inicialización, con variabilidades de 0.3042 en RMSE, 0.1312 en MAE y 0.0675 en R². Esto implica que D-DCRNN no solo alcanza mejores métricas promedio, sino que además genera resultados mucho más consistentes y reproducibles entre ejecuciones independientes.</p>
+<p>La diferencia también es evidente frente al resto de arquitecturas. GRU y LSTM presentan las mayores fluctuaciones en RMSE y MAE, mientras que STGNN muestra la mayor variabilidad en R², reflejando una mayor dependencia de las condiciones iniciales del entrenamiento. Incluso ConvLSTM, que exhibe una estabilidad relativamente alta, mantiene niveles de variación superiores a los observados en D-DCRNN.</p>
+</section>
+<section id="anova">
+<h2><strong>12.5. ANOVA</strong><a class="headerlink" href="#anova" title="Permalink to this heading">#</a></h2>
+<p>El análisis de varianza (ANOVA) se utiliza para evaluar si las diferencias observadas en el desempeño entre los distintos modelos son estadísticamente significativas o si pueden atribuirse a la variabilidad inherente del proceso de entrenamiento. De esta manera, se garantiza una comparación rigurosa y objetiva bajo un mismo esquema experimental.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">models</span> <span class="o">=</span> <span class="n">metrics_df</span><span class="p">[</span><span class="s2">&quot;Model&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+
+<span class="n">groups_rmse</span> <span class="o">=</span> <span class="p">[</span><span class="n">metrics_df</span><span class="p">[</span><span class="n">metrics_df</span><span class="p">[</span><span class="s2">&quot;Model&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">m</span><span class="p">][</span><span class="s2">&quot;RMSE&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span> <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">models</span><span class="p">]</span>
+<span class="n">groups_mae</span>  <span class="o">=</span> <span class="p">[</span><span class="n">metrics_df</span><span class="p">[</span><span class="n">metrics_df</span><span class="p">[</span><span class="s2">&quot;Model&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">m</span><span class="p">][</span><span class="s2">&quot;MAE&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span> <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">models</span><span class="p">]</span>
+<span class="n">groups_r2</span>   <span class="o">=</span> <span class="p">[</span><span class="n">metrics_df</span><span class="p">[</span><span class="n">metrics_df</span><span class="p">[</span><span class="s2">&quot;Model&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">m</span><span class="p">][</span><span class="s2">&quot;R2&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span> <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="n">models</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="supuestos">
+<h3><strong>12.5.1. Supuestos</strong><a class="headerlink" href="#supuestos" title="Permalink to this heading">#</a></h3>
+<p>Para aplicar ANOVA es necesario cumplir ciertos supuestos estadísticos, principalmente la normalidad de las distribuciones dentro de cada grupo, la homogeneidad de varianzas entre los grupos y la independencia de las observaciones. Estos requisitos son importantes porque aseguran que la comparación de medias entre modelos sea válida y que los resultados del test no estén sesgados por violaciones de las condiciones estadísticas que sustentan su inferencia.</p>
+<section id="normalidad">
+<h4><strong>12.5.1.1. Normalidad</strong><a class="headerlink" href="#normalidad" title="Permalink to this heading">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;TEST DE NORMALIDAD (Shapiro-Wilk)</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">model</span> <span class="ow">in</span> <span class="n">models</span><span class="p">:</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">metrics_df</span><span class="p">[</span><span class="n">metrics_df</span><span class="p">[</span><span class="s2">&quot;Model&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">model</span><span class="p">][</span><span class="s2">&quot;RMSE&quot;</span><span class="p">]</span>
+
+    <span class="n">stat</span><span class="p">,</span> <span class="n">p</span> <span class="o">=</span> <span class="n">shapiro</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;🔹 </span><span class="si">{</span><span class="n">model</span><span class="si">}</span><span class="s2"> - RMSE&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;   W = </span><span class="si">{</span><span class="n">stat</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">, p = </span><span class="si">{</span><span class="n">p</span><span class="si">:</span><span class="s2">.6f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">p</span> <span class="o">&lt;</span> <span class="mf">0.05</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;   No normal (rechaza H0)</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;   Normal (no se rechaza H0)</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TEST DE NORMALIDAD (Shapiro-Wilk)
+
+🔹 LSTM - RMSE
+   W = 0.7738, p = 0.053330
+   Normal (no se rechaza H0)
+
+🔹 CONVLSTM - RMSE
+   W = 0.9350, p = 0.507554
+   Normal (no se rechaza H0)
+
+🔹 STGNN - RMSE
+   W = 0.9631, p = 0.630615
+   Normal (no se rechaza H0)
+
+🔹 GRU - RMSE
+   W = 0.9952, p = 0.866914
+   Normal (no se rechaza H0)
+
+🔹 Transformer - RMSE
+   W = 0.7729, p = 0.051330
+   Normal (no se rechaza H0)
+
+🔹 DDCRNN - RMSE
+   W = 0.9131, p = 0.428449
+   Normal (no se rechaza H0)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Los resultados del test de Shapiro-Wilk indican que, para la métrica RMSE en todos los modelos evaluados, no se rechaza la hipótesis nula de normalidad (p &gt; 0.05 en todos los casos). Esto sugiere que las distribuciones de error por modelo pueden considerarse aproximadamente normales.</p>
+</section>
+<section id="homocedasticidad">
+<h4><strong>12.5.1.2. Homocedasticidad</strong><a class="headerlink" href="#homocedasticidad" title="Permalink to this heading">#</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;TEST DE LEVENE (Homogeneidad de varianzas)</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># RMSE</span>
+<span class="n">stat</span><span class="p">,</span> <span class="n">p</span> <span class="o">=</span> <span class="n">levene</span><span class="p">(</span><span class="o">*</span><span class="n">groups_rmse</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;RMSE -&gt; W=</span><span class="si">{</span><span class="n">stat</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">, p=</span><span class="si">{</span><span class="n">p</span><span class="si">:</span><span class="s2">.6f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># MAE</span>
+<span class="n">stat</span><span class="p">,</span> <span class="n">p</span> <span class="o">=</span> <span class="n">levene</span><span class="p">(</span><span class="o">*</span><span class="n">groups_mae</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;MAE  -&gt; W=</span><span class="si">{</span><span class="n">stat</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">, p=</span><span class="si">{</span><span class="n">p</span><span class="si">:</span><span class="s2">.6f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># R2</span>
+<span class="n">stat</span><span class="p">,</span> <span class="n">p</span> <span class="o">=</span> <span class="n">levene</span><span class="p">(</span><span class="o">*</span><span class="n">groups_r2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;R2   -&gt; W=</span><span class="si">{</span><span class="n">stat</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">, p=</span><span class="si">{</span><span class="n">p</span><span class="si">:</span><span class="s2">.6f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TEST DE LEVENE (Homogeneidad de varianzas)
+
+RMSE -&gt; W=0.7228, p=0.619122
+MAE  -&gt; W=0.6608, p=0.659950
+R2   -&gt; W=0.7366, p=0.610239
+</pre></div>
+</div>
+</div>
+</div>
+<p>Los resultados del test de Levene indican que no se rechaza la hipótesis nula de igualdad de varianzas para las métricas RMSE, MAE y R² (p &gt; 0.05 en todos los casos). Esto sugiere que las varianzas entre los distintos modelos son homogéneas, cumpliendo así el supuesto de homocedasticidad requerido para la aplicación del ANOVA.</p>
+</section>
+<section id="independencia-de-observaciones">
+<h4><strong>12.5.1.3. Independencia de Observaciones</strong><a class="headerlink" href="#independencia-de-observaciones" title="Permalink to this heading">#</a></h4>
+<p>La independencia de las observaciones se garantiza mediante el uso de distintas semillas aleatorias y particiones de validación cruzada, asegurando que cada ejecución del modelo sea estadísticamente independiente.</p>
+</section>
+</section>
+<section id="aplicando-anova">
+<h3><strong>12.5.2. Aplicando ANOVA</strong><a class="headerlink" href="#aplicando-anova" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f_rmse</span><span class="p">,</span> <span class="n">p_rmse</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">f_oneway</span><span class="p">(</span><span class="o">*</span><span class="n">groups_rmse</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot; ANOVA RMSE&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;F-statistic: </span><span class="si">{</span><span class="n">f_rmse</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;p-value: </span><span class="si">{</span><span class="n">p_rmse</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> ANOVA RMSE
+F-statistic: 624.9052
+p-value: 4.575935054137005e-14
+</pre></div>
+</div>
+</div>
+</div>
+<p>El ANOVA aplicado a RMSE arroja un estadístico F = 624.9052 con p ≈ 4.575935054137005e-14, lo que implica el rechazo de la hipótesis nula de igualdad de medias entre modelos. Bajo este resultado, se concluye que las diferencias observadas en RMSE no pueden atribuirse a variabilidad muestral o aleatoria del proceso de entrenamiento, sino que existen efectos sistemáticos asociados a la arquitectura del modelo. En términos inferenciales, al menos un modelo pertenece a una distribución de error significativamente distinta, lo que valida estadísticamente la existencia de heterogeneidad estructural en el desempeño predictivo dentro del conjunto evaluado.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f_mae</span><span class="p">,</span> <span class="n">p_mae</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">f_oneway</span><span class="p">(</span><span class="o">*</span><span class="n">groups_mae</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2"> ANOVA MAE&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;F-statistic: </span><span class="si">{</span><span class="n">f_mae</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;p-value: </span><span class="si">{</span><span class="n">p_mae</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> ANOVA MAE
+F-statistic: 1211.5376
+p-value: 8.733933185116829e-16
+</pre></div>
+</div>
+</div>
+</div>
+<p>El ANOVA sobre MAE produce F = 1211.5376 con p ≈ 8.733933185116829e-16, lo que implica un rechazo de la hipótesis nula de igualdad de medias entre modelos. Este resultado indica que las diferencias en el error absoluto medio no son atribuibles a fluctuaciones aleatorias del proceso de entrenamiento, sino a diferencias sistemáticas inducidas por la arquitectura de cada modelo. En consecuencia, existe evidencia estadística robusta de heterogeneidad en el desempeño respecto a MAE, confirmando que al menos un subconjunto de modelos presenta un nivel de error significativamente distinto dentro del espacio experimental evaluado.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f_r2</span><span class="p">,</span> <span class="n">p_r2</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">f_oneway</span><span class="p">(</span><span class="o">*</span><span class="n">groups_r2</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2"> ANOVA R²&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;F-statistic: </span><span class="si">{</span><span class="n">f_r2</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;p-value: </span><span class="si">{</span><span class="n">p_r2</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> ANOVA R²
+F-statistic: 112.1390
+p-value: 1.2077206835506196e-09
+</pre></div>
+</div>
+</div>
+</div>
+<p>El ANOVA aplicado al coeficiente de determinación (R²) arroja F = 112.1390 con p ≈ 1.2077206835506196e-09, lo que implica el rechazo de la hipótesis nula de igualdad de medias entre modelos para la capacidad explicativa. Aunque la magnitud del estadístico F es menor que en RMSE y MAE, el resultado sigue siendo estadísticamente altamente significativo, indicando que las diferencias observadas en R² no pueden explicarse por variabilidad aleatoria. En términos inferenciales, se confirma la existencia de heterogeneidad estructural en la capacidad de ajuste de los modelos, con al menos un subconjunto que presenta una varianza explicada significativamente distinta dentro del sistema evaluado.</p>
+</section>
+</section>
+<section id="tukey-hsd">
+<h2><strong>12.6. TUKEY HSD</strong><a class="headerlink" href="#tukey-hsd" title="Permalink to this heading">#</a></h2>
+<p>Dado que el ANOVA evidenció la existencia de diferencias estadísticamente significativas entre las medias de desempeño de los modelos, y considerando que se verificó el cumplimiento de los supuestos de normalidad y homocedasticidad, se procede a aplicar la prueba post-hoc de Tukey HSD. Esta prueba permite identificar específicamente entre qué pares de modelos se presentan diferencias significativas, proporcionando una comparación múltiple controlada del error tipo I.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tukey_rmse</span> <span class="o">=</span> <span class="n">pairwise_tukeyhsd</span><span class="p">(</span>
+    <span class="n">endog</span><span class="o">=</span><span class="n">metrics_df</span><span class="p">[</span><span class="s2">&quot;RMSE&quot;</span><span class="p">],</span>
+    <span class="n">groups</span><span class="o">=</span><span class="n">metrics_df</span><span class="p">[</span><span class="s2">&quot;Model&quot;</span><span class="p">],</span>
+    <span class="n">alpha</span><span class="o">=</span><span class="mf">0.05</span>
+<span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;TUKEY HSD - RMSE&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">tukey_rmse</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TUKEY HSD - RMSE
+    Multiple Comparison of Means - Tukey HSD, FWER=0.05    
+===========================================================
+ group1     group2   meandiff p-adj   lower   upper  reject
+-----------------------------------------------------------
+CONVLSTM      DDCRNN  -0.2516 0.7552 -0.8789  0.3756  False
+CONVLSTM         GRU   6.6147    0.0  5.9875   7.242   True
+CONVLSTM        LSTM   6.5965    0.0  5.9693  7.2238   True
+CONVLSTM       STGNN    6.579    0.0  5.9517  7.2062   True
+CONVLSTM Transformer   3.3962    0.0   2.769  4.0235   True
+  DDCRNN         GRU   6.8663    0.0  6.2391  7.4936   True
+  DDCRNN        LSTM   6.8481    0.0  6.2209  7.4754   True
+  DDCRNN       STGNN   6.8306    0.0  6.2033  7.4578   True
+  DDCRNN Transformer   3.6478    0.0  3.0206  4.2751   True
+     GRU        LSTM  -0.0182    1.0 -0.6454  0.6091  False
+     GRU       STGNN  -0.0358    1.0  -0.663  0.5915  False
+     GRU Transformer  -3.2185    0.0 -3.8457 -2.5912   True
+    LSTM       STGNN  -0.0176    1.0 -0.6448  0.6097  False
+    LSTM Transformer  -3.2003    0.0 -3.8276  -2.573   True
+   STGNN Transformer  -3.1827    0.0   -3.81 -2.5555   True
+-----------------------------------------------------------
+</pre></div>
+</div>
+</div>
+</div>
+<p>El análisis post hoc mediante la prueba de Tukey HSD para la métrica RMSE muestra que D-DCRNN presenta diferencias estadísticamente significativas respecto a Transformer, GRU, LSTM y STGNN (p &lt; 0.001 en todos los casos), evidenciando un error de predicción significativamente menor. La diferencia media entre D-DCRNN y Transformer es de aproximadamente 3.65 unidades de RMSE, mientras que frente a GRU, LSTM y STGNN las diferencias superan las 6.8 unidades, lo que confirma una mejora sustancial en la precisión predictiva de la arquitectura propuesta.
+Por otra parte, no se encontraron diferencias estadísticamente significativas entre D-DCRNN y ConvLSTM (p = 0.755), ya que el intervalo de confianza de la diferencia incluye el valor cero. Esto indica que, desde un punto de vista estrictamente estadístico, ambos modelos alcanzan niveles de error comparables. Sin embargo, considerando conjuntamente los resultados de desempeño promedio y estabilidad entre semillas, D-DCRNN es mejor al exhibir menor variabilidad y una capacidad explicativa superior.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tukey_mae</span> <span class="o">=</span> <span class="n">pairwise_tukeyhsd</span><span class="p">(</span>
+    <span class="n">endog</span><span class="o">=</span><span class="n">metrics_df</span><span class="p">[</span><span class="s2">&quot;MAE&quot;</span><span class="p">],</span>
+    <span class="n">groups</span><span class="o">=</span><span class="n">metrics_df</span><span class="p">[</span><span class="s2">&quot;Model&quot;</span><span class="p">],</span>
+    <span class="n">alpha</span><span class="o">=</span><span class="mf">0.05</span>
+<span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;TUKEY HSD - MAE&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">tukey_mae</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TUKEY HSD - MAE
+    Multiple Comparison of Means - Tukey HSD, FWER=0.05    
+===========================================================
+ group1     group2   meandiff p-adj   lower   upper  reject
+-----------------------------------------------------------
+CONVLSTM      DDCRNN  -0.1863 0.1873 -0.4329  0.0602  False
+CONVLSTM         GRU    3.565    0.0  3.3185  3.8116   True
+CONVLSTM        LSTM   3.5738    0.0  3.3272  3.8203   True
+CONVLSTM       STGNN   3.5753    0.0  3.3287  3.8219   True
+CONVLSTM Transformer   1.6297    0.0  1.3831  1.8762   True
+  DDCRNN         GRU   3.7514    0.0  3.5048  3.9979   True
+  DDCRNN        LSTM   3.7601    0.0  3.5135  4.0067   True
+  DDCRNN       STGNN   3.7617    0.0  3.5151  4.0082   True
+  DDCRNN Transformer    1.816    0.0  1.5695  2.0626   True
+     GRU        LSTM   0.0087    1.0 -0.2378  0.2553  False
+     GRU       STGNN   0.0103    1.0 -0.2363  0.2568  False
+     GRU Transformer  -1.9354    0.0 -2.1819 -1.6888   True
+    LSTM       STGNN   0.0015    1.0  -0.245  0.2481  False
+    LSTM Transformer  -1.9441    0.0 -2.1907 -1.6975   True
+   STGNN Transformer  -1.9456    0.0 -2.1922 -1.6991   True
+-----------------------------------------------------------
+</pre></div>
+</div>
+</div>
+</div>
+<p>Los resultados de la prueba de Tukey HSD para la métrica MAE muestran un patrón consistente con el observado en RMSE. D-DCRNN presenta diferencias estadísticamente significativas frente a Transformer, GRU, LSTM y STGNN (p &lt; 0.001), obteniendo errores absolutos medios considerablemente menores. La diferencia media respecto a Transformer es de aproximadamente 1.82 unidades de MAE, mientras que frente a GRU, LSTM y STGNN supera las 3.75 unidades, lo que evidencia una mejora sustancial en la precisión de las predicciones.</p>
+<p>Al igual que en RMSE, no se observan diferencias estadísticamente significativas entre D-DCRNN y ConvLSTM (p = 0.187), ya que el intervalo de confianza de la diferencia incluye el valor cero. Esto indica que ambos modelos alcanzan niveles de error absoluto similares desde una perspectiva estadística.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tukey_r2</span> <span class="o">=</span> <span class="n">pairwise_tukeyhsd</span><span class="p">(</span>
+    <span class="n">endog</span><span class="o">=</span><span class="n">metrics_df</span><span class="p">[</span><span class="s2">&quot;R2&quot;</span><span class="p">],</span>
+    <span class="n">groups</span><span class="o">=</span><span class="n">metrics_df</span><span class="p">[</span><span class="s2">&quot;Model&quot;</span><span class="p">],</span>
+    <span class="n">alpha</span><span class="o">=</span><span class="mf">0.05</span>
+<span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot; TUKEY HSD - R²&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">tukey_r2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> TUKEY HSD - R²
+    Multiple Comparison of Means - Tukey HSD, FWER=0.05    
+===========================================================
+ group1     group2   meandiff p-adj   lower   upper  reject
+-----------------------------------------------------------
+CONVLSTM      DDCRNN   0.3467 0.0001  0.1831  0.5103   True
+CONVLSTM         GRU  -0.4317    0.0 -0.5953 -0.2681   True
+CONVLSTM        LSTM   -0.438    0.0 -0.6016 -0.2744   True
+CONVLSTM       STGNN   -0.461    0.0 -0.6246 -0.2974   True
+CONVLSTM Transformer   0.2244 0.0062  0.0608   0.388   True
+  DDCRNN         GRU  -0.7784    0.0  -0.942 -0.6148   True
+  DDCRNN        LSTM  -0.7847    0.0 -0.9483 -0.6211   True
+  DDCRNN       STGNN  -0.8077    0.0 -0.9713 -0.6441   True
+  DDCRNN Transformer  -0.1224 0.1948  -0.286  0.0412  False
+     GRU        LSTM  -0.0063    1.0 -0.1699  0.1573  False
+     GRU       STGNN  -0.0293 0.9889 -0.1929  0.1343  False
+     GRU Transformer    0.656    0.0  0.4924  0.8197   True
+    LSTM       STGNN   -0.023 0.9963 -0.1866  0.1406  False
+    LSTM Transformer   0.6623    0.0  0.4987   0.826   True
+   STGNN Transformer   0.6854    0.0  0.5218   0.849   True
+-----------------------------------------------------------
+</pre></div>
+</div>
+</div>
+</div>
+<p>Para la métrica R², la prueba de Tukey HSD muestra que D-DCRNN obtiene una capacidad explicativa significativamente superior a ConvLSTM, GRU, LSTM y STGNN (p &lt; 0.001 en todos los casos). Las diferencias medias son particularmente amplias frente a GRU, LSTM y STGNN, con incrementos cercanos a 0.78–0.81 puntos de R², lo que indica una mejora sustancial en la proporción de variabilidad explicada por el modelo. Asimismo, D-DCRNN supera significativamente a ConvLSTM, con una diferencia media de 0.347 puntos de R².</p>
+<p>Sin embargo, a diferencia de lo observado para RMSE y MAE, no se detectan diferencias estadísticamente significativas entre D-DCRNN y Transformer (p = 0.195). Aunque D-DCRNN presenta un R² medio superior, el intervalo de confianza de la diferencia incluye el valor cero, lo que sugiere que ambos modelos poseen una capacidad explicativa estadísticamente comparable. Este resultado posiciona a Transformer como la arquitectura más cercana a D-DCRNN en términos de explicación de la variabilidad de los datos.</p>
+</section>
+<section id="evaluando-robustez">
+<h2><strong>12.7. Evaluando Robustez</strong><a class="headerlink" href="#evaluando-robustez" title="Permalink to this heading">#</a></h2>
+<p>Para evaluar la robustez de los modelos, se analizaron las medias y desviaciones estándar de cada métrica de desempeño (RMSE, MAE y R²) a través de múltiples ejecuciones, con el fin de cuantificar tanto el rendimiento promedio como su variabilidad. Adicionalmente, se calculó el coeficiente de variación, lo que permitió estandarizar la dispersión relativa de los resultados y comparar la estabilidad entre modelos con diferentes escalas de error. Este enfoque facilita la identificación de aquellos modelos que no solo presentan buen desempeño promedio, sino también consistencia frente a variaciones en la inicialización y el proceso de entrenamiento, lo cual es fundamental para evaluar su robustez.</p>
+<section id="medias-desviaciones">
+<h3><strong>12.7.1. Medias &amp; Desviaciones</strong><a class="headerlink" href="#medias-desviaciones" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">robustness</span> <span class="o">=</span> <span class="n">metrics_df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;Model&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span>
+    <span class="s2">&quot;RMSE&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;mean&quot;</span><span class="p">,</span> <span class="s2">&quot;std&quot;</span><span class="p">],</span>
+    <span class="s2">&quot;MAE&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;mean&quot;</span><span class="p">,</span> <span class="s2">&quot;std&quot;</span><span class="p">],</span>
+    <span class="s2">&quot;R2&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;mean&quot;</span><span class="p">,</span> <span class="s2">&quot;std&quot;</span><span class="p">]</span>
+<span class="p">})</span>
+
+<span class="n">robustness</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead tr th {
+        text-align: left;
+    }
+
+    .dataframe thead tr:last-of-type th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr>
+      <th></th>
+      <th colspan="2" halign="left">RMSE</th>
+      <th colspan="2" halign="left">MAE</th>
+      <th colspan="2" halign="left">R2</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>mean</th>
+      <th>std</th>
+      <th>mean</th>
+      <th>std</th>
+      <th>mean</th>
+      <th>std</th>
+    </tr>
+    <tr>
+      <th>Model</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>CONVLSTM</th>
+      <td>0.658141</td>
+      <td>0.017618</td>
+      <td>0.473016</td>
+      <td>0.014764</td>
+      <td>0.457593</td>
+      <td>0.020778</td>
+    </tr>
+    <tr>
+      <th>DDCRNN</th>
+      <td>0.406530</td>
+      <td>0.002373</td>
+      <td>0.286674</td>
+      <td>0.003909</td>
+      <td>0.804324</td>
+      <td>0.006929</td>
+    </tr>
+    <tr>
+      <th>GRU</th>
+      <td>7.272854</td>
+      <td>0.315501</td>
+      <td>4.038056</td>
+      <td>0.092422</td>
+      <td>0.025908</td>
+      <td>0.083521</td>
+    </tr>
+    <tr>
+      <th>LSTM</th>
+      <td>7.254668</td>
+      <td>0.336835</td>
+      <td>4.046782</td>
+      <td>0.137063</td>
+      <td>0.019608</td>
+      <td>0.024789</td>
+    </tr>
+    <tr>
+      <th>STGNN</th>
+      <td>7.237096</td>
+      <td>0.089629</td>
+      <td>4.048328</td>
+      <td>0.060917</td>
+      <td>-0.003409</td>
+      <td>0.093412</td>
+    </tr>
+    <tr>
+      <th>Transformer</th>
+      <td>4.054371</td>
+      <td>0.304159</td>
+      <td>2.102692</td>
+      <td>0.131240</td>
+      <td>0.681954</td>
+      <td>0.067499</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>La comparación global de las arquitecturas evaluadas muestra que D-DCRNN obtuvo el mejor desempeño general, alcanzando los menores errores de predicción (RMSE = 0.4065; MAE = 0.2867) y la mayor capacidad explicativa (R² = 0.8043). Además, presentó la menor variabilidad entre ejecuciones (RMSE std = 0.0024; MAE std = 0.0039; R² std = 0.0069), lo que evidencia una alta estabilidad y reproducibilidad del proceso de entrenamiento. Estos resultados sugieren que la integración de mecanismos de difusión espacial junto con un grafo dinámico permite capturar de manera más efectiva las dependencias espacio-temporales presentes en los datos.</p>
+<p>Transformer se posicionó como la segunda mejor arquitectura, con un R² de 0.6820, valor relativamente cercano al obtenido por D-DCRNN, aunque acompañado de errores considerablemente mayores (RMSE = 4.0544; MAE = 2.1027) y una variabilidad entre semillas notablemente superior. Por su parte, ConvLSTM alcanzó errores bajos en comparación con los modelos recurrentes tradicionales, pero presentó una capacidad explicativa sustancialmente inferior (R² = 0.4576). Finalmente, GRU, LSTM y STGNN exhibieron los desempeños más limitados, con valores de R² cercanos a cero o incluso negativos y errores elevados, indicando una capacidad reducida para representar adecuadamente la dinámica de la serie temporal.</p>
+</section>
+<section id="coeficiente-de-variacion">
+<h3><strong>12.7.2. Coeficiente de Variación</strong><a class="headerlink" href="#coeficiente-de-variacion" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cv_rmse</span> <span class="o">=</span> <span class="n">metrics_df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;Model&quot;</span><span class="p">)[</span><span class="s2">&quot;RMSE&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">std</span><span class="p">()</span> <span class="o">/</span> <span class="n">metrics_df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;Model&quot;</span><span class="p">)[</span><span class="s2">&quot;RMSE&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">cv_rmse</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Model
+CONVLSTM       0.026769
+DDCRNN         0.005837
+GRU            0.043381
+LSTM           0.046430
+STGNN          0.012385
+Transformer    0.075020
+Name: RMSE, dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<p>El modelo D-DCRNN presenta el menor coeficiente de variación (CV = 0.0058), indicando que sus resultados son extremadamente consistentes entre diferentes semillas de inicialización y que su desempeño apenas varía entre ejecuciones. Le siguen STGNN (CV = 0.0124) y ConvLSTM (CV = 0.0268), que también muestran niveles relativamente bajos de variabilidad. En contraste, Transformer exhibe el mayor coeficiente de variación (CV = 0.0750), lo que sugiere una mayor sensibilidad a las condiciones iniciales del entrenamiento y una menor reproducibilidad relativa de sus resultados. GRU (CV = 0.0434) y LSTM (CV = 0.0464) presentan igualmente niveles de variabilidad superiores a los observados en D-DCRNN.</p>
+</section>
+</section>
+<section id="overfitting-underfitting">
+<h2><strong>12.8. Overfitting/underfitting</strong><a class="headerlink" href="#overfitting-underfitting" title="Permalink to this heading">#</a></h2>
+<p>En esta sección se analiza la presencia de <strong>sobreajuste (overfitting) y subajuste (underfitting)</strong> en los modelos evaluados a partir de sus curvas de aprendizaje. Para ello, se utiliza la diferencia entre la pérdida de validación y la pérdida de entrenamiento como indicador del grado de generalización del modelo, calculada a nivel de épocas y posteriormente agregada por semillas y particiones. Este enfoque permite cuantificar la brecha de generalización (generalization gap) y evaluar su estabilidad mediante medidas de tendencia central y dispersión, facilitando la comparación consistente del comportamiento de cada arquitectura bajo el mismo esquema experimental.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">BASE_DIR</span> <span class="o">=</span> <span class="s2">&quot;Modelos&quot;</span>
+
+<span class="n">MODELOS</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;LSTM&quot;</span><span class="p">,</span> <span class="s2">&quot;CONVLSTM&quot;</span><span class="p">,</span> <span class="s2">&quot;STGNN&quot;</span><span class="p">,</span> <span class="s2">&quot;GRU&quot;</span><span class="p">,</span> <span class="s2">&quot;Transformer&quot;</span><span class="p">,</span><span class="s2">&quot;DDCRNN&quot;</span><span class="p">]</span>
+
+<span class="n">all_results</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">model</span> <span class="ow">in</span> <span class="n">MODELOS</span><span class="p">:</span>
+
+    <span class="n">path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">BASE_DIR</span><span class="p">,</span> <span class="n">model</span><span class="p">)</span>
+
+    <span class="n">file</span> <span class="o">=</span> <span class="p">[</span><span class="n">f</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">path</span><span class="p">)</span> <span class="k">if</span> <span class="s2">&quot;training_history&quot;</span> <span class="ow">in</span> <span class="n">f</span> <span class="ow">and</span> <span class="n">f</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;.csv&quot;</span><span class="p">)]</span>
+
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">file</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;No history found for </span><span class="si">{</span><span class="n">model</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">continue</span>
+
+    <span class="n">history_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">file</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">history</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">history_path</span><span class="p">)</span>
+
+    <span class="n">history</span><span class="p">[</span><span class="s2">&quot;gap&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">history</span><span class="p">[</span><span class="s2">&quot;val_loss&quot;</span><span class="p">]</span> <span class="o">-</span> <span class="n">history</span><span class="p">[</span><span class="s2">&quot;train_loss&quot;</span><span class="p">]</span>
+
+    <span class="n">summary_gap</span> <span class="o">=</span> <span class="n">history</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">&quot;seed&quot;</span><span class="p">,</span> <span class="s2">&quot;outer_fold&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span>
+        <span class="s2">&quot;train_loss&quot;</span><span class="p">:</span> <span class="s2">&quot;last&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;val_loss&quot;</span><span class="p">:</span> <span class="s2">&quot;last&quot;</span>
+    <span class="p">})</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+
+    <span class="n">summary_gap</span><span class="p">[</span><span class="s2">&quot;gap&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">summary_gap</span><span class="p">[</span><span class="s2">&quot;val_loss&quot;</span><span class="p">]</span> <span class="o">-</span> <span class="n">summary_gap</span><span class="p">[</span><span class="s2">&quot;train_loss&quot;</span><span class="p">]</span>
+
+    <span class="n">overfit_summary</span> <span class="o">=</span> <span class="n">summary_gap</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;seed&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span>
+        <span class="s2">&quot;gap&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;mean&quot;</span><span class="p">,</span> <span class="s2">&quot;std&quot;</span><span class="p">]</span>
+    <span class="p">})</span>
+
+    <span class="n">overfit_summary</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;gap_mean&quot;</span><span class="p">,</span> <span class="s2">&quot;gap_std&quot;</span><span class="p">]</span>
+    <span class="n">overfit_summary</span> <span class="o">=</span> <span class="n">overfit_summary</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+
+    <span class="n">overfit_summary</span><span class="p">[</span><span class="s2">&quot;Model&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">model</span>
+
+    <span class="n">all_results</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">overfit_summary</span><span class="p">)</span>
+
+<span class="n">final_overfit</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">(</span><span class="n">all_results</span><span class="p">,</span> <span class="n">ignore_index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">final_overfit</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>seed</th>
+      <th>gap_mean</th>
+      <th>gap_std</th>
+      <th>Model</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>42</td>
+      <td>0.301793</td>
+      <td>0.086989</td>
+      <td>LSTM</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>123</td>
+      <td>0.315937</td>
+      <td>0.101948</td>
+      <td>LSTM</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2024</td>
+      <td>0.331889</td>
+      <td>0.119613</td>
+      <td>LSTM</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>42</td>
+      <td>0.085528</td>
+      <td>0.026504</td>
+      <td>CONVLSTM</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>123</td>
+      <td>0.120640</td>
+      <td>0.023259</td>
+      <td>CONVLSTM</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>2024</td>
+      <td>0.102050</td>
+      <td>0.016064</td>
+      <td>CONVLSTM</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>42</td>
+      <td>0.349910</td>
+      <td>0.155646</td>
+      <td>STGNN</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>123</td>
+      <td>0.344154</td>
+      <td>0.166403</td>
+      <td>STGNN</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>2024</td>
+      <td>0.342878</td>
+      <td>0.152486</td>
+      <td>STGNN</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>42</td>
+      <td>0.341189</td>
+      <td>0.106184</td>
+      <td>GRU</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>123</td>
+      <td>0.305540</td>
+      <td>0.101201</td>
+      <td>GRU</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>2024</td>
+      <td>0.283977</td>
+      <td>0.033511</td>
+      <td>GRU</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>42</td>
+      <td>0.032980</td>
+      <td>0.020449</td>
+      <td>Transformer</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>123</td>
+      <td>0.019268</td>
+      <td>0.023873</td>
+      <td>Transformer</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>2024</td>
+      <td>0.022746</td>
+      <td>0.019543</td>
+      <td>Transformer</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>42</td>
+      <td>0.027188</td>
+      <td>0.039098</td>
+      <td>DDCRNN</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>123</td>
+      <td>0.025100</td>
+      <td>0.019245</td>
+      <td>DDCRNN</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>2024</td>
+      <td>0.031657</td>
+      <td>0.021682</td>
+      <td>DDCRNN</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Los resultados muestran que Transformer y D-DCRNN presentan los menores valores de gap, con promedios cercanos a 0.02–0.03 en todas las semillas evaluadas. Esto sugiere que ambos modelos mantienen un equilibrio adecuado entre ajuste y generalización, logrando un desempeño consistente sobre datos no observados. En particular, D-DCRNN exhibe una estabilidad notable entre semillas, con valores de gap comprendidos entre 0.025 y 0.032, mientras que Transformer presenta los menores valores absolutos, aunque acompañado de una mayor variabilidad global observada previamente en sus métricas de evaluación.</p>
+<p>Por otro lado, ConvLSTM muestra niveles moderados de separación entre entrenamiento y validación (gap ≈ 0.10), indicando una ligera pérdida de capacidad de generalización respecto a D-DCRNN y Transformer. En contraste, GRU, LSTM y STGNN registran los mayores valores de gap (entre 0.28 y 0.35), lo que evidencia una discrepancia más marcada entre el comportamiento observado durante el entrenamiento y el desempeño en validación.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model_summary</span> <span class="o">=</span> <span class="n">final_overfit</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;Model&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span>
+    <span class="s2">&quot;gap_mean&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;mean&quot;</span><span class="p">,</span> <span class="s2">&quot;std&quot;</span><span class="p">],</span>
+    <span class="s2">&quot;gap_std&quot;</span><span class="p">:</span> <span class="s2">&quot;mean&quot;</span>
+<span class="p">})</span>
+
+<span class="n">model_summary</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;gap_mean_mean&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;gap_mean_std&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;gap_std_mean&quot;</span>
+<span class="p">]</span>
+
+<span class="n">model_summary</span> <span class="o">=</span> <span class="n">model_summary</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">model_summary</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>         Model  gap_mean_mean  gap_mean_std  gap_std_mean
+0     CONVLSTM       0.102739      0.017566      0.021942
+1       DDCRNN       0.027982      0.003350      0.026675
+2          GRU       0.310235      0.028894      0.080299
+3         LSTM       0.316540      0.015057      0.102850
+4        STGNN       0.345647      0.003746      0.158178
+5  Transformer       0.024998      0.007128      0.021288
+</pre></div>
+</div>
+</div>
+</div>
+<p>El análisis del generalization gap promedio muestra que las arquitecturas con mejor capacidad de generalización son Transformer y D-DCRNN, con diferencias medias entre entrenamiento y validación de 0.0250 y 0.0280, respectivamente. Estos valores son considerablemente inferiores a los observados en ConvLSTM (0.1027), GRU (0.3102), LSTM (0.3165) y STGNN (0.3456), lo que indica que tanto Transformer como D-DCRNN mantienen un comportamiento muy similar sobre datos de entrenamiento y validación, reduciendo el riesgo de sobreajuste.</p>
+<p>Aunque Transformer presenta el menor gap promedio, D-DCRNN exhibe una estabilidad comparable entre semillas (gap_mean_std = 0.0034 frente a 0.0071), lo que sugiere una convergencia más consistente del proceso de entrenamiento. Por otra parte, GRU, LSTM y especialmente STGNN muestran brechas sustancialmente mayores, evidenciando una menor capacidad para generalizar el conocimiento aprendido durante el entrenamiento.</p>
+</section>
+<section id="conclusion">
+<h2><strong>12.9. Conclusión</strong><a class="headerlink" href="#conclusion" title="Permalink to this heading">#</a></h2>
+<p>Los resultados obtenidos permiten concluir que la arquitectura D-DCRNN constituye la alternativa más efectiva y robusta entre todos los modelos evaluados. En términos de precisión predictiva, alcanzó los menores errores (RMSE = 0.406 y MAE = 0.287) y la mayor capacidad explicativa (R² = 0.804), superando ampliamente a las arquitecturas recurrentes convencionales (LSTM y GRU), al modelo espacial STGNN y al ConvLSTM. Aunque el Transformer se posicionó como el benchmark de mejor desempeño, D-DCRNN logró una reducción aproximada del 90% en RMSE y del 86% en MAE, además de incrementar el R² desde 0.682 hasta 0.804, evidenciando una representación más precisa de la dinámica epidemiológica.</p>
+<p>Adicionalmente, D-DCRNN mostró la mayor estabilidad entre ejecuciones, registrando la menor variabilidad entre semillas (RMSE std = 0.0024 y CV = 0.0058), lo que indica una convergencia altamente reproducible e independiente de la inicialización aleatoria. Los análisis complementarios de generalización también respaldan este comportamiento, con una brecha entrenamiento-validación reducida (gap ≈ 0.028), comparable a la del Transformer y sustancialmente menor que la observada en GRU, LSTM, STGNN y ConvLSTM. En conjunto, estos hallazgos sugieren que la incorporación simultánea de dependencias espaciales mediante grafos y dependencias temporales mediante mecanismos recurrentes permite a D-DCRNN capturar con mayor eficacia la estructura espacio-temporal del dengue, alcanzando un equilibrio superior entre precisión, capacidad explicativa, estabilidad y reproducibilidad respecto a todos los modelos benchmark evaluados.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "tf_gpu"
+        },
+        kernelOptions: {
+            name: "tf_gpu",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'tf_gpu'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="11_DDCRNN_Dengue.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><strong>11. Modelo Final: D-DCRNN (Dynamic Diffusion Convolutional RNN)</strong></p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="13_Discusi%C3%B3n_Cr%C3%ADtica.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><strong>13. Discusión Crítica</strong></p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#librerias"><strong>12.1. Librerias</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cargando-los-resultados"><strong>12.2.Cargando los Resultados</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metricas-globales"><strong>12.3. Metricas Globales</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metricas-por-semilla"><strong>12.4. Métricas por Semilla</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#anova"><strong>12.5. ANOVA</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#supuestos"><strong>12.5.1. Supuestos</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#normalidad"><strong>12.5.1.1. Normalidad</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#homocedasticidad"><strong>12.5.1.2. Homocedasticidad</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#independencia-de-observaciones"><strong>12.5.1.3. Independencia de Observaciones</strong></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aplicando-anova"><strong>12.5.2. Aplicando ANOVA</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tukey-hsd"><strong>12.6. TUKEY HSD</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluando-robustez"><strong>12.7. Evaluando Robustez</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#medias-desviaciones"><strong>12.7.1. Medias &amp; Desviaciones</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#coeficiente-de-variacion"><strong>12.7.2. Coeficiente de Variación</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overfitting-underfitting"><strong>12.8. Overfitting/underfitting</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion"><strong>12.9. Conclusión</strong></a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Guirlessa De la Hoz & Mariangel Mercado
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

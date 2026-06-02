@@ -1,0 +1,445 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>10. Paper guía &#8212; Predicción Espacio-Temporal de la Incidencia de Dengue en los Departamentos de Colombia Mediante Técnicas de Deep Learning</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '10_PF_PAPER_GUIA';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="11. Modelo Final: D-DCRNN (Dynamic Diffusion Convolutional RNN)" href="11_DDCRNN_Dengue.html" />
+    <link rel="prev" title="9. Comparando Modelos Benchmark" href="9_Comparando_Modelos.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Predicción Espacio-Temporal de la Incidencia de Dengue en los Departamentos de Colombia Mediante Técnicas de Deep Learning</p>
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Predicción Espacio-Temporal de la Incidencia de Dengue en los Departamentos de Colombia Mediante Técnicas de Deep Learning
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="1_Cargue_Datos.html"><strong>1. Cargue Base de Datos</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="2_EDA.html"><strong>2. Análisis Exploratorio de Datos</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="3_ESTADO_DEL_ARTE.html"><strong>3. Revisión del Estado del Arte</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="4_Modelo_LSTM.html"><strong>4. LSTM</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="5_Modelo_ConvLSTM.html"><strong>5. ConvLSTM</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="6_Modelo_STGNN.html"><strong>6. STGNN</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="7_Modelo_GRU.html"><strong>7. GRU</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="8_Modelo_Transformer.html"><strong>8. Transformer</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="9_Comparando_Modelos.html"><strong>9. Comparando Modelos Benchmark</strong></a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#"><strong>10. Paper guía</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="11_DDCRNN_Dengue.html"><strong>11. Modelo Final: D-DCRNN (Dynamic Diffusion Convolutional RNN)</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="12_Comparaci%C3%B3n_Final.html"><strong>12. Comparación Final</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="13_Discusi%C3%B3n_Cr%C3%ADtica.html"><strong>13. Discusión Crítica</strong></a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/10_PF_PAPER_GUIA.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>10. Paper guía</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="paper-guia">
+<h1><strong>10. Paper guía</strong><a class="headerlink" href="#paper-guia" title="Permalink to this heading">#</a></h1>
+<p>El artículo científico DengueGNN: Graph-based deep learning for modeling disease spread dynamics and prediction, desarrollado por GulMohamed et al. (2026), se consolida como la referencia principal y el pilar fundamental de esta propuesta de investigación debido a su estricta convergencia metodológica con el objetivo de modelar la dispersión del dengue en entornos geográficos complejos e irregulares. La justificación medular para seleccionar este trabajo como paper base radica en que resuelve con rigor matemático el desafío de integrar la naturaleza dinámica de los factores antrópicos y ambientales dentro de una estructura de grafos espacio-temporales, superando las limitaciones de los enfoques estáticos tradicionales. Para los propósitos de esta investigación, el artículo no solo actúa como un precedente teórico, sino como una guía operativa e instrumental explícita que valida el porqué y el para qué de la transición hacia una arquitectura avanzada como la Dynamic Diffusion Convolutional RNN (D-DCRNN). Al demostrar empíricamente sobre el repositorio global OpenDengue que los grafos variables en el tiempo reducen significativamente el error de pronóstico en horizontes críticos de mediano plazo (1 a 4 semanas), este texto provee el sustento analítico indispensable para legitimar la viabilidad y necesidad de desplegar un marco predictivo similar adaptado a la compleja realidad epidemiológica de los departamentos de Colombia.</p>
+<p>Bajo esta premisa, el modelo original de GulMohamed et al. (2026) aporta una arquitectura conceptualmente robusta dividida en cuatro componentes interconectados que sirven como base directa para la formulación del diseño D-DCRNN. El sistema original se compone de un módulo de construcción de grafos epidemiológicos dinámicos, un codificador espacial fundamentado en capas de convolución de grafos (GCN), un codificador temporal que emplea celdas LSTM potenciadas con mecanismos de atención adaptativa, y una capa de fusión de características climáticas y demográficas. El supuesto fundamental de esta arquitectura dictamina que la transmisión del dengue no responde a una estructura geográfica inmutable, sino que los patrones de contagio interregional mutan dinámicamente semana a semana, gobernados de forma no lineal por los flujos fluctuantes de la movilidad humana y las variaciones climáticas locales. Con base en este supuesto, los autores calculan y actualizan periódicamente una matriz de adyacencia híbrida que fusiona la contigüidad física con proyecciones de transporte derivadas de un modelo de gravedad poblacional. Esta formulación matemática exacta es el insumo principal que se requiere para heredar y refinar en la propuesta D-DCRNN, permitiendo transicionar de una convolución de grafos estándar a un proceso de difusión convolucional dinámico que capture con mayor precisión el flujo y la dirección de la propagación del vector en el territorio nacional.</p>
+<p>La adopción de este estudio como eje conductor se vuelve completamente persuasiva al analizar su relación analítica con los modelos de referencia o benchmarks de la literatura actual, tales como GRU, LSTM, ConvLSTM, Transformer y las variaciones clásicas de STGNN. En términos de similitudes, el modelo propuesto comparte con LSTM y GRU la capacidad intrínseca para codificar la memoria secuencial de los registros históricos de incidencia en el vector de tiempo, y se asemeja a ConvLSTM y a las redes espacio-temporales tradicionales en el intento conjunto de capturar simultáneamente las dimensiones espaciales y temporales en una sola estructura. Sin embargo, las diferencias marcan la superioridad del enfoque del paper base y justifican su elección: mientras que LSTM, GRU y las arquitecturas Transformer clásicas analizan cada unidad territorial de manera aislada o bajo dependencias puramente secuenciales que pierden las correlaciones geográficas explícitas, las redes ConvLSTM están severamente restringidas al procesamiento de datos estructurados en cuadrículas regulares bidimensionales, lo que las inhabilita para representar fielmente las divisiones administrativas asimétricas, heterogéneas e irregulares de los departamentos de Colombia. Finalmente, la diferencia crucial respecto a las STGNN convencionales de la literatura radica en que estas últimas dependen de una matriz de conectividad fija o basada únicamente en distancias euclidianas; en contraste, el modelo guía rompe este paradigma al reformular la matriz de adyacencia de manera dinámica y guiada por variables externas de movilidad y densidad. Esta última distinción es el argumento teórico maestro que se utilizará para fundamentar las ventajas operativas del diseño D-DCRNN, consolidando al artículo de GulMohamed et al. (2026) como el único antecedente capaz de ofrecer el andamiaje metodológico para integrar con éxito datos climáticos y flujos de transporte humano en un modelo predictivo de alta precisión para la salud pública colombiana.</p>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="9_Comparando_Modelos.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><strong>9. Comparando Modelos Benchmark</strong></p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="11_DDCRNN_Dengue.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><strong>11. Modelo Final: D-DCRNN (Dynamic Diffusion Convolutional RNN)</strong></p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Guirlessa De la Hoz & Mariangel Mercado
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
