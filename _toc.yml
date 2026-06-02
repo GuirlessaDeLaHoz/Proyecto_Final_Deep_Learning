@@ -1,0 +1,16 @@
+format: jb-book
+root: intro
+chapters:
+  - file: 1_Cargue_Datos
+  - file: 2_EDA
+  - file: 3_ESTADO_DEL_ARTE
+  - file: 4_Modelo_LSTM
+  - file: 5_Modelo_ConvLSTM
+  - file: 6_Modelo_STGNN
+  - file: 7_Modelo_GRU
+  - file: 8_Modelo_Transformer
+  - file: 9_Comparando_Modelos
+  - file: 10_PF_PAPER_GUIA
+  - file: 11_DDCRNN_Dengue
+  - file: 12_Comparación_Final
+  - file: 13_Discusión_Crítica

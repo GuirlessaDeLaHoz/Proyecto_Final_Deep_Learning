@@ -1,0 +1,55 @@
+# ==========================================
+# 1. Jupyter Book & Sphinx (Outputs locales)
+# ==========================================
+_build/
+.jupyter_cache/
+
+# ==========================================
+# 2. Jupyter Notebooks & Python
+# ==========================================
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/*
+__pycache__/
+*.pyc
+.env
+
+# ==========================================
+# 3. Carpetas de Datos (Pesados / Locales)
+# ==========================================
+# Se recomienda ignorar los datasets crudos o intermedios si son grandes.
+# Git rastreará la estructura, pero no los archivos de datos pesados dentro.
+Bases_Datos/
+Covariables/
+Datos_Dengue/
+
+# ==========================================
+# 4. Pesos de Modelos (Checkpoints de Redes)
+# ==========================================
+*.pt
+*.pth
+*.h5
+*.pkl
+*.ckpt
+
+# ==========================================
+# 5. Outputs Masivos de Deep Learning / Optuna
+# ==========================================
+# Ignoramos predicciones fila por fila, residuos y archivos por partición (fold)
+# que son muy pesados y cambian en cada entrenamiento.
+Modelos/**/*_predictions.csv
+Modelos/**/*_residuals.csv
+Modelos/**/*_optuna_*.csv
+Modelos/**/*_seed_*.csv
+Modelos/**/*_fold_*.csv
+
+# NOTA CON RESPECTO A LO ANTERIOR:
+# Al especificar los patrones de arriba, Git seguirá RASTREANDO archivos clave como
+# "metrics_lstm.csv" y "metrics_stgnn.csv". Esto es perfecto, ya que tu Jupyter Book 
+# necesita estos pequeños archivos de métricas para compilar los capítulos de comparación.
+
+# ==========================================
+# 6. Sistema operativo e IDEs
+# ==========================================
+.vscode/
+.DS_Store
+*.log
