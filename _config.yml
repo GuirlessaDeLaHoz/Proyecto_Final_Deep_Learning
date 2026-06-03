@@ -1,5 +1,9 @@
 title: Predicción Espacio-Temporal de la Incidencia de Dengue en los Departamentos de Colombia Mediante Técnicas de Deep Learning
 author: Guirlessa De la Hoz & Mariangel Mercado
 
+html:
+  extra_javascript:
+    - https://cdn.plot.ly/plotly-latest.min.js
+    
 execute:
   execute_notebooks: "off"  # Crucial para que no intente reentrenar tus modelos al compilar
