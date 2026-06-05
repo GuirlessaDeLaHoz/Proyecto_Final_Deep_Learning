@@ -1,0 +1,685 @@
+trial,seed,val_year,held_spatial_fold,held_depts,rmse
+0,42,2019,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.7335763199983135
+0,42,2019,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.6023498188509653
+0,42,2019,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.42764742938678135
+0,42,2019,4,"['Amazonas', 'Guaviare', 'Vaupes']",1.373563145780518
+0,42,2020,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.49322690657756124
+0,42,2020,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.36067646132138964
+0,42,2020,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.3858237457972316
+0,42,2020,4,"['Amazonas', 'Guaviare', 'Vaupes']",0.49098089454931604
+0,42,2021,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.48328119262537106
+0,42,2021,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.3242711174278759
+0,42,2021,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.24538722874217042
+0,42,2021,4,"['Amazonas', 'Guaviare', 'Vaupes']",0.6267122417940398
+1,42,2019,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.512844972111231
+1,42,2019,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.7192072036151144
+1,42,2019,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.3610583561280953
+1,42,2019,4,"['Amazonas', 'Guaviare', 'Vaupes']",1.3346444726652236
+1,42,2020,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.39721732206960514
+1,42,2020,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.5335511130504994
+1,42,2020,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.5284929539906422
+1,42,2020,4,"['Amazonas', 'Guaviare', 'Vaupes']",0.46887200675076046
+1,42,2021,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.7137342921597926
+1,42,2021,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.3389973129507771
+1,42,2021,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.6118929998460305
+1,42,2021,4,"['Amazonas', 'Guaviare', 'Vaupes']",0.4274302058662219
+2,42,2019,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.5489624239234117
+2,42,2019,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.7010175274740541
+2,42,2019,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.6141852016015843
+2,42,2019,4,"['Amazonas', 'Guaviare', 'Vaupes']",1.6479622395318934
+2,42,2020,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.28566946589219777
+2,42,2020,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.5308220766731425
+2,42,2020,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.5415657083864261
+2,42,2020,4,"['Amazonas', 'Guaviare', 'Vaupes']",0.5494532707102427
+2,42,2021,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.8294897529884291
+2,42,2021,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.34760500498072233
+2,42,2021,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.6190750616841277
+2,42,2021,4,"['Amazonas', 'Guaviare', 'Vaupes']",0.45604400295508973
+3,42,2019,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.6088725488355335
+3,42,2019,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.7250350154444994
+3,42,2019,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.4238388306280852
+3,42,2019,4,"['Amazonas', 'Guaviare', 'Vaupes']",1.4698513852465847
+3,42,2020,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.38509260119831995
+3,42,2020,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.4272315845750645
+3,42,2020,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.3796660876417615
+3,42,2020,4,"['Amazonas', 'Guaviare', 'Vaupes']",0.48606079291482557
+3,42,2021,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.5346120587384288
+3,42,2021,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.3393635042186021
+3,42,2021,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.4497629104010193
+3,42,2021,4,"['Amazonas', 'Guaviare', 'Vaupes']",0.6513301489964322
+4,42,2019,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.41501671226011194
+4,42,2019,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.4814729508519818
+4,42,2019,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.3845786206620358
+4,42,2019,4,"['Amazonas', 'Guaviare', 'Vaupes']",1.2735019971744257
+4,42,2020,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.40750840494346074
+4,42,2020,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.3797055495253691
+4,42,2020,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.29481143020231987
+4,42,2020,4,"['Amazonas', 'Guaviare', 'Vaupes']",0.5160918001235683
+4,42,2021,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.5119421376691348
+4,42,2021,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.3876991367872132
+4,42,2021,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.2941187983465802
+4,42,2021,4,"['Amazonas', 'Guaviare', 'Vaupes']",0.6370869607449992
+5,42,2019,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.7013208130154351
+5,42,2019,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.6450026666600897
+5,42,2019,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.32987391909891645
+5,42,2019,4,"['Amazonas', 'Guaviare', 'Vaupes']",1.5342761130234228
+5,42,2020,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.27647996091054267
+5,42,2020,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.5213458845285439
+5,42,2020,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.3200234527859813
+5,42,2020,4,"['Amazonas', 'Guaviare', 'Vaupes']",0.5004607997885702
+5,42,2021,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.5679104792154528
+5,42,2021,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.5892708124200436
+5,42,2021,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.4707356833439987
+5,42,2021,4,"['Amazonas', 'Guaviare', 'Vaupes']",0.4853892628325059
+6,42,2019,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.7750874654574101
+6,42,2019,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.7928914751256343
+6,42,2019,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.6667863519840517
+6,42,2019,4,"['Amazonas', 'Guaviare', 'Vaupes']",1.384430924226768
+6,42,2020,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.27594565875216714
+6,42,2020,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.4402184836388927
+6,42,2020,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.4411885560240984
+6,42,2020,4,"['Amazonas', 'Guaviare', 'Vaupes']",0.4585032924619164
+6,42,2021,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.695526861515367
+6,42,2021,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.404994326157327
+6,42,2021,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.3028774784630644
+6,42,2021,4,"['Amazonas', 'Guaviare', 'Vaupes']",0.5808264276001864
+7,42,2019,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.7375921434287109
+7,42,2019,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.6458241067247789
+7,42,2019,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.44685516513474177
+7,42,2019,4,"['Amazonas', 'Guaviare', 'Vaupes']",1.331555547259643
+7,42,2020,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.418388316545188
+7,42,2020,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.3916790854568397
+7,42,2020,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.3537327431624661
+7,42,2020,4,"['Amazonas', 'Guaviare', 'Vaupes']",0.5412539015931076
+7,42,2021,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.6761511082713562
+7,42,2021,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.37889283933208384
+7,42,2021,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.3971667501460436
+7,42,2021,4,"['Amazonas', 'Guaviare', 'Vaupes']",0.5198881314603384
+8,42,2019,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.6882311227927612
+8,42,2019,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.45471705901032267
+8,42,2019,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.4269586435364455
+8,42,2019,4,"['Amazonas', 'Guaviare', 'Vaupes']",1.2742947928204837
+8,42,2020,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.4098143833123526
+8,42,2020,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.5211057967547837
+8,42,2020,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.5711855541913631
+8,42,2020,4,"['Amazonas', 'Guaviare', 'Vaupes']",0.5151582397015242
+8,42,2021,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.748310052775784
+8,42,2021,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.2997780704176575
+8,42,2021,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.29908619128133934
+8,42,2021,4,"['Amazonas', 'Guaviare', 'Vaupes']",0.45607002771623095
+9,42,2019,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.9300317207177063
+9,42,2019,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.6523286280906594
+9,42,2019,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.3673645160992383
+9,42,2019,4,"['Amazonas', 'Guaviare', 'Vaupes']",2.101564882411812
+9,42,2020,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.43057803724243543
+9,42,2020,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.33625146698897607
+9,42,2020,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.32383898819210283
+9,42,2020,4,"['Amazonas', 'Guaviare', 'Vaupes']",0.5775785441057193
+9,42,2021,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.4730229334675059
+9,42,2021,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.3899516405481703
+9,42,2021,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.2541732264803083
+9,42,2021,4,"['Amazonas', 'Guaviare', 'Vaupes']",0.5242177642039824
+10,42,2019,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",1.1362000950260456
+10,42,2019,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",1.2276120888680035
+10,42,2019,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.3169942854590337
+10,42,2019,4,"['Amazonas', 'Guaviare', 'Vaupes']",1.5296085668505497
+10,42,2020,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.3953867220652994
+10,42,2020,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.41909156149526805
+10,42,2020,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.5843217315466864
+10,42,2020,4,"['Amazonas', 'Guaviare', 'Vaupes']",0.7132655999596612
+10,42,2021,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.6237040435129053
+10,42,2021,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.34071258766208734
+10,42,2021,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.4252722085819549
+10,42,2021,4,"['Amazonas', 'Guaviare', 'Vaupes']",0.5279334832724312
+11,42,2019,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.6700752905631918
+11,42,2019,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.6607663422222323
+11,42,2019,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.41128843356901507
+11,42,2019,4,"['Amazonas', 'Guaviare', 'Vaupes']",1.2438001900518958
+11,42,2020,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.37481430542310507
+11,42,2020,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.6615833004225392
+11,42,2020,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.4676056084965077
+11,42,2020,4,"['Amazonas', 'Guaviare', 'Vaupes']",0.6656982023435196
+11,42,2021,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.6937565485327325
+11,42,2021,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.576649354838377
+11,42,2021,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.29829413880227296
+11,42,2021,4,"['Amazonas', 'Guaviare', 'Vaupes']",0.4693919871846269
+12,42,2019,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.5350172043199927
+12,42,2019,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.5379052386656934
+12,42,2019,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.39900255339983826
+12,42,2019,4,"['Amazonas', 'Guaviare', 'Vaupes']",1.4542681391743668
+12,42,2020,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.38884340268120865
+12,42,2020,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.5025479840384786
+12,42,2020,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.24905169457577275
+12,42,2020,4,"['Amazonas', 'Guaviare', 'Vaupes']",0.5494288893081222
+12,42,2021,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.49237099511909127
+12,42,2021,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.42206359109464947
+12,42,2021,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.39206747748974824
+12,42,2021,4,"['Amazonas', 'Guaviare', 'Vaupes']",0.46820238232692946
+13,42,2019,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.7201464811305183
+13,42,2019,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.5205642354704761
+13,42,2019,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.37617645894681173
+13,42,2019,4,"['Amazonas', 'Guaviare', 'Vaupes']",1.3965751565089561
+13,42,2020,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.37056911928541586
+13,42,2020,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.42064198693469834
+13,42,2020,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.33477692512660606
+13,42,2020,4,"['Amazonas', 'Guaviare', 'Vaupes']",0.5280560521822396
+13,42,2021,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.6354471626676433
+13,42,2021,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.4223514974196127
+13,42,2021,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.35853210368121713
+13,42,2021,4,"['Amazonas', 'Guaviare', 'Vaupes']",0.4953948677481693
+14,42,2019,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",1.1034467017331075
+14,42,2019,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.6402745102224137
+14,42,2019,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.584068981153064
+14,42,2019,4,"['Amazonas', 'Guaviare', 'Vaupes']",1.6710244983450164
+14,42,2020,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.3284512442009644
+14,42,2020,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.37135693101892875
+14,42,2020,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.4719926731593626
+14,42,2020,4,"['Amazonas', 'Guaviare', 'Vaupes']",0.5446949421324425
+14,42,2021,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.5536918569570588
+14,42,2021,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.29602847373705155
+14,42,2021,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.24231937878644624
+14,42,2021,4,"['Amazonas', 'Guaviare', 'Vaupes']",0.5445523393397371
+15,42,2019,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.6119924719696542
+15,42,2019,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.5566389652695924
+15,42,2019,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.34342834205323103
+15,42,2019,4,"['Amazonas', 'Guaviare', 'Vaupes']",1.5680869353970432
+15,42,2020,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.39866822238260285
+15,42,2020,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.3351751148810097
+15,42,2020,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.38021716233893393
+15,42,2020,4,"['Amazonas', 'Guaviare', 'Vaupes']",0.5638632414481203
+15,42,2021,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.49565796221769315
+15,42,2021,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.4864852375729205
+15,42,2021,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.3011487598182429
+15,42,2021,4,"['Amazonas', 'Guaviare', 'Vaupes']",0.5696304632564868
+16,42,2019,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.42396501009445736
+16,42,2019,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.5966657271679704
+16,42,2019,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.37159652781937985
+16,42,2019,4,"['Amazonas', 'Guaviare', 'Vaupes']",1.3152562673506776
+16,42,2020,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.35956460677825525
+16,42,2020,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.45318788881275995
+16,42,2020,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.3325126411967711
+16,42,2020,4,"['Amazonas', 'Guaviare', 'Vaupes']",0.4858307190618087
+16,42,2021,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.4966074019021009
+16,42,2021,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.3119295277640135
+16,42,2021,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.23489547794312338
+16,42,2021,4,"['Amazonas', 'Guaviare', 'Vaupes']",0.6193280823737858
+17,42,2019,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.5376611545630606
+17,42,2019,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.6298159541642642
+17,42,2019,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.4698228003877533
+17,42,2019,4,"['Amazonas', 'Guaviare', 'Vaupes']",1.4322189682515063
+17,42,2020,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.3951705247948648
+17,42,2020,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.39174423092292665
+17,42,2020,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.31181464142483634
+17,42,2020,4,"['Amazonas', 'Guaviare', 'Vaupes']",0.5449248009606565
+17,42,2021,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.641556225804988
+17,42,2021,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.3403793039424534
+17,42,2021,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.2598863048883587
+17,42,2021,4,"['Amazonas', 'Guaviare', 'Vaupes']",0.7162953214969502
+18,42,2019,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.4144761700205088
+18,42,2019,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.49507155951152193
+18,42,2019,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.40975011063435185
+18,42,2019,4,"['Amazonas', 'Guaviare', 'Vaupes']",1.3156930593252008
+18,42,2020,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.29334465071175253
+18,42,2020,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.37284144392316326
+18,42,2020,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.26304294316996074
+18,42,2020,4,"['Amazonas', 'Guaviare', 'Vaupes']",0.5039406402444631
+18,42,2021,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.5728817900243397
+18,42,2021,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.3239184563044055
+18,42,2021,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.4124356465281394
+18,42,2021,4,"['Amazonas', 'Guaviare', 'Vaupes']",0.45238233411608997
+19,42,2019,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.5689769417862413
+19,42,2019,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.49452107375343035
+19,42,2019,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.34254783966272456
+19,42,2019,4,"['Amazonas', 'Guaviare', 'Vaupes']",1.2253340868907794
+19,42,2020,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.3535287127522205
+19,42,2020,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.3996837796536929
+19,42,2020,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.4333541483036943
+19,42,2020,4,"['Amazonas', 'Guaviare', 'Vaupes']",0.5543555219942095
+19,42,2021,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.5003057081725334
+19,42,2021,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.30046777366999294
+19,42,2021,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.293314005547331
+19,42,2021,4,"['Amazonas', 'Guaviare', 'Vaupes']",0.6143773240116284
+0,123,2019,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.45121147345292373
+0,123,2019,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.597978916206392
+0,123,2019,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.3638211002535873
+0,123,2019,4,"['Amazonas', 'Guaviare', 'Vaupes']",1.2815628600195617
+0,123,2020,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.41069039577403105
+0,123,2020,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.32985615461652296
+0,123,2020,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.3369266341807851
+0,123,2020,4,"['Amazonas', 'Guaviare', 'Vaupes']",0.5717515426534867
+0,123,2021,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.3996655108716434
+0,123,2021,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.3031003769971025
+0,123,2021,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.24855386180221958
+0,123,2021,4,"['Amazonas', 'Guaviare', 'Vaupes']",0.592723184431918
+1,123,2019,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.6786076528875998
+1,123,2019,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.5499289932798279
+1,123,2019,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.4981515063911948
+1,123,2019,4,"['Amazonas', 'Guaviare', 'Vaupes']",1.357552764948997
+1,123,2020,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.34526478191721127
+1,123,2020,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.4897645621654073
+1,123,2020,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.2755894180175393
+1,123,2020,4,"['Amazonas', 'Guaviare', 'Vaupes']",0.6367287430242348
+1,123,2021,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.8371787081232235
+1,123,2021,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.33641884939197325
+1,123,2021,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.39061861032982037
+1,123,2021,4,"['Amazonas', 'Guaviare', 'Vaupes']",0.5817630585162624
+2,123,2019,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.44277234643129487
+2,123,2019,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.6271837707469483
+2,123,2019,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.4765026805418017
+2,123,2019,4,"['Amazonas', 'Guaviare', 'Vaupes']",1.5525656938398307
+2,123,2020,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.4032799467341379
+2,123,2020,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.5435057529980215
+2,123,2020,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.41893670488953916
+2,123,2020,4,"['Amazonas', 'Guaviare', 'Vaupes']",0.560222039821692
+2,123,2021,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.6938637202079124
+2,123,2021,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.4517353222135001
+2,123,2021,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.4099192524981123
+2,123,2021,4,"['Amazonas', 'Guaviare', 'Vaupes']",0.5438903287701397
+3,123,2019,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",1.139333124024216
+3,123,2019,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",1.0047198016015333
+3,123,2019,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.38824732994959515
+3,123,2019,4,"['Amazonas', 'Guaviare', 'Vaupes']",1.634519861632176
+3,123,2020,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.2642741917893087
+3,123,2020,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.5175099453914886
+3,123,2020,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.35306222830350187
+3,123,2020,4,"['Amazonas', 'Guaviare', 'Vaupes']",0.5082609690558167
+3,123,2021,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.4901303792734667
+3,123,2021,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.3714930343822044
+3,123,2021,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.29555611275563226
+3,123,2021,4,"['Amazonas', 'Guaviare', 'Vaupes']",0.5233141340947559
+4,123,2019,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.4625029570253024
+4,123,2019,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.8003043638841348
+4,123,2019,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.6715267742767077
+4,123,2019,4,"['Amazonas', 'Guaviare', 'Vaupes']",1.4883193764596412
+4,123,2020,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.3631128105244978
+4,123,2020,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.43851384129748483
+4,123,2020,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.5970516512633994
+4,123,2020,4,"['Amazonas', 'Guaviare', 'Vaupes']",0.5732662839227844
+4,123,2021,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.52167590335229
+4,123,2021,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.6236251252343042
+4,123,2021,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.42904561389498946
+4,123,2021,4,"['Amazonas', 'Guaviare', 'Vaupes']",0.4779157810347094
+5,123,2019,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.6629912318603559
+5,123,2019,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.5632604915269944
+5,123,2019,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.42455336930457965
+5,123,2019,4,"['Amazonas', 'Guaviare', 'Vaupes']",1.5790413943536747
+5,123,2020,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.28134439791560606
+5,123,2020,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.33621043938623923
+5,123,2020,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.3331540812883458
+5,123,2020,4,"['Amazonas', 'Guaviare', 'Vaupes']",0.5178573718798652
+5,123,2021,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.4562586097688764
+5,123,2021,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.3196034608683994
+5,123,2021,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.3408307071182779
+5,123,2021,4,"['Amazonas', 'Guaviare', 'Vaupes']",0.47336263914567844
+6,123,2019,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.6886919915544146
+6,123,2019,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.5090645247595361
+6,123,2019,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.3447896019027675
+6,123,2019,4,"['Amazonas', 'Guaviare', 'Vaupes']",1.6223870323599654
+6,123,2020,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.44293072855216703
+6,123,2020,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.33122643935787477
+6,123,2020,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.49275834419156844
+6,123,2020,4,"['Amazonas', 'Guaviare', 'Vaupes']",0.5223680360142283
+6,123,2021,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.5605349655747052
+6,123,2021,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.3172045162879389
+6,123,2021,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.5139475615689144
+6,123,2021,4,"['Amazonas', 'Guaviare', 'Vaupes']",0.5130206429211671
+7,123,2019,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.4169883995866816
+7,123,2019,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.6590989126942226
+7,123,2019,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.45837625028066775
+7,123,2019,4,"['Amazonas', 'Guaviare', 'Vaupes']",1.3958295660774673
+7,123,2020,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.3493708537440885
+7,123,2020,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.4115733416497197
+7,123,2020,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.3191842118268103
+7,123,2020,4,"['Amazonas', 'Guaviare', 'Vaupes']",0.5481802486470247
+7,123,2021,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.5703926030171593
+7,123,2021,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.4529932915893992
+7,123,2021,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.3264635917326905
+7,123,2021,4,"['Amazonas', 'Guaviare', 'Vaupes']",0.4398581778563643
+8,123,2019,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.49230371344516216
+8,123,2019,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.7849949913108087
+8,123,2019,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.5393471450066676
+8,123,2019,4,"['Amazonas', 'Guaviare', 'Vaupes']",1.2463890371560353
+8,123,2020,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.3655467609911629
+8,123,2020,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.4128069284829801
+8,123,2020,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.33553054467853927
+8,123,2020,4,"['Amazonas', 'Guaviare', 'Vaupes']",0.5959029065930108
+8,123,2021,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.6306398086397016
+8,123,2021,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.5192044886910061
+8,123,2021,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.4880778995506923
+8,123,2021,4,"['Amazonas', 'Guaviare', 'Vaupes']",0.6612456548003589
+9,123,2019,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.46205048431723633
+9,123,2019,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.5119443498054693
+9,123,2019,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.3435748694533349
+9,123,2019,4,"['Amazonas', 'Guaviare', 'Vaupes']",1.3504514151416938
+9,123,2020,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.2522522090062788
+9,123,2020,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.3209951499969192
+9,123,2020,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.45872725731815417
+9,123,2020,4,"['Amazonas', 'Guaviare', 'Vaupes']",0.4808585283905683
+9,123,2021,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.5906801924575887
+9,123,2021,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.327573983429871
+9,123,2021,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.38512610961719546
+9,123,2021,4,"['Amazonas', 'Guaviare', 'Vaupes']",0.4894505043294516
+10,123,2019,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",1.1891512683512142
+10,123,2019,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",1.016665878973067
+10,123,2019,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.41759593772186665
+10,123,2019,4,"['Amazonas', 'Guaviare', 'Vaupes']",1.3364811287549125
+10,123,2020,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.6741972865714051
+10,123,2020,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.3342798498730073
+10,123,2020,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.4337545560657973
+10,123,2020,4,"['Amazonas', 'Guaviare', 'Vaupes']",0.6279214766515806
+10,123,2021,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.502239457334509
+10,123,2021,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.36226820440733515
+10,123,2021,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.4868199416235954
+10,123,2021,4,"['Amazonas', 'Guaviare', 'Vaupes']",0.6377048929847188
+11,123,2019,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.419186040545588
+11,123,2019,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.5114703849672654
+11,123,2019,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.2812418671597696
+11,123,2019,4,"['Amazonas', 'Guaviare', 'Vaupes']",1.15310679889157
+11,123,2020,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.38013024595153766
+11,123,2020,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.3775844919625711
+11,123,2020,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.3293330343537254
+11,123,2020,4,"['Amazonas', 'Guaviare', 'Vaupes']",0.5782256940836932
+11,123,2021,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.442562513084503
+11,123,2021,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.31060924743376467
+11,123,2021,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.28919384524027314
+11,123,2021,4,"['Amazonas', 'Guaviare', 'Vaupes']",0.4540768688419888
+12,123,2019,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.499608348400979
+12,123,2019,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.5034112791103477
+12,123,2019,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.31118149361576264
+12,123,2019,4,"['Amazonas', 'Guaviare', 'Vaupes']",1.5324935534592121
+12,123,2020,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.4323972052314454
+12,123,2020,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.34489601012355675
+12,123,2020,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.4219901492892282
+12,123,2020,4,"['Amazonas', 'Guaviare', 'Vaupes']",0.5355635993065683
+12,123,2021,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.4466518038114249
+12,123,2021,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.33262042336897507
+12,123,2021,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.5192498900827099
+12,123,2021,4,"['Amazonas', 'Guaviare', 'Vaupes']",0.5480104103926839
+13,123,2019,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.45934179471473907
+13,123,2019,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.47755786258066935
+13,123,2019,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.4826933525498223
+13,123,2019,4,"['Amazonas', 'Guaviare', 'Vaupes']",1.1836245693311152
+13,123,2020,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.2940556265324632
+13,123,2020,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.3557270913833843
+13,123,2020,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.3484853972456906
+13,123,2020,4,"['Amazonas', 'Guaviare', 'Vaupes']",0.5650951865284026
+13,123,2021,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.45705333884567584
+13,123,2021,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.3173210318663554
+13,123,2021,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.31627470979165384
+13,123,2021,4,"['Amazonas', 'Guaviare', 'Vaupes']",0.4436100154688143
+14,123,2019,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.485504325911267
+14,123,2019,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.5214159345541927
+14,123,2019,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.34330456223505207
+14,123,2019,4,"['Amazonas', 'Guaviare', 'Vaupes']",1.2150462677862635
+14,123,2020,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.31606783252914883
+14,123,2020,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.3384628632112525
+14,123,2020,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.2760253652521672
+14,123,2020,4,"['Amazonas', 'Guaviare', 'Vaupes']",0.5853431739244238
+14,123,2021,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.4975727741889905
+14,123,2021,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.38132618393078666
+14,123,2021,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.26730810588840037
+14,123,2021,4,"['Amazonas', 'Guaviare', 'Vaupes']",0.4732892392864166
+15,123,2019,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.4376946084571361
+15,123,2019,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.4587986347081724
+15,123,2019,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.52862649954283
+15,123,2019,4,"['Amazonas', 'Guaviare', 'Vaupes']",1.062820330184093
+15,123,2020,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.343179163766077
+15,123,2020,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.3813434556639349
+15,123,2020,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.4354756215747252
+15,123,2020,4,"['Amazonas', 'Guaviare', 'Vaupes']",0.6055155582177422
+15,123,2021,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.5066884732207055
+15,123,2021,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.31823158039524113
+15,123,2021,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.596655088126755
+15,123,2021,4,"['Amazonas', 'Guaviare', 'Vaupes']",0.5300882764391005
+17,123,2019,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.4961836725873709
+17,123,2019,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.6047972123718227
+17,123,2019,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.3824843343007513
+17,123,2019,4,"['Amazonas', 'Guaviare', 'Vaupes']",1.245925652816243
+17,123,2020,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.3482048977470163
+17,123,2020,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.3942746753916965
+17,123,2020,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.48203376262387077
+17,123,2020,4,"['Amazonas', 'Guaviare', 'Vaupes']",0.5325896258439321
+17,123,2021,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.5980497573195055
+17,123,2021,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.28952015912655316
+17,123,2021,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.2579619523555863
+17,123,2021,4,"['Amazonas', 'Guaviare', 'Vaupes']",0.5393595775286815
+18,123,2019,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.5721418487738262
+18,123,2019,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.5747756852180432
+18,123,2019,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.47606019610758593
+18,123,2019,4,"['Amazonas', 'Guaviare', 'Vaupes']",1.083007041992794
+18,123,2020,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.39093929997798965
+18,123,2020,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.3754798084587896
+18,123,2020,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.5062378163696557
+18,123,2020,4,"['Amazonas', 'Guaviare', 'Vaupes']",0.632751768047164
+18,123,2021,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.48571067128018697
+18,123,2021,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.2733102502370446
+18,123,2021,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.26369469155384917
+18,123,2021,4,"['Amazonas', 'Guaviare', 'Vaupes']",0.602001030344414
+19,123,2019,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.4297157798477468
+19,123,2019,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.4806602685585632
+19,123,2019,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.3805665675694704
+19,123,2019,4,"['Amazonas', 'Guaviare', 'Vaupes']",1.1680320799125745
+19,123,2020,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.393676492853593
+19,123,2020,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.3026546742521829
+19,123,2020,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.4867635103220856
+19,123,2020,4,"['Amazonas', 'Guaviare', 'Vaupes']",0.5394037521054295
+19,123,2021,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.471000545764615
+19,123,2021,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.27868715170055525
+19,123,2021,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.29707986890280697
+19,123,2021,4,"['Amazonas', 'Guaviare', 'Vaupes']",0.4372766810347296
+0,2024,2019,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.5949616366929489
+0,2024,2019,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.7769689758739873
+0,2024,2019,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.45642644853831665
+0,2024,2019,4,"['Amazonas', 'Guaviare', 'Vaupes']",1.3316283749425086
+0,2024,2020,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.3830806026902187
+0,2024,2020,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.3421835211082694
+0,2024,2020,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.2805575084237997
+0,2024,2020,4,"['Amazonas', 'Guaviare', 'Vaupes']",0.4934443668663171
+0,2024,2021,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.582597853582444
+0,2024,2021,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.39253185246235117
+0,2024,2021,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.42199800605438453
+0,2024,2021,4,"['Amazonas', 'Guaviare', 'Vaupes']",0.6000453842403232
+1,2024,2019,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.4827793665507261
+1,2024,2019,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.7381890456332277
+1,2024,2019,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.46167398871572723
+1,2024,2019,4,"['Amazonas', 'Guaviare', 'Vaupes']",1.3919719644798045
+1,2024,2020,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.44247620798794507
+1,2024,2020,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.3921348384441332
+1,2024,2020,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.3600738406283378
+1,2024,2020,4,"['Amazonas', 'Guaviare', 'Vaupes']",0.5090857169967166
+1,2024,2021,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.5750888538124188
+1,2024,2021,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.3105528489024097
+1,2024,2021,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.27538729726525835
+1,2024,2021,4,"['Amazonas', 'Guaviare', 'Vaupes']",0.6793615941020835
+2,2024,2019,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.5446856407094399
+2,2024,2019,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.6775156377205254
+2,2024,2019,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.41065897332195545
+2,2024,2019,4,"['Amazonas', 'Guaviare', 'Vaupes']",1.39854115363061
+2,2024,2020,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.4282406462801962
+2,2024,2020,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.31033388667248507
+2,2024,2020,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.3936811106832996
+2,2024,2020,4,"['Amazonas', 'Guaviare', 'Vaupes']",0.5549732063458652
+2,2024,2021,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.7092682241331227
+2,2024,2021,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.4898672819189042
+2,2024,2021,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.32760586998420393
+2,2024,2021,4,"['Amazonas', 'Guaviare', 'Vaupes']",0.9892988733052889
+4,2024,2019,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.4498318344716422
+4,2024,2019,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.44833866651842047
+4,2024,2019,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.3487805285986788
+4,2024,2019,4,"['Amazonas', 'Guaviare', 'Vaupes']",1.2653882311474325
+4,2024,2020,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.27523837378718474
+4,2024,2020,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.39130584510197725
+4,2024,2020,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.4839872531020186
+4,2024,2020,4,"['Amazonas', 'Guaviare', 'Vaupes']",0.5040877555011632
+4,2024,2021,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.566595059199391
+4,2024,2021,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.3418594630021725
+4,2024,2021,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.2815708476066506
+4,2024,2021,4,"['Amazonas', 'Guaviare', 'Vaupes']",0.52246555789794
+5,2024,2019,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.7980337133456588
+5,2024,2019,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.7152175759676582
+5,2024,2019,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.5045970646758854
+5,2024,2019,4,"['Amazonas', 'Guaviare', 'Vaupes']",1.2173563985714633
+5,2024,2020,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.2760308581461414
+5,2024,2020,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.44066725115742106
+5,2024,2020,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.42342704042135754
+5,2024,2020,4,"['Amazonas', 'Guaviare', 'Vaupes']",0.4376161455208243
+5,2024,2021,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.6292761194842422
+5,2024,2021,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.4113276511512918
+5,2024,2021,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.3118552948607264
+5,2024,2021,4,"['Amazonas', 'Guaviare', 'Vaupes']",0.7323578666692152
+6,2024,2019,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.9155072588942723
+6,2024,2019,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.48577811457621184
+6,2024,2019,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.46133572138540796
+6,2024,2019,4,"['Amazonas', 'Guaviare', 'Vaupes']",1.228721662021901
+6,2024,2020,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.43028282193388456
+6,2024,2020,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.41796465007161543
+6,2024,2020,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.377499574667331
+6,2024,2020,4,"['Amazonas', 'Guaviare', 'Vaupes']",0.5829429398678873
+6,2024,2021,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.7394118356436905
+6,2024,2021,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.4222364466746612
+6,2024,2021,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.26754716011811464
+6,2024,2021,4,"['Amazonas', 'Guaviare', 'Vaupes']",0.5370202562784586
+8,2024,2019,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.6989715394896348
+8,2024,2019,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.7603216808688283
+8,2024,2019,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.420938901438713
+8,2024,2019,4,"['Amazonas', 'Guaviare', 'Vaupes']",1.4312890259865139
+8,2024,2020,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.4721069296483617
+8,2024,2020,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.3814860348076524
+8,2024,2020,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.49161378029155106
+8,2024,2020,4,"['Amazonas', 'Guaviare', 'Vaupes']",0.5129678928020658
+8,2024,2021,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.5691699248909953
+8,2024,2021,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.4366059193355792
+8,2024,2021,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.3053512313038705
+8,2024,2021,4,"['Amazonas', 'Guaviare', 'Vaupes']",0.5031665429444406
+9,2024,2019,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.47683979784425634
+9,2024,2019,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.8533379830355428
+9,2024,2019,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.31620030706301455
+9,2024,2019,4,"['Amazonas', 'Guaviare', 'Vaupes']",1.3169831050608842
+9,2024,2020,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.25661004579585656
+9,2024,2020,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.5104867796199506
+9,2024,2020,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.3510715235154387
+9,2024,2020,4,"['Amazonas', 'Guaviare', 'Vaupes']",0.4860260879624118
+9,2024,2021,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.7019525076853352
+9,2024,2021,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.3481029469612152
+9,2024,2021,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.29310189082835014
+9,2024,2021,4,"['Amazonas', 'Guaviare', 'Vaupes']",0.48337409988942964
+10,2024,2019,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.47263891014890985
+10,2024,2019,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.48667562853985735
+10,2024,2019,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.3290977817397468
+10,2024,2019,4,"['Amazonas', 'Guaviare', 'Vaupes']",1.2135300478836089
+10,2024,2020,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.26076958901656855
+10,2024,2020,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.4139261561064309
+10,2024,2020,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.39305156419110615
+10,2024,2020,4,"['Amazonas', 'Guaviare', 'Vaupes']",0.4852943156385613
+10,2024,2021,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.4889440234555006
+10,2024,2021,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.421700317811066
+10,2024,2021,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.38794056704381064
+10,2024,2021,4,"['Amazonas', 'Guaviare', 'Vaupes']",0.5791238198337267
+11,2024,2019,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.5511045116026
+11,2024,2019,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.5513062916773597
+11,2024,2019,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.42432532613880297
+11,2024,2019,4,"['Amazonas', 'Guaviare', 'Vaupes']",1.1596152845762948
+11,2024,2020,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.2417957922151692
+11,2024,2020,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.3994915987224722
+11,2024,2020,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.3225859928072391
+11,2024,2020,4,"['Amazonas', 'Guaviare', 'Vaupes']",0.5608007407767155
+11,2024,2021,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.5176801185159956
+11,2024,2021,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.33396752075143277
+11,2024,2021,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.29433559729057146
+11,2024,2021,4,"['Amazonas', 'Guaviare', 'Vaupes']",0.4722581085036036
+12,2024,2019,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.4635239465591149
+12,2024,2019,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.539114382914583
+12,2024,2019,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.3461375981576805
+12,2024,2019,4,"['Amazonas', 'Guaviare', 'Vaupes']",1.2232661082136673
+12,2024,2020,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.25408191473001746
+12,2024,2020,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.3085849978014643
+12,2024,2020,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.3675192896328302
+12,2024,2020,4,"['Amazonas', 'Guaviare', 'Vaupes']",0.4977623369813797
+12,2024,2021,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.547240108137447
+12,2024,2021,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.2860335480555905
+12,2024,2021,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.3973689429741593
+12,2024,2021,4,"['Amazonas', 'Guaviare', 'Vaupes']",0.44743443930535953
+13,2024,2019,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.467487956876212
+13,2024,2019,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.5450250124659987
+13,2024,2019,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.42743329116058815
+13,2024,2019,4,"['Amazonas', 'Guaviare', 'Vaupes']",1.1930966751469234
+13,2024,2020,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.26658781246736324
+13,2024,2020,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.35817195794182327
+13,2024,2020,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.28042802966667046
+13,2024,2020,4,"['Amazonas', 'Guaviare', 'Vaupes']",0.5113616454442118
+13,2024,2021,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.4562999711040226
+13,2024,2021,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.3116489623879783
+13,2024,2021,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.3391123058285773
+13,2024,2021,4,"['Amazonas', 'Guaviare', 'Vaupes']",0.4877691253547265
+14,2024,2019,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.49076721596410616
+14,2024,2019,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.44217638332020937
+14,2024,2019,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.4754298774606653
+14,2024,2019,4,"['Amazonas', 'Guaviare', 'Vaupes']",1.1647571308927256
+14,2024,2020,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.29322249550060014
+14,2024,2020,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.40953025276327554
+14,2024,2020,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.3548842014921695
+14,2024,2020,4,"['Amazonas', 'Guaviare', 'Vaupes']",0.4800616454732804
+14,2024,2021,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.48477207336317457
+14,2024,2021,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.29921511605548584
+14,2024,2021,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.32642149367832196
+14,2024,2021,4,"['Amazonas', 'Guaviare', 'Vaupes']",0.457701916407298
+15,2024,2019,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.42604623650646994
+15,2024,2019,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.8577979790130772
+15,2024,2019,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.3985190962472187
+15,2024,2019,4,"['Amazonas', 'Guaviare', 'Vaupes']",1.2558519235630174
+15,2024,2020,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.3538783620326322
+15,2024,2020,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.35718618240847666
+15,2024,2020,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.3805597153472638
+15,2024,2020,4,"['Amazonas', 'Guaviare', 'Vaupes']",0.7985951799840034
+15,2024,2021,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.6044267856301875
+15,2024,2021,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.3360138407174023
+15,2024,2021,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.24993918096325746
+15,2024,2021,4,"['Amazonas', 'Guaviare', 'Vaupes']",0.49507494563797005
+16,2024,2019,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.5974587756264648
+16,2024,2019,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.69457475764109
+16,2024,2019,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.4232930264220033
+16,2024,2019,4,"['Amazonas', 'Guaviare', 'Vaupes']",1.2562362556275006
+16,2024,2020,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.3128279872112982
+16,2024,2020,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.3624676443326978
+16,2024,2020,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.3945038285498748
+16,2024,2020,4,"['Amazonas', 'Guaviare', 'Vaupes']",0.5352874372308333
+16,2024,2021,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.43318949575629045
+16,2024,2021,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.2849305186988442
+16,2024,2021,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.3428643260995216
+16,2024,2021,4,"['Amazonas', 'Guaviare', 'Vaupes']",0.5209755576179025
+17,2024,2019,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.66816532298808
+17,2024,2019,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.6657032387828159
+17,2024,2019,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.4119797633858405
+17,2024,2019,4,"['Amazonas', 'Guaviare', 'Vaupes']",1.3520675773858548
+17,2024,2020,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.27669224308947177
+17,2024,2020,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.3509809346210644
+17,2024,2020,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.4550203114733892
+17,2024,2020,4,"['Amazonas', 'Guaviare', 'Vaupes']",0.5286213410314691
+17,2024,2021,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.4967318958560065
+17,2024,2021,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.31255896727211807
+17,2024,2021,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.42608619409064974
+17,2024,2021,4,"['Amazonas', 'Guaviare', 'Vaupes']",0.529050959930472
+18,2024,2019,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.4715133910901908
+18,2024,2019,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.5643657365885728
+18,2024,2019,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.30814983937112145
+18,2024,2019,4,"['Amazonas', 'Guaviare', 'Vaupes']",1.066124847508707
+18,2024,2020,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.38324695379287044
+18,2024,2020,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.35008303559870335
+18,2024,2020,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.36202263971263593
+18,2024,2020,4,"['Amazonas', 'Guaviare', 'Vaupes']",0.5531500072537522
+18,2024,2021,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.4496781695089153
+18,2024,2021,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.2974111333720492
+18,2024,2021,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.27542483340508755
+18,2024,2021,4,"['Amazonas', 'Guaviare', 'Vaupes']",0.5162090115289341
+19,2024,2019,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.5689960073455016
+19,2024,2019,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.7853633930004928
+19,2024,2019,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.3516975990961866
+19,2024,2019,4,"['Amazonas', 'Guaviare', 'Vaupes']",1.3177671557579638
+19,2024,2020,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.5697526143119928
+19,2024,2020,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.3825863345268112
+19,2024,2020,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.439938171578052
+19,2024,2020,4,"['Amazonas', 'Guaviare', 'Vaupes']",0.5699159471544764
+19,2024,2021,1,"['Atlantico', 'Bolivar', 'Cesar', 'Cordoba', 'Guajira', 'Magdalena', 'Norte De Santander', 'Sucre']",0.63968023556012
+19,2024,2021,2,"['Caqueta', 'Cauca', 'Huila', 'Narino', 'Putumayo']",0.3630347902779303
+19,2024,2021,3,"['Antioquia', 'Bogota d.c.', 'Boyaca', 'Caldas', 'Choco', 'Cundinamarca', 'Meta', 'Quindio', 'Risaralda', 'Santander', 'Tolima', 'Valle Del Cauca']",0.40427358071857306
+19,2024,2021,4,"['Amazonas', 'Guaviare', 'Vaupes']",0.4534192445315164
