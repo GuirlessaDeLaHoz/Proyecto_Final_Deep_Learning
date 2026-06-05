@@ -4,13 +4,14 @@ chapters:
   - file: 1_Cargue_Datos
   - file: 2_EDA
   - file: 3_ESTADO_DEL_ARTE
-  - file: 4_Modelo_LSTM
-  - file: 5_Modelo_ConvLSTM
-  - file: 6_Modelo_STGNN
-  - file: 7_Modelo_GRU
-  - file: 8_Modelo_Transformer
-  - file: 9_Comparando_Modelos
-  - file: 10_PF_PAPER_GUIA
-  - file: 11_ECT_EpiClimate_Transformer
-  - file: 12_Comparación_Final
-  - file: 13_Discusión_Crítica
+  - file: 4_Modelos_Benchmark
+  - file: 5_LSTM_DengueColombia
+  - file: 6_ST_GRU_CV
+  - file: 7_ConvLSTM_DengueColombia
+  - file: 8_STT_SpaceTime_CV
+  - file: 9_STGNN_SpaceTime_CV
+  - file: 10_Comparando_Modelos_Benchmark
+  - file: 11_PF_PAPER_GUIA
+  - file: 12_ECT_SpaceTime_CV_Interpretado
+  - file: 13_Comparación_Final
+  - file: 14_Discusión_Crítica
