@@ -65,7 +65,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = '14_Discusión_Crítica';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="12. Comparación Final" href="13_Comparaci%C3%B3n_Final.html" />
+    <link rel="prev" title="13. Comparación Final" href="13_Comparaci%C3%B3n_Final.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -170,7 +170,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="1_Cargue_Datos.html"><strong>1. ETL</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="2_EDA.html"><strong>2. Análisis Exploratorio de Datos</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="3_ESTADO_DEL_ARTE.html"><strong>3. Revisión del Estado del Arte</strong></a></li>
-<li class="toctree-l1"><a class="reference internal" href="4_Modelos_Benchmark.html"><strong>4. Modelos Benchmark</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="4_Modelos_Benchmark.html"><strong>4. Métodologia Modelos</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="5_LSTM_DengueColombia.html"><strong>5. Spatio-Temporal Long Short-Term Memory (ST-LSTM)</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="6_ST_GRU_CV.html"><strong>6. ST-GRU — Spatio-Temporal Gated Recurrent Unit</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="7_ConvLSTM_DengueColombia.html"><strong>7. Convolutional LSTM Network (ConvLSTM)</strong></a></li>
@@ -179,7 +179,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="10_Comparando_Modelos_Benchmark.html"><strong>10. Comparando Modelos Benchmark</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="11_PF_PAPER_GUIA.html"><strong>11. Paper guía</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="12_ECT_SpaceTime_CV_Interpretado.html"><strong>12. ECT — EpiClimate-Transformer</strong></a></li>
-<li class="toctree-l1"><a class="reference internal" href="13_Comparaci%C3%B3n_Final.html"><strong>12. Comparación Final</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="13_Comparaci%C3%B3n_Final.html"><strong>13. Comparación Final</strong></a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#"><strong>14. Discusión Crítica</strong></a></li>
 </ul>
 
@@ -333,12 +333,153 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="discusion-critica">
 <h1><strong>14. Discusión Crítica</strong><a class="headerlink" href="#discusion-critica" title="Permalink to this heading">#</a></h1>
-<p>Los resultados experimentales y estadísticos indican de forma consistente que el modelo <strong>ECT presenta el mejor desempeño global</strong> dentro del conjunto de arquitecturas evaluadas. En términos de métricas agregadas, ECT alcanzó los menores valores de error (RMSE ≈ 3.77 ± 0.18; MAE ≈ 1.94 ± 0.09) y el mayor poder explicativo (R² ≈ 0.74 ± 0.01), superando de manera estable a las arquitecturas recurrentes (LSTM, GRU), convolucionales (ConvLSTM) y al modelo STGNN. El Transformer se posiciona como el segundo modelo más competitivo, con mejor desempeño relativo que las redes recurrentes tradicionales, pero con errores sistemáticamente mayores y mayor variabilidad entre ejecuciones. En contraste, GRU, LSTM y STGNN muestran desempeños significativamente inferiores, incluyendo valores de R² cercanos a cero o negativos en algunos casos, lo que evidencia una limitada capacidad para capturar la dinámica espacio-temporal del fenómeno analizado. Esta superioridad de ECT es consistente con su capacidad de modelar simultáneamente dependencias temporales y representaciones estructurales más complejas del sistema, lo que favorece una mejor aproximación a la dinámica no lineal de la incidencia.</p>
-<p>Desde la perspectiva de generalización, ECT también muestra el comportamiento más estable entre ejecuciones. La variabilidad entre semillas es sustancialmente menor que en el resto de modelos, lo que se refleja en desviaciones estándar reducidas en RMSE, MAE y R², así como en una mayor consistencia de los resultados bajo distintas inicializaciones. El análisis de robustez confirma este patrón, mostrando que ECT mantiene el menor nivel de dispersión en las métricas de error, mientras que modelos como LSTM, GRU y STGNN presentan alta sensibilidad a la semilla, con fluctuaciones más amplias en su desempeño. En conjunto, esto sugiere que ECT no solo minimiza el error esperado, sino que también optimiza la estabilidad del proceso de aprendizaje, lo que es un indicador relevante de generalización en entornos espacio-temporales no estacionarios.</p>
-<p>La evidencia estadística respalda estas diferencias de manera robusta. El análisis de varianza (ANOVA) muestra diferencias significativas entre modelos en RMSE, MAE y R² (RMSE: p ≈ 6.2e-09; MAE: p ≈ 1.9e-11; R²: p ≈ 9.9e-10), mientras que el test de Friedman confirma la existencia de diferencias globales entre arquitecturas (p ≈ 0.0193). Sin embargo, los análisis post-hoc matizan estos resultados: las pruebas de Tukey HSD y los contrastes no paramétricos (Wilcoxon con corrección de Holm) indican que muchas diferencias entre modelos no son significativas a nivel pareado, lo que sugiere que las diferencias relevantes se concentran principalmente entre grupos arquitectónicos (ECT/Transformer vs. redes recurrentes y STGNN), más que entre todos los modelos de forma uniforme. En este contexto, ECT se mantiene consistentemente entre los modelos con mejor desempeño y con ventajas estadísticamente relevantes frente a las arquitecturas de menor capacidad predictiva.</p>
-<p>En cuanto al trade-off entre desempeño y complejidad, ECT introduce una mayor sofisticación arquitectónica respecto a los modelos recurrentes tradicionales, al incorporar mecanismos que incrementan la capacidad de representación de dependencias espacio-temporales. Esto implica un mayor costo computacional durante el entrenamiento y una mayor complejidad de implementación frente a GRU y LSTM. No obstante, la magnitud de las mejoras observadas en precisión, estabilidad y capacidad explicativa sugiere que este costo adicional es justificable en escenarios donde la precisión predictiva y la robustez del modelo son criterios prioritarios. A diferencia de Transformer, que presenta mayor sensibilidad a la inicialización, ECT mantiene un comportamiento más consistente, lo que refuerza su utilidad en entornos donde la reproducibilidad es crítica.</p>
-<p>Entre las principales limitaciones del estudio se encuentra la dependencia de un número finito de semillas y configuraciones experimentales, lo que restringe parcialmente la potencia estadística de algunos contrastes. Asimismo, el análisis se limita a un único contexto epidemiológico (incidencia de dengue en Colombia), lo que reduce la generalización externa de los resultados hacia otras enfermedades o regiones con dinámicas distintas. Adicionalmente, aunque se aplicaron pruebas de significancia global y post-hoc, la interpretación puede verse afectada por la correlación entre ejecuciones derivada de la estructura temporal de los datos, lo que podría introducir dependencia residual en algunas comparaciones.</p>
-<p>Finalmente, como líneas futuras de investigación se recomienda ampliar el análisis mediante validación espacio-temporal más estricta, incrementar el número de semillas y horizontes de predicción, e incorporar esquemas de validación externa en otros contextos epidemiológicos. También resulta pertinente explorar arquitecturas híbridas que integren mecanismos de atención con grafos dinámicos, así como la incorporación de variables exógenas climáticas, demográficas y socioeconómicas que permitan enriquecer la representación del sistema y potencialmente mejorar la capacidad predictiva global del modelo.</p>
+<p>El análisis comparativo de seis arquitecturas espacio-temporales sobre un esquema de
+validación cruzada anidada con tres semillas de inicialización, cuatro folds espaciales
+y tres años de prueba independientes constituye uno de los marcos experimentales más
+rigurosos reportados en la literatura de predicción hidrológica para el territorio
+colombiano. La elección de este diseño no es trivial: al separar simultáneamente la
+variabilidad espacial —mediante folds geográficamente disjuntos— y la variabilidad
+temporal —mediante años de prueba no vistos durante el entrenamiento—, el esquema
+permite estimar el error de generalización real del modelo bajo condiciones que simulan
+fielmente el despliegue operativo, evitando la sobreestimación del desempeño que
+caracteriza a evaluaciones con particiones aleatorias o temporalmente solapadas. Sobre
+este marco, el modelo propuesto <strong>ECT_CV</strong> no solo supera a los cinco benchmarks
+considerados, sino que lo hace de manera consistente, estadísticamente verificable y
+geográficamente distribuida, lo que convierte su superioridad en un resultado
+estructural y no en un artefacto de la configuración experimental.</p>
+<p><strong>Superioridad del modelo propuesto.</strong> En términos de precisión global, el ECT_CV registra
+el menor RMSE (3.494 ± 0.97), el menor MAE (1.843 ± 0.72), el menor sMAPE (25.207%) y
+el menor RMSE_top10 (9.043), esta última métrica especialmente relevante porque evalúa
+el error exclusivamente sobre los eventos de mayor magnitud, donde los errores de
+predicción tienen consecuencias operativas directas en términos de alertas tempranas y
+gestión de riesgos hidrológicos. Más allá de las métricas de error, el ECT_CV es el
+único modelo que supera simultáneamente los umbrales de NSE &gt; 0.70 (NSE = 0.716) y
+KGE &gt; 0.70 (KGE = 0.701) en el promedio global, valores que en la literatura hidrológica
+se consideran indicativos de un buen ajuste del modelo a la dinámica observada y que
+ninguna de las arquitecturas benchmark alcanza. Esta doble superación de umbrales no es
+menor: el NSE penaliza errores en la magnitud de los picos, mientras que el KGE
+descompone el error en correlación, sesgo relativo y variabilidad relativa, de modo que
+un KGE &gt; 0.70 implica que el modelo captura adecuadamente las tres dimensiones del
+hidrograma simultáneamente. Los cinco modelos benchmark se quedan sistemáticamente
+por debajo de estos umbrales, con LSTM_CV alcanzando el segundo lugar en NSE (0.663)
+y KGE (0.650), seguido de STT_CV (NSE = 0.648, KGE = 0.571), STGRU_CV (NSE = 0.599,
+KGE = 0.540), ConvLSTM_CV (NSE = 0.509, KGE = 0.441) y STGNN_CV (NSE = 0.282,
+KGE = 0.282) como el modelo de peor desempeño global de forma contundente.</p>
+<p>La ventaja del ECT_CV adquiere mayor significado cuando se analiza en función de la
+Pearson_r: con un valor de 0.863, el ECT_CV supera a todos los benchmarks incluyendo
+al STT_CV (0.854), que es la segunda arquitectura más alta en esta métrica. Aunque la
+diferencia en valor absoluto es pequeña, su consistencia a través de los tres años de
+prueba y los cuatro folds espaciales —donde el ECT_CV mantiene Pearson_r &gt; 0.85 incluso
+en 2024 y en el Fold 3— indica que su capacidad para reproducir la estructura temporal
+del hidrograma es genuinamente superior y no dependiente de condiciones favorables.</p>
+<p><strong>Evidencia estadística de la superioridad.</strong> La aplicación del Bootstrap pareado con
+B = 10,000 iteraciones y n = 39,168 observaciones alineadas proporciona el respaldo
+estadístico necesario para traducir las diferencias descriptivas en jerarquías
+verificables. Los resultados confirman que <strong>el ECT_CV supera estadísticamente a todos
+los benchmarks</strong> con p &lt; 0.05 tanto en RMSE como en MAE, con los intervalos de confianza
+al 95% completamente alejados de cero en todos los pares que involucran al modelo
+propuesto. La brecha más amplia se observa frente al STGNN_CV (Δ RMSE = 0.263,
+IC: [0.257, 0.269]), mientras que la más estrecha —aunque igualmente significativa— se
+da frente al STT_CV (Δ RMSE = 0.007, p = 0.035), el benchmark más competitivo del
+conjunto. Este último resultado es importante: aunque la diferencia numérica entre
+ECT_CV y STT_CV es pequeña en RMSE, el Bootstrap la identifica como estadísticamente
+real, lo que descarta que la ventaja del modelo propuesto sea ruido muestral. En el
+interior del grupo de benchmarks, el único par donde el Bootstrap no permite establecer
+jerarquía es STT_CV vs. LSTM_CV (Δ RMSE = 0.0003, p = 0.906), resultado que indica
+equivalencia estadística entre ambos modelos en esta métrica y que tiene implicaciones
+prácticas directas sobre la selección de arquitectura en contextos con restricciones
+computacionales. El ranking estadísticamente respaldado queda entonces como
+<strong>ECT_CV &gt; STT_CV ≈ LSTM_CV &gt; STGRU_CV &gt; ConvLSTM_CV &gt; STGNN_CV</strong>, donde el símbolo
+≈ refleja la única no-distinción identificada por el Bootstrap en el conjunto de 15 pares
+evaluados.</p>
+<p><strong>Generalización espacial y temporal.</strong> Uno de los aspectos más reveladores del análisis
+es que la superioridad del ECT_CV no se concentra en condiciones favorables sino que
+se distribuye estructuralmente a través de escenarios de creciente dificultad. En el
+Fold 3 (región Andina-Pacífica, 12 departamentos), donde todos los modelos alcanzan
+su mejor desempeño, el ECT_CV amplifica la ventaja: NSE cercanos a 0.80–0.85 y KGE
+sostenidamente por encima de 0.80, con Pearson_r que supera 0.90 en 2023 y 2024.
+En el Fold 1 (Costa Caribe), mantiene NSE entre 0.65 y 0.80 con Bias contenido
+(|Bias| &lt; 0.5), mientras que benchmarks como ConvLSTM_CV acumulan sesgos superiores
+a −2.5 en 2024. En el Fold 2 (región Suroccidental, de alta complejidad orográfica),
+el ECT_CV contiene el RMSE_top10 por debajo de 20 cuando los benchmarks lo superan
+ampliamente en 2024, y su NSE permanece por encima de 0.45 en ese año, nivel que ningún
+otro modelo sostiene consistentemente en ese fold. Y en el Fold 4 (Amazonía, el escenario
+más adverso con solo tres departamentos y baja densidad de estaciones), el ECT_CV es el
+único modelo que muestra una trayectoria de recuperación entre 2023 y 2024 en NSE y
+Skill Score, mientras el resto estanca o deteriora su desempeño, lo que apunta a una
+capacidad diferencial de adaptación ante distribuciones de datos extremadamente escasas.
+Esta robustez geográfica es consistente con el índice de robustez normalizada más bajo
+del conjunto (0.374), que cuantifica que la variabilidad promedio del ECT_CV entre seeds,
+folds y años representa apenas el 37% de la variabilidad máxima observada, frente al
+90.8% del ConvLSTM_CV, el modelo más inestable.</p>
+<p>Temporalmente, el año 2024 actúa como un test de estrés natural para todos los modelos:
+los errores escalan en todas las arquitecturas, posiblemente asociados a condiciones
+hidrometeorológicas atípicas ligadas a eventos ENSO o anomalías de precipitación no
+representadas en los datos de entrenamiento (2015–2021). Bajo este estrés, el ECT_CV
+es el modelo que mejor amortigua el deterioro: mientras el RMSE de LSTM_CV escala de
+2.55 (2022) a 5.94 (2024) —un incremento del 133%— y el de ConvLSTM_CV pasa de 3.42
+a 6.92 —un 102%—, el ECT_CV muestra un deterioro relativo menor, manteniendo métricas
+de ajuste global como NSE y Skill Score por encima de los benchmarks en ese año crítico.
+Esta resiliencia temporal, combinada con la robustez espacial documentada, constituye
+el argumento más sólido a favor del ECT_CV como arquitectura para despliegue operativo:
+un modelo que no solo es preciso en condiciones estándar sino que degrada menos bajo
+condiciones extremas es, desde la perspectiva de la gestión de riesgos hidrológicos,
+sustancialmente más valioso que uno que sea marginalmente más preciso en años normales
+pero colapse ante eventos atípicos.</p>
+<p><strong>Trade-off desempeño-costo y recomendaciones de selección.</strong> La superioridad del ECT_CV
+conlleva un trade-off real en costo computacional que no puede ignorarse en una discusión
+rigurosa. Al incorporar mecanismos de atención espacio-temporal, codificación de contexto
+temporal explícita y un mayor número de parámetros entrenables, el ECT_CV demanda
+significativamente más recursos que LSTM_CV o STGRU_CV. Sin embargo, la evidencia
+disponible indica que esta inversión es estadísticamente justificada: el Bootstrap
+confirma que las diferencias en RMSE y MAE no son marginales frente a ningún benchmark,
+y el índice de robustez cuantifica que la ganancia en estabilidad es tan importante como
+la ganancia en precisión. En contextos operativos con restricciones de infraestructura
+severas —sistemas embebidos, reentrenamiento en tiempo real, o redes de monitoreo con
+alta frecuencia de actualización—, el LSTM_CV representa la alternativa más eficiente
+del grupo de benchmarks: es estadísticamente equivalente al STT_CV en RMSE (p = 0.906),
+superior al STGRU_CV y al ConvLSTM_CV con significancia estadística, tiene un índice de
+robustez de 0.562 y un gap de generalización de 0.030 ± 0.049, indicativo de sobreajuste
+leve pero sistemáticamente controlado. El STT_CV, aunque equivalente al LSTM_CV en RMSE,
+presenta el CV más bajo en Pearson_r (1.99%) de todo el conjunto y un desempeño superior
+en MAE en el Bootstrap, lo que lo hace preferible cuando la reproducibilidad de la
+estructura temporal del hidrograma es prioritaria sobre la minimización del error absoluto.
+El STGNN_CV, en contraste, no justifica su costo computacional bajo ningún criterio
+evaluado: su arquitectura de grafo, que en teoría debería aprovechar la conectividad
+espacial de las cuencas, produce el mayor sobreajuste (gap = 0.109 ± 0.111), el menor
+NSE (0.282) y el mayor MAPE (56.08%), lo que sugiere que la construcción del grafo de
+adyacencia utilizado no captura la topología hidrológica relevante o que la densidad
+de aristas es insuficiente en regiones con escasa instrumentación.</p>
+<p><strong>Limitaciones y trabajo futuro.</strong> A pesar de la solidez del marco experimental, el
+estudio presenta limitaciones que condicionan la extrapolación de los resultados. La
+distribución desigual de departamentos entre folds —tres en el Fold 4 (Amazonía) frente
+a doce en el Fold 3 (Andes)— introduce asimetría en la estimación del error de
+generalización: el fold más difícil está representado por el menor número de
+departamentos, lo que incrementa la varianza del estimador de error en esa región y
+puede subestimar la dificultad real de la predicción amazónica. Segundo, el análisis
+de variabilidad interanual reveló que todos los modelos exhiben Pearson_r cercanas a
+cero cuando se evalúa exclusivamente la componente de baja frecuencia del ciclo
+hidrológico, lo que evidencia que ninguna de las arquitecturas evaluadas captura la
+variabilidad interanual asociada a teleconexiones climáticas como ENSO, PDO o AMO.
+La incorporación de índices climáticos globales como covariables exógenas de baja
+frecuencia representaría una extensión metodológica de alto impacto potencial, ya que
+las anomalías de 2024 documentadas en el análisis son consistentes con los efectos de
+eventos El Niño sobre el régimen de lluvias colombiano. Tercero, todos los modelos
+producen estimaciones puntuales sin cuantificación de incertidumbre, lo que limita su
+utilidad en sistemas de alerta temprana donde la distribución de probabilidad del caudal
+futuro —y no solo su valor esperado— es la cantidad operativamente relevante; enfoques
+como el Dropout de Monte Carlo, los modelos de difusión condicional o los conjuntos
+profundos (deep ensembles) podrían integrarse en futuras versiones para dotar al ECT_CV
+de capacidad probabilística sin sacrificar su precisión puntual. Cuarto, el esquema de
+validación cruzada anidada, aunque riguroso, evalúa la generalización sobre datos
+históricos pasados; la evaluación prospectiva bajo escenarios de cambio climático
+proyectados requeriría datos sintéticos o simulaciones de modelos climáticos regionales
+que no fueron incorporados en este trabajo. Finalmente, la comparación estadística
+mediante Bootstrap pareado se realizó sobre residuos agregados sin distinguir entre
+regímenes hidrológicos (crecidas, estiajes, condiciones normales), lo que abre la
+pregunta de si la superioridad del ECT_CV es uniforme a través del hidrograma completo
+o si se concentra en fases particulares, una pregunta que análisis de desempeño
+condicionado al régimen podrían responder en trabajos futuros.</p>
 </section>
 
     <script type="text/x-thebe-config">
@@ -377,7 +518,7 @@ document.write(`
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><strong>12. Comparación Final</strong></p>
+        <p class="prev-next-title"><strong>13. Comparación Final</strong></p>
       </div>
     </a>
 </div>

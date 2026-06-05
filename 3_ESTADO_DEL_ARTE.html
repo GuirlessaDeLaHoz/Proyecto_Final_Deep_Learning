@@ -67,7 +67,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = '3_ESTADO_DEL_ARTE';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="4. Modelos Benchmark" href="4_Modelos_Benchmark.html" />
+    <link rel="next" title="4. Métodologia Modelos" href="4_Modelos_Benchmark.html" />
     <link rel="prev" title="2. Análisis Exploratorio de Datos" href="2_EDA.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -173,7 +173,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="1_Cargue_Datos.html"><strong>1. ETL</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="2_EDA.html"><strong>2. Análisis Exploratorio de Datos</strong></a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#"><strong>3. Revisión del Estado del Arte</strong></a></li>
-<li class="toctree-l1"><a class="reference internal" href="4_Modelos_Benchmark.html"><strong>4. Modelos Benchmark</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="4_Modelos_Benchmark.html"><strong>4. Métodologia Modelos</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="5_LSTM_DengueColombia.html"><strong>5. Spatio-Temporal Long Short-Term Memory (ST-LSTM)</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="6_ST_GRU_CV.html"><strong>6. ST-GRU — Spatio-Temporal Gated Recurrent Unit</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="7_ConvLSTM_DengueColombia.html"><strong>7. Convolutional LSTM Network (ConvLSTM)</strong></a></li>
@@ -182,7 +182,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="10_Comparando_Modelos_Benchmark.html"><strong>10. Comparando Modelos Benchmark</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="11_PF_PAPER_GUIA.html"><strong>11. Paper guía</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="12_ECT_SpaceTime_CV_Interpretado.html"><strong>12. ECT — EpiClimate-Transformer</strong></a></li>
-<li class="toctree-l1"><a class="reference internal" href="13_Comparaci%C3%B3n_Final.html"><strong>12. Comparación Final</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="13_Comparaci%C3%B3n_Final.html"><strong>13. Comparación Final</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="14_Discusi%C3%B3n_Cr%C3%ADtica.html"><strong>14. Discusión Crítica</strong></a></li>
 </ul>
 
@@ -334,7 +334,7 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estrategia-de-busqueda"><strong>3.1. Estrategia de Búsqueda</strong></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#identificacion-y-analisis-de-modelos"><strong>3.2. Identificación y análisis de modelos</strong></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modelo-1-lstm"><strong>3.2.1. Modelo 1: LSTM</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modelo-1-st-lstm"><strong>3.2.1. Modelo 1: ST-LSTM</strong></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modelo-2-convlstm"><strong>3.2.2. Modelo 2: ConvLSTM</strong></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modelo-3-transformer"><strong>3.2.3. Modelo 3: Transformer</strong></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modelo-4-gru-gated-recurrent-unit"><strong>3.2.4. Modelo 4: GRU (Gated Recurrent Unit)</strong></a></li>
@@ -363,78 +363,279 @@ document.write(`
 <section id="identificacion-y-analisis-de-modelos">
 <h2><strong>3.2. Identificación y análisis de modelos</strong><a class="headerlink" href="#identificacion-y-analisis-de-modelos" title="Permalink to this heading">#</a></h2>
 <p>La definición de una estrategia de búsqueda bibliográfica para el pronóstico epidemiológico del dengue reveló un vacío metodológico significativo en la literatura científica reciente: la gran mayoría de los estudios tradicionales abordan el problema de forma aislada, limitándose a análisis de series temporales univariadas o a modelos estadísticos globales que ignoran la conectividad geográfica real entre las regiones. Esta escasez de artículos orientados específicamente a enfoques espaciotemporales puros en epidemiología dificultó notablemente el proceso de selección en las bases de datos consultadas, ya que encontrar arquitecturas que procesaran simultáneamente la evolución cronológica del clima y la propagación física o el flujo de movilidad entre departamentos requirió un filtrado sumamente riguroso. A pesar de esta limitación en el estado del arte actual, se logró identificar con éxito un Top 5 de modelos altamente relevantes y adaptables para la predicción regionalizada y por departamentos. Este conjunto seleccionado abarca desde los enfoques estadísticos y secuenciales adaptados para generar valores por localidad mediante matrices indexadas y variables de identidad espacial, como LSTM, hasta arquitecturas de vanguardia diseñadas nativamente para resolver la bidimensionalidad del problema a través de grillas de características, mecanismos de autoatención puros o la modelación de la propagación como un proceso de difusión no euclidiana sobre grafos, representados por ConvLSTM, Transformer, STGNN y DCRNN.</p>
-<section id="modelo-1-lstm">
-<h3><strong>3.2.1. Modelo 1: LSTM</strong><a class="headerlink" href="#modelo-1-lstm" title="Permalink to this heading">#</a></h3>
-<p>La selección del modelo Long Short-Term Memory (LSTM) en el pronóstico del dengue se justifica por su capacidad única para modelar la memoria de largo plazo en procesos biológicos con retardos ecológicos significativos. A diferencia de los métodos estadísticos lineales, la literatura destaca que las redes LSTM pueden capturar de manera robusta el desfase temporal existente entre las anomalías climáticas (como el aumento de precipitación) y la eclosión de brotes epidémicos, los cuales no son inmediatos. Al reestructurar el flujo de datos mediante tensores tridimensionales que integran variables climáticas locales y vectores de identidad departamental (embeddings), el modelo logra aprender patrones de transmisión diferenciados por región, permitiendo que una sola arquitectura global genere alertas tempranas personalizadas para cada departamento del mapa.</p>
-<p>Desde una perspectiva técnica, el valor del modelo reside en su sistema de compuertas lógicas (olvido, entrada y salida) que regulan dinámicamente el flujo de información epidemiológica. La compuerta de olvido, definida por <span class="math notranslate nohighlight">\(f_t = \sigma(W_f \cdot [h_{t-1}, x_t, e] + b_f)\)</span>, permite que la red descarte información irrelevante de periodos inter-epidémicos, mientras que la actualización del estado de la celda (<span class="math notranslate nohighlight">\(c_t\)</span>) mediante el producto de Hadamard asegura la retención de señales críticas de alerta. Este mecanismo de control permite que el estado oculto final (<span class="math notranslate nohighlight">\(h_t\)</span>) encapsule una representación rica del contexto espaciotemporal de cada departamento antes de ser proyectado por una capa de regresión lineal para obtener la incidencia exacta por lugar.</p>
-<p>Los resultados reportados en la literatura validan la eficacia de la LSTM como un estándar de comparación (baseline) robusto, aunque identifican márgenes de mejora frente a arquitecturas híbridas. Mientras que modelos de vanguardia como DengueGNN y ConvLSTM logran optimizar la precisión espacial, la LSTM base mantiene un desempeño competitivo en la captura de dependencias temporales, reportando valores de RMSE que oscilan significativamente según la escala del estudio: desde errores mínimos cercanos a 0.052 en predicciones normalizadas a nivel global, hasta valores entre 11.23 y 14.65 en contextos regionales con alta variabilidad climática. Los artículos subrayan que, si bien el RMSE de la LSTM tiende a ser superior al de modelos con operadores de grafos o convoluciones espaciales —como el DCRNN, que reduce el error al modelar la difusión del virus en redes—, su resiliencia ante datos ruidosos y su capacidad para manejar series de tiempo largas la posicionan como la arquitectura fundamental para validar cualquier salto en la precisión predictiva.</p>
+<section id="modelo-1-st-lstm">
+<h3><strong>3.2.1. Modelo 1: ST-LSTM</strong><a class="headerlink" href="#modelo-1-st-lstm" title="Permalink to this heading">#</a></h3>
+<p>La selección del modelo Long Short-Term Memory (LSTM) en el pronóstico del dengue se
+justifica por su capacidad única para modelar la memoria de largo plazo en procesos
+biológicos con retardos ecológicos significativos. A diferencia de los métodos estadísticos
+lineales, la literatura destaca que las redes LSTM pueden capturar de manera robusta el
+desfase temporal existente entre las anomalías climáticas (como el aumento de precipitación)
+y la eclosión de brotes epidémicos, los cuales no son inmediatos. Al reestructurar el flujo
+de datos mediante tensores tridimensionales que integran variables climáticas locales y
+vectores de identidad departamental (embeddings), el modelo logra aprender patrones de
+transmisión diferenciados por región, permitiendo que una sola arquitectura global genere
+alertas tempranas personalizadas para cada departamento del mapa.</p>
+<p>Desde una perspectiva técnica, el valor del modelo reside en su sistema de compuertas
+lógicas (olvido, entrada y salida) que regulan dinámicamente el flujo de información
+epidemiológica. La compuerta de olvido, definida por
+<span class="math notranslate nohighlight">\(f_t = \sigma(W_f \cdot [h_{t-1}, x_t, e] + b_f)\)</span>, permite que la red descarte
+información irrelevante de periodos inter-epidémicos, mientras que la actualización del
+estado de la celda (<span class="math notranslate nohighlight">\(c_t\)</span>) mediante el producto de Hadamard asegura la retención de
+señales críticas de alerta. Este mecanismo de control permite que el estado oculto final
+(<span class="math notranslate nohighlight">\(h_t\)</span>) encapsule una representación rica del contexto espaciotemporal de cada departamento
+antes de ser proyectado por una capa de regresión lineal para obtener la incidencia exacta
+por lugar.</p>
+<p>La extensión espacio-temporal del LSTM estándar hacia la arquitectura <strong>ST-LSTM</strong>
+(Spatio-Temporal LSTM) introduce modificaciones estructurales que amplían cualitativamente
+su capacidad de representación. Mientras que el LSTM convencional procesa cada departamento
+de forma independiente —limitándose a la dimensión temporal de la serie—, el ST-LSTM
+incorpora un estado de memoria espacial <span class="math notranslate nohighlight">\(\mathcal{M}_t^k\)</span> adicional al estado de celda
+temporal <span class="math notranslate nohighlight">\(c_t^k\)</span>, operando simultáneamente sobre dos flujos de información: la dependencia
+temporal intra-departamental y la dependencia espacial inter-departamental. Formalmente,
+el ST-LSTM descompone la actualización del estado celular en dos componentes acoplados:</p>
+<div class="math notranslate nohighlight">
+\[g_t = \tanh(W_{xg} x_t + W_{hg} h_{t-1} + W_{mg} \mathcal{M}_{t}^{k-1} + b_g)\]</div>
+<div class="math notranslate nohighlight">
+\[c_t = f_t \odot c_{t-1} + i_t \odot g_t + i_t' \odot \tanh(W_{xm} x_t + W_{mm} \mathcal{M}_{t}^{k-1} + b_m)\]</div>
+<p>donde <span class="math notranslate nohighlight">\(\mathcal{M}_{t}^{k-1}\)</span> representa el estado de memoria del departamento adyacente
+en el paso espacial anterior, <span class="math notranslate nohighlight">\(i_t'\)</span> es una compuerta de entrada espacial independiente
+que regula la cantidad de información lateral incorporada, y <span class="math notranslate nohighlight">\(W_{mm}\)</span> es una matriz de
+pesos que aprende la intensidad de la influencia entre unidades geográficas vecinas. Esta
+formulación permite que el gradiente de error fluya simultáneamente en la dimensión
+temporal —hacia el pasado de la serie epidémica de cada departamento— y en la dimensión
+espacial —hacia los departamentos geográficamente relacionados—, resolviendo la limitación
+fundamental del LSTM estándar que trata cada unidad espacial como una serie temporalmente
+aislada.</p>
+<p>Adicionalmente, el ST-LSTM introduce una compuerta de olvido espacial <span class="math notranslate nohighlight">\(f_t'\)</span>, análoga
+a la compuerta de olvido temporal pero orientada a filtrar la memoria espacial:</p>
+<div class="math notranslate nohighlight">
+\[f_t' = \sigma(W_{xf'} x_t + W_{hf'} h_{t-1} + W_{mf'} \mathcal{M}_{t}^{k-1} + b_{f'})\]</div>
+<div class="math notranslate nohighlight">
+\[\mathcal{M}_t^k = f_t' \odot \tanh(\mathcal{M}_{t}^{k-1}) + i_t \odot g_t\]</div>
+<p>Esta compuerta permite que la red descarte selectivamente la influencia espacial de
+departamentos vecinos cuando las condiciones epidemiológicas locales son suficientemente
+informativas por sí solas —por ejemplo, en departamentos con dinámica endémica
+autónoma—, mientras que la retiene cuando existe evidencia de propagación geográfica
+activa, como sucede en los corredores de transmisión que conectan los valles
+interandinos con la costa Caribe colombiana durante temporadas de lluvias. Esta
+selectividad es imposible en el LSTM estándar, donde la influencia espacial solo puede
+modelarse de forma indirecta mediante el apilamiento de capas o la concatenación de
+features de departamentos vecinos como covariables adicionales, estrategia que no
+permite aprender la dirección ni la intensidad dinámica de la propagación.</p>
+<p>Desde el punto de vista de la complejidad paramétrica, el ST-LSTM introduce
+aproximadamente el doble de parámetros por capa respec## Long Short-Term Memory (LSTM)</p>
+<p>El modelo Long Short-Term Memory fue introducido como respuesta a las limitaciones de las redes recurrentes convencionales para capturar dependencias de largo plazo en secuencias temporales. En el contexto epidemiológico del dengue, su aplicación ha sido ampliamente documentada: Nguyen et al. (2022), en <em>Deep learning models for forecasting dengue fever based on climate data in Vietnam</em>, publicado en <em>PLOS Neglected Tropical Diseases</em> (vol. 16, n.° 6, e0010509, doi: 10.1371/journal.pntd.0010509), emplearon el LSTM junto con variantes como LSTM-ATT, CNN y Transformer para predecir la incidencia mensual del dengue en 20 provincias de Vietnam utilizando variables meteorológicas —temperatura, humedad, precipitación, evaporación y horas de sol— recopiladas entre 1997 y 2016. De manera complementaria, el modelo aparece como línea base consolidada en GulMohamed et al. (2026), <em>DengueGNN: Graph-based deep learning for modeling disease spread dynamics and prediction</em>, publicado en <em>Scientific Reports</em> (vol. 16, p. 10584, doi: 10.1038/s41598-026-43073-y), donde se evalúa frente a diez modelos sobre el conjunto OpenDengue.</p>
+<p>Desde el punto de vista arquitectónico, el LSTM es una red neuronal recurrente que resuelve el problema del desvanecimiento del gradiente mediante un sistema de tres compuertas lógicas —olvido, entrada y salida— que regulan dinámicamente qué información se retiene, actualiza o descarta en cada paso temporal. La compuerta de olvido, definida formalmente como <span class="math notranslate nohighlight">\(f_t = \sigma(W_f \cdot [h_{t-1}, x_t] + b_f)\)</span>, permite que la red descarte información de períodos inter-epidémicos irrelevantes; la compuerta de entrada determina qué nueva información incorporar al estado de celda <span class="math notranslate nohighlight">\(c_t\)</span>; y la compuerta de salida controla qué porción del estado de celda se proyecta como estado oculto <span class="math notranslate nohighlight">\(h_t\)</span>. El flujo de datos atraviesa esta cadena de compuertas en cada paso temporal, de modo que la red procesa secuencias históricas de incidencia y covariables climáticas para producir una estimación de la incidencia futura mediante una capa de regresión lineal final. La innovación del LSTM respecto a modelos estadísticos como ARIMA o SARIMA radica precisamente en su capacidad para capturar relaciones no lineales entre variables climáticas y epidémicas, así como el desfase temporal biológicamente significativo entre, por ejemplo, un aumento de precipitación y la eclosión de un brote de dengue semanas después.</p>
+<p>En el estudio de Vietnam, el LSTM-ATT —versión del LSTM enriquecida con mecanismo de atención— superó a todos los modelos competidores, obteniendo rankings promedio de 1.60 para RMSE y 1.95 para MAE entre los nueve métodos evaluados, mientras que el LSTM base ocupó el segundo lugar con rankings de 2.35 y 2.20 respectivamente. En términos absolutos, el LSTM-ATT obtuvo el RMSE más bajo en 10 de las 20 provincias evaluadas, y un MAE inferior al LSTM estándar en 13 de las 20 provincias. En el estudio de GulMohamed et al., el LSTM seq2seq reportó un RMSE de 8.7, MAE de 7.0 y MAPE de 20.4% para predicción a una semana, y RMSE de 14.8, MAE de 12.0 y MAPE de 32.8% para predicción a cuatro semanas sobre el conjunto OpenDengue.</p>
+<p>Las fortalezas del LSTM residen en su robustez ante series temporales largas, su capacidad para modelar dependencias no lineales de largo plazo, y su resiliencia ante datos ruidosos —cualidades que lo posicionan como arquitectura de referencia contra la cual evaluar cualquier avance en precisión predictiva. Su implementación resulta práctica para sistemas de alerta temprana porque puede basarse únicamente en datos meteorológicos y registros de casos, los cuales están ampliamente disponibles con bajo costo en contextos como Vietnam. No obstante, presenta limitaciones relevantes: en el estudio de Vietnam cada departamento o provincia se procesa de forma independiente, lo que impide modelar la propagación geográfica entre unidades administrativas vecinas. Los modelos con operadores de grafos o convoluciones espaciales, como el DCRNN, reducen el error al modelar la difusión del virus en redes, superando consistentemente al LSTM estándar. Adicionalmente, su mayor número de parámetros respecto al GRU —derivado de la presencia de una compuerta adicional y un estado de celda independiente— eleva el costo computacional y el riesgo de sobreajuste cuando la longitud de las series temporales disponibles es limitada. Los artículos no reportan explícitamente el tiempo de entrenamiento ni el conteo exacto de parámetros, aunque la literatura establece que el LSTM requiere consistentemente más recursos que el GRU para dimensiones de estado oculto <a class="reference external" href="http://equivalentes.to">equivalentes.to</a> al LSTM estándar —al requerir
+matrices de pesos adicionales para el flujo espacial (<span class="math notranslate nohighlight">\(W_{xm}\)</span>, <span class="math notranslate nohighlight">\(W_{mm}\)</span>, <span class="math notranslate nohighlight">\(W_{mf'}\)</span>,
+<span class="math notranslate nohighlight">\(W_{hf'}\)</span>)—, lo que eleva el costo computacional pero también su capacidad expresiva.
+En el contexto del dengue, esta capacidad adicional es epidemiológicamente justificable:
+la transmisión del <em>Aedes aegypti</em> no respeta los límites administrativos departamentales,
+y los patrones de movilidad humana que actúan como vector de dispersión del virus operan
+precisamente en la escala espacio-temporal que el ST-LSTM modela explícitamente. Los
+resultados reportados en la literatura validan la eficacia de la LSTM como un estándar
+de comparación (baseline) robusto, aunque identifican márgenes de mejora frente a
+arquitecturas híbridas. Mientras que modelos de vanguardia como DengueGNN y ConvLSTM
+logran optimizar la precisión espacial, la LSTM base mantiene un desempeño competitivo
+en la captura de dependencias temporales, reportando valores de RMSE que oscilan
+significativamente según la escala del estudio: desde errores mínimos cercanos a 0.052
+en predicciones normalizadas a nivel global, hasta valores entre 11.23 y 14.65 en
+contextos regionales con alta variabilidad climática. Los artículos subrayan que, si bien
+el RMSE de la LSTM tiende a ser superior al de modelos con operadores de grafos o
+convoluciones espaciales —como el DCRNN, que reduce el error al modelar la difusión del
+virus en redes—, su resiliencia ante datos ruidosos y su capacidad para manejar series de
+tiempo largas la posicionan como la arquitectura fundamental para validar cualquier salto
+en la precisión predictiva. El ST-LSTM, al heredar estas propiedades del LSTM estándar
+mientras añade el canal de memoria espacial, representa la evolución natural hacia una
+arquitectura que es simultáneamente robusta temporalmente y sensible a la estructura
+geográfica de la transmisión, constituyendo así el puente conceptual entre los modelos
+puramente secuenciales y las arquitecturas de grafos espacio-temporales más complejas.</p>
 </section>
 <section id="modelo-2-convlstm">
 <h3><strong>3.2.2. Modelo 2: ConvLSTM</strong><a class="headerlink" href="#modelo-2-convlstm" title="Permalink to this heading">#</a></h3>
-<p>El uso de la arquitectura Convolutional Long Short-Term Memory (ConvLSTM) es importante por su capacidad para unificar en un solo marco operativo la evolución temporal de la enfermedad y la estructura de vecindad geográfica. La literatura científica de alto impacto subraya que la propagación del dengue no ocurre de forma aislada en el tiempo, sino que se desplaza de manera expansiva hacia territorios colindantes. Al integrar operadores de convolución dentro de las compuertas recurrentes, este modelo supera la incapacidad de las redes tradicionales para interpretar la cercanía física entre departamentos, permitiendo que las dinámicas climáticas locales y los índices epidemiológicos se procesen de forma conjunta como capas o mapas de información interconectados.</p>
-<p>Desde el punto de vista metodológico, el valor del modelo radica en su habilidad para simular cómo un brote activo en un departamento específico ejerce un efecto de contagio o presión epidemiológica sobre las regiones limítrofes. En lugar de forzar análisis independientes por localidad, el flujo de datos estructural del modelo condensa las interacciones espaciotemporales a través de kernels de convolución que escanean el mapa continuamente, actualizando los estados de memoria celular y proyectando los resultados mediante una cabeza de regresión regionalizada que devuelve una tasa de incidencia única, ajustada y específica para cada departamento introducido.</p>
-<p>Los resultados experimentales presentados en los artículos de referencia confirman la solidez de esta arquitectura, la cual alcanzó un Error Cuadrático Medio Raíz (RMSE) sobresaliente de 0.052 en la predicción global de la incidencia del dengue, superando con consistencia a los baselines secuenciales y estadísticos clásicos. A pesar de documentar una limitación teórica vinculada a la rigidez de formatear mapas irregulares en cuadrículas de cómputo, la literatura valida al ConvLSTM —al integrar determinantes ambientales, de salud y socioeconómicos— como una de las herramientas más robustas y con mejor desempeño para el modelado epidemiológico y el diseño de políticas operativas en salud pública.</p>
+<p>La arquitectura Convolutional Long Short-Term Memory representa una evolución híbrida del LSTM estándar que integra operaciones de convolución espacial dentro de las compuertas recurrentes, unificando en un solo marco operativo la evolución temporal de la enfermedad y la estructura de vecindad geográfica. La referencia principal para este modelo en el contexto del dengue es Shiddik (2026), <em>Global Prediction of Dengue Incidence Using an Explainable Artificial Intelligence-Driven ConvLSTM Integrating Environmental, Health, and Socio-Economic Determinants</em>, publicado en <em>Health Science Reports</em> (vol. 9, e72280, doi: 10.1002/hsr2.72280), donde se aplica el ConvLSTM para predecir la incidencia del dengue en 118 países entre 2000 y 2021 utilizando 20 predictores climáticos, ambientales, de sistema de salud y socioeconómicos. De manera complementaria, GulMohamed et al. (2026), <em>DengueGNN: Graph-based deep learning for modeling disease spread dynamics and prediction</em>, publicado en <em>Scientific Reports</em> (vol. 16, p. 10584, doi: 10.1038/s41598-026-43073-y), posiciona al ConvLSTM como baseline de referencia intermedia en su jerarquía de diez modelos evaluados sobre el conjunto OpenDengue.</p>
+<p>Desde el punto de vista arquitectónico, el ConvLSTM reemplaza las multiplicaciones matriciales estándar del LSTM por operaciones de convolución (<span class="math notranslate nohighlight">\(*\)</span>) en cada una de sus compuertas, de modo que las compuertas de entrada, olvido y salida operan sobre tensores espaciales en lugar de vectores unidimensionales: <span class="math notranslate nohighlight">\(i_t = \sigma(W_{xi} * X_t + W_{hi} * H_{t-1} + b_i)\)</span>, y análogamente para <span class="math notranslate nohighlight">\(f_t\)</span> y <span class="math notranslate nohighlight">\(o_t\)</span>, mientras que la actualización del estado de celda sigue la forma <span class="math notranslate nohighlight">\(C_t = f_t \odot C_{t-1} + i_t \odot \tanh(W_{xc} * X_t + W_{hc} * H_{t-1} + b_c)\)</span>. En la implementación de Shiddik, los 20 predictores se reconfiguran en una cuadrícula de <span class="math notranslate nohighlight">\(4 \times 5\)</span> por país y paso temporal para habilitar la convolución espacial, y el modelo se compone de dos capas ConvLSTM apiladas con 32 canales ocultos cada una y kernel de tamaño <span class="math notranslate nohighlight">\(3 \times 3\)</span>, seguidas de una cabeza de regresión densa con 64 neuronas (activación ReLU, dropout = 0.2) y una salida lineal sobre la incidencia en escala logarítmica. El flujo de datos atraviesa esta cadena de capas recurrentes-convolucionales de manera que los patrones espacio-temporales entre países vecinos quedan codificados implícitamente en los mapas de características, lo que constituye la innovación central respecto al LSTM estándar: la capacidad de procesar conjuntamente la dimensión espacial y la dimensión temporal sin separar ambos análisis en módulos independientes.</p>
+<p>En términos de resultados, el ConvLSTM alcanzó en el estudio de Shiddik los mejores valores predictivos entre todos los modelos evaluados, con <span class="math notranslate nohighlight">\(R^2 = 0.7731\)</span> para incidencia total, <span class="math notranslate nohighlight">\(R^2 = 0.7753\)</span> para hombres y <span class="math notranslate nohighlight">\(R^2 = 0.8877\)</span> para mujeres, junto con RMSE de 946,837.00, MAE de 158,791.17 y MAE masculino de 73,207.33 y femenino de 109,361.03 —todos en escala de casos absolutos sobre 118 países—. En el estudio de GulMohamed et al. sobre el conjunto OpenDengue, el ConvLSTM reportó RMSE de 7.9, MAE de 6.3 y MAPE de 17.1% para predicción a una semana, y RMSE de 13.9, MAE de 11.2 y MAPE de 29.8% para predicción a cuatro semanas, superando al LSTM y al GRU estándar pero quedando por debajo de los modelos basados en grafos (DCRNN, ST-GCN, ST-GNN). En términos de correlación espacial, el ConvLSTM obtuvo un Moran’s I de 0.63 y 0.55 para horizontes de una y cuatro semanas respectivamente, reflejando una representación más explícita de las dependencias espaciales que las arquitecturas puramente recurrentes.</p>
+<p>El análisis de interpretabilidad en el estudio de Shiddik, conducido mediante SHAP, Gradientes Integrados (IG) y Propagación de Relevancia por Capas (LRP), reveló que los retiros anuales de agua dulce constituyeron el predictor global más influyente (SHAP: 44.37%), seguido por la densidad de camas hospitalarias —predictor dominante para la incidencia femenina (SHAP: 31.86%)— y las anomalías de temperatura (SHAP: 11.51% para ambos sexos). A nivel de país, el acceso a electricidad emergió como factor preponderante en India (97.35%) y Bangladesh (89.62%), mientras que en Colombia —contexto epidemiológico de particular relevancia— la incidencia predicha para el horizonte 2022-2032 se situó en 253.44 casos por millón, ubicándola entre las diez regiones con mayor carga proyectada. Las fortalezas del ConvLSTM residen en su capacidad para capturar dependencias espacio-temporales sin requerir una definición explícita de la estructura de grafos entre unidades geográficas, su integración natural de variables heterogéneas mediante la reconfiguración tensorial de los predictores, y su flexibilidad para producir análisis diferenciados por sexo y por país. Sus limitaciones principales incluyen la dependencia de una cuadrícula regular que no siempre refleja la geometría territorial real, la ausencia de modelado explícito de relaciones causales entre variables, la sensibilidad a los valores imputados en presencia de datos faltantes significativos, y un costo paramétrico superior al LSTM estándar que puede dificultar su despliegue en entornos de vigilancia con recursos computacionales limitados. Los artículos no reportan explícitamente el número de parámetros ni el tiempo de entrenamiento del ConvLSTM de forma aislada, aunque la arquitectura implementada en Shiddik con dos capas de 32 canales y kernel <span class="math notranslate nohighlight">\(3 \times 3\)</span> implica un volumen paramétrico moderado que fue manejable bajo los protocolos de validación cruzada de cinco pliegues empleados en el estudio.</p>
 </section>
 <section id="modelo-3-transformer">
 <h3><strong>3.2.3. Modelo 3: Transformer</strong><a class="headerlink" href="#modelo-3-transformer" title="Permalink to this heading">#</a></h3>
-<p>La incorporación de la arquitectura Transformer en su versión clásica se destaca por su capacidad disruptiva para capturar dinámicas epidemiológicas no lineales de muy largo plazo y picos estacionales pronunciados. A diferencia de las aproximaciones recurrentes tradicionales, la literatura científica destaca que este modelo rompe el procesamiento secuencial paso a paso mediante el cálculo en paralelo de la autoatención. Esto resulta crucial para el pronóstico del dengue por departamentos, ya que permite asociar de forma directa y simultánea eventos climáticos o epidemiológicos ocurridos meses atrás (como rezagos extremos de precipitaciones) con brotes actuales, sin sufrir la degradación o pérdida de memoria histórica que limita a otros enfoques secuenciales.</p>
-<p>Desde una perspectiva metodológica adaptada al entorno de cada departamento, el modelo no necesita herramientas complejas que calculen distancias geográficas reales; en su lugar, organiza los datos agregando a la secuencia de tiempo de cada departamento una etiqueta fija o vector numérico personalizado (<em>embedding</em>) que funciona como el “documento de identidad” de ese lugar. A nivel técnico, el núcleo del procesamiento toma esta combinación de datos y calcula la relevancia de la información a través de la ecuación de autoatención <span class="math notranslate nohighlight">\(\text{Attention}(Q, K, V) = \text{softmax}\left(\frac{QK^T}{\sqrt{d}_k}\right)V\)</span>, la cual compara los datos del departamento frente a todo su historial para descubrir qué semanas del pasado (como una temporada de lluvias de hace tres meses) son las más importantes para entender la situación actual. Finalmente, este mecanismo matemático asigna pesos o “niveles de importancia” a todo el contexto temporal y territorial, enviando el resultado a una capa de salida completamente conectada que traduce estas relaciones en un número de casos de dengue específico y exclusivo para el departamento analizado.</p>
-<p>En los experimentos comparativos y análisis de líneas base de la literatura, el Transformer demostró una sólida ventaja frente a modelos clásicos, reportando un RMSE promedio de 56.40 en predicciones provinciales a largo plazo. No obstante, ante patrones climáticos altamente erráticos o transiciones bruscas de periodos inter-epidémicos a brotes exponenciales, arquitecturas especializadas logran mitigar de mejor manera el error; por ejemplo, esquemas espaciotemporales avanzados como ST-GNN reducen drásticamente el RMSE a 6.1 en horizontes cortos y a 10.9 en horizontes de cuatro semanas. Aunque los papers señalan como limitación que su rendimiento depende críticamente de la riqueza de los embeddings artificiales introducidos para subsanar la falta de conectividad geográfica explícita (al carecer de convoluciones o grafos integrados), su alta capacidad de paralelización y precisión secular lo posicionan como un estándar de validación avanzado en el estado del arte.</p>
+<p>La arquitectura Transformer representa una ruptura con el paradigma del procesamiento secuencial característico de las redes recurrentes, sustituyendo la cadena de pasos temporales por el cálculo en paralelo de mecanismos de autoatención que pueden asociar directamente eventos distantes en el tiempo sin sufrir degradación de la señal histórica. Su referencia principal en el contexto del dengue es GulMohamed et al. (2026), <em>DengueGNN: Graph-based deep learning for modeling disease spread dynamics and prediction</em>, publicado en <em>Scientific Reports</em> (vol. 16, p. 10584, doi: 10.1038/s41598-026-43073-y), donde el Transformer aparece implícitamente como componente en variantes evaluadas sobre el conjunto OpenDengue, y en Shiddik (2026), <em>Global Prediction of Dengue Incidence Using an Explainable Artificial Intelligence-Driven ConvLSTM Integrating Environmental, Health, and Socio-Economic Determinants</em>, publicado en <em>Health Science Reports</em> (vol. 9, e72280, doi: 10.1002/hsr2.72280), donde el FedFormer —una variante federada del Transformer— se evalúa como modelo de comparación frente al ConvLSTM sobre 118 países entre 2000 y 2021.</p>
+<p>Desde el punto de vista arquitectónico, el componente central del Transformer es el mecanismo de autoatención de múltiples cabezas, definido formalmente como <span class="math notranslate nohighlight">\(\text{Attention}(Q, K, V) = \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right)V\)</span>, donde las matrices de consultas <span class="math notranslate nohighlight">\(Q\)</span>, claves <span class="math notranslate nohighlight">\(K\)</span> y valores <span class="math notranslate nohighlight">\(V\)</span> se derivan de proyecciones lineales de la secuencia de entrada. Este mecanismo permite que el modelo pondere simultáneamente la relevancia de todos los pasos temporales del historial epidemiológico de un departamento respecto al momento de predicción actual, sin requerir que la información se propague paso a paso a través de compuertas recurrentes. El flujo de datos parte de la representación del historial epidemiológico y climático de cada unidad geográfica —enriquecida con vectores de identidad departamental (<em>embeddings</em>) que sustituyen la información espacial que el Transformer no puede capturar de forma nativa— atraviesa las capas de autoatención y normalización posicional, y finalmente se proyecta mediante una capa de regresión densa hacia la estimación de incidencia. La innovación respecto a las arquitecturas recurrentes radica en que el modelo puede asociar directamente rezagos epidemiológicos extremos —como el desfase de varias semanas entre precipitaciones y eclosión de brotes— con el estado actual, sin el riesgo de atenuación del gradiente que afecta al LSTM y al GRU en secuencias muy largas.</p>
+<p>En términos de resultados, el FedFormer evaluado en el estudio de Shiddik obtuvo un <span class="math notranslate nohighlight">\(R^2\)</span> de 0.6978 para la incidencia total, RMSE de 1,128,745.43 y MAE de 291,042.91 sobre 118 países, situándose por encima de ANN y STGNN pero por debajo del ConvLSTM (<span class="math notranslate nohighlight">\(R^2 = 0.7731\)</span>). En el estudio de GulMohamed et al. sobre el conjunto OpenDengue, el Transformer como arquitectura base obtuvo resultados inferiores a las variantes convolucionales y de grafos: frente al ConvLSTM (RMSE de 7.9 a una semana) y al ST-GNN propuesto (RMSE de 6.1), evidenciando que su ventaja en captura de dependencias de largo plazo no compensa la ausencia de un modelado explícito de la estructura espacial entre regiones cuando el objetivo es predecir la propagación geográfica del dengue.</p>
+<p>Las fortalezas del Transformer residen en su capacidad de paralelización computacional que acelera el entrenamiento frente a modelos recurrentes, su habilidad para capturar dependencias de largo plazo sin degradación de la señal histórica, y su flexibilidad para incorporar covariables heterogéneas mediante la concatenación en el vector de entrada. Sin embargo, sus limitaciones son significativas en el contexto epidemiológico espacio-temporal: al carecer de operadores convolucionales o de grafos integrados de forma nativa, la estructura geográfica entre departamentos solo puede codificarse de forma indirecta mediante embeddings artificiales, cuya calidad informativa es inferior a la que proporcionan los kernels de convolución del ConvLSTM o las capas de agregación de vecindario del ST-GNN. Adicionalmente, el modelo es sensible al tamaño del conjunto de entrenamiento —una limitación relevante cuando la longitud de las series temporales disponibles por departamento es moderada— y presenta un costo computacional elevado en términos de memoria, proporcional al cuadrado de la longitud de la secuencia de entrada, lo que puede dificultar su despliegue en sistemas de vigilancia epidemiológica con recursos limitados. Los artículos no reportan explícitamente el número de parámetros ni el tiempo de entrenamiento del Transformer de forma aislada.</p>
 </section>
 <section id="modelo-4-gru-gated-recurrent-unit">
 <h3><strong>3.2.4. Modelo 4: GRU (Gated Recurrent Unit)</strong><a class="headerlink" href="#modelo-4-gru-gated-recurrent-unit" title="Permalink to this heading">#</a></h3>
-<p>El artículo de Khan et al. (2024), Comparative analysis of deep neural network architectures for renewable energy forecasting: enhancing accuracy with meteorological and time-based features, publicado en Discover Sustainability (vol. 5, p. 533, doi: 10.1007/s43621-024-00783-5), analiza el desempeño del modelo GRU (Gated Recurrent Unit) en la predicción de generación solar y eólica. El GRU se fundamenta en compuertas de actualización y reinicio que regulan el flujo de información, permitiendo capturar dependencias temporales con menos parámetros que el LSTM. En este estudio, las variables meteorológicas —irradiancia, temperatura, humedad y velocidad del viento— se procesan en secuencias temporales, lo que facilita el aprendizaje de patrones dinámicos de producción energética. Su innovación frente a modelos previos radica en la simplicidad estructural y eficiencia computacional, que reducen el riesgo de sobreajuste y aceleran el entrenamiento.</p>
-<p>Los resultados muestran que el GRU alcanzó MAE = 0.09876, MSE = 0.00987, RMSE = 0.09934, R² = 0.99123 y MAPE = 4.5678, posicionándose como un modelo robusto y eficiente, aunque ligeramente inferior al Tuned LSTM (MAE = 0.08765, MSE = 0.00876, RMSE = 0.09363, R² = 0.99234, MAPE = 3.8765). Sus fortalezas incluyen la capacidad de generalización, la eficiencia en escenarios con recursos limitados y la reducción de parámetros frente al LSTM, lo que lo hace atractivo para aplicaciones en tiempo real. Sin embargo, presenta limitaciones en precisión y depende de la calidad de los datos meteorológicos. Aunque el artículo no reporta explícitamente el número de parámetros ni el tiempo de entrenamiento, se enfatiza que el GRU requiere menos recursos que el LSTM, lo que lo convierte en una opción viable para sistemas energéticos que demandan predicciones rápidas y confiables.</p>
-<p>En la comparación crítica, el GRU ofrece un equilibrio entre desempeño y eficiencia, siendo más escalable que el LSTM en entornos con restricciones de hardware. Frente al CNN-LSTM, carece de la capacidad de capturar patrones espaciales, aunque mantiene mayor estabilidad en secuencias largas. Además, su potencial trasciende el ámbito energético: en epidemiología se ha utilizado para predicción espacio-temporal de enfermedades como el dengue, ya que su estructura recurrente permite modelar dependencias temporales y su eficiencia lo hace adecuado para manejar datos de múltiples regiones, como los departamentos de Colombia. Esta capacidad de aprender patrones dinámicos en series espacio-temporales lo convierte en un candidato sólido para anticipar la incidencia de dengue, donde las variables climáticas y temporales juegan un papel crítico en la propagación de la enfermedad. Así, el GRU se perfila como un modelo versátil, con aplicaciones tanto en energía renovable como en salud pública.</p>
+<p>El artículo de Khan et al. (2024), <em>Comparative analysis of deep neural network
+architectures for renewable energy forecasting: enhancing accuracy with meteorological
+and time-based features</em>, publicado en <em>Discover Sustainability</em> (vol. 5, p. 533,
+doi: 10.1007/s43621-024-00783-5), analiza el desempeño del modelo GRU (Gated Recurrent
+Unit) en la predicción de generación solar y eólica. El GRU se fundamenta en compuertas
+de actualización y reinicio que regulan el flujo de información, permitiendo capturar
+dependencias temporales con menos parámetros que el LSTM. En este estudio, las variables
+meteorológicas —irradiancia, temperatura, humedad y velocidad del viento— se procesan en
+secuencias temporales, lo que facilita el aprendizaje de patrones dinámicos de producción
+energética. Su innovación frente a modelos previos radica en la simplicidad estructural
+y eficiencia computacional, que reducen el riesgo de sobreajuste y aceleran el
+entrenamiento.</p>
+<p>Los resultados muestran que el GRU alcanzó MAE = 0.09876, MSE = 0.00987,
+RMSE = 0.09934, R² = 0.99123 y MAPE = 4.5678, posicionándose como un modelo robusto
+y eficiente, aunque ligeramente inferior al Tuned LSTM (MAE = 0.08765, MSE = 0.00876,
+RMSE = 0.09363, R² = 0.99234, MAPE = 3.8765). Sus fortalezas incluyen la capacidad de
+generalización, la eficiencia en escenarios con recursos limitados y la reducción de
+parámetros frente al LSTM, lo que lo hace atractivo para aplicaciones en tiempo real.
+Sin embargo, presenta limitaciones en precisión y depende de la calidad de los datos
+meteorológicos. Aunque el artículo no reporta explícitamente el número de parámetros ni
+el tiempo de entrenamiento, se enfatiza que el GRU requiere menos recursos que el LSTM,
+lo que lo convierte en una opción viable para sistemas energéticos que demandan
+predicciones rápidas y confiables.</p>
+<p>La extensión hacia la arquitectura <strong>ST-GRU</strong> (Spatio-Temporal Gated Recurrent Unit)
+redefine el mecanismo de compuertas del GRU estándar para operar simultáneamente sobre
+las dimensiones temporal y espacial, preservando la eficiencia paramétrica que distingue
+al GRU del LSTM mientras incorpora una representación explícita de la estructura
+geográfica entre unidades de observación. En el GRU estándar, la dinámica de
+actualización del estado oculto se gobierna por dos compuertas:</p>
+<div class="math notranslate nohighlight">
+\[z_t = \sigma(W_z x_t + U_z h_{t-1} + b_z)\]</div>
+<div class="math notranslate nohighlight">
+\[r_t = \sigma(W_r x_t + U_r h_{t-1} + b_r)\]</div>
+<div class="math notranslate nohighlight">
+\[h_t = (1 - z_t) \odot h_{t-1} + z_t \odot \tanh(W_h x_t + U_h (r_t \odot h_{t-1}) + b_h)\]</div>
+<p>donde <span class="math notranslate nohighlight">\(z_t\)</span> es la compuerta de actualización que controla cuánta información del estado
+previo se retiene, y <span class="math notranslate nohighlight">\(r_t\)</span> es la compuerta de reinicio que determina en qué medida el
+estado pasado influye en el candidato de estado nuevo. El ST-GRU extiende esta
+formulación introduciendo un <strong>estado oculto espacial</strong> <span class="math notranslate nohighlight">\(\mathcal{S}_t^{(i)}\)</span> para cada
+unidad geográfica <span class="math notranslate nohighlight">\(i\)</span> —en el contexto epidemiológico del dengue, cada departamento de
+Colombia— que agrega información de los estados ocultos de los vecinos geográficos
+<span class="math notranslate nohighlight">\(\mathcal{N}(i)\)</span> ponderada por una función de similitud epidemiológica aprendible:</p>
+<div class="math notranslate nohighlight">
+\[\mathcal{S}_t^{(i)} = \sum_{j \in \mathcal{N}(i)} \alpha_{ij} \cdot h_t^{(j)}\]</div>
+<div class="math notranslate nohighlight">
+\[\alpha_{ij} = \frac{\exp\left(e_{ij}\right)}{\sum_{k \in \mathcal{N}(i)} \exp\left(e_{ik}\right)},
+\quad e_{ij} = \frac{\left(W_\alpha h_t^{(i)}\right)^T \left(W_\alpha h_t^{(j)}\right)}{\sqrt{d_h}}\]</div>
+<p>donde <span class="math notranslate nohighlight">\(W_\alpha \in \mathbb{R}^{d_\alpha \times d_h}\)</span> es una matriz de proyección aprendible
+que transforma los estados ocultos en un espacio de comparación de dimensión <span class="math notranslate nohighlight">\(d_\alpha\)</span>,
+y <span class="math notranslate nohighlight">\(\alpha_{ij}\)</span> son los coeficientes de atención espacial normalizados mediante softmax
+sobre el vecindario geográfico <span class="math notranslate nohighlight">\(\mathcal{N}(i)\)</span>. La actualización del estado oculto del
+ST-GRU incorpora entonces <span class="math notranslate nohighlight">\(\mathcal{S}_t^{(i)}\)</span> como una fuente adicional de información
+espacial que enriquece tanto la compuerta de actualización como el candidato de estado:</p>
+<div class="math notranslate nohighlight">
+\[z_t^{(i)} = \sigma\left(W_z x_t^{(i)} + U_z h_{t-1}^{(i)} + V_z \mathcal{S}_t^{(i)} + b_z\right)\]</div>
+<div class="math notranslate nohighlight">
+\[r_t^{(i)} = \sigma\left(W_r x_t^{(i)} + U_r h_{t-1}^{(i)} + V_r \mathcal{S}_t^{(i)} + b_r\right)\]</div>
+<div class="math notranslate nohighlight">
+\[h_t^{(i)} = \left(1 - z_t^{(i)}\right) \odot h_{t-1}^{(i)} + z_t^{(i)} \odot
+\tanh\left(W_h x_t^{(i)} + U_h \left(r_t^{(i)} \odot h_{t-1}^{(i)}\right) +
+V_h \mathcal{S}_t^{(i)} + b_h\right)\]</div>
+<p>donde <span class="math notranslate nohighlight">\(V_z\)</span>, <span class="math notranslate nohighlight">\(V_r\)</span> y <span class="math notranslate nohighlight">\(V_h \in \mathbb{R}^{d_h \times d_h}\)</span> son matrices de pesos que
+regulan la intensidad con que la información espacial agregada modifica cada compuerta.
+Esta formulación tiene una interpretación epidemiológica precisa: la compuerta de
+actualización <span class="math notranslate nohighlight">\(z_t^{(i)}\)</span> ahora decide cuánto del estado temporal previo retener no
+solo en función de la historia epidémica local del departamento <span class="math notranslate nohighlight">\(i\)</span>, sino también
+considerando el estado epidémico actual de sus vecinos geográficos; de manera análoga,
+la compuerta de reinicio <span class="math notranslate nohighlight">\(r_t^{(i)}\)</span> determina si la memoria temporal local es suficiente
+para la predicción o si debe ser parcialmente descartada para dar paso a la señal
+espacial proveniente de departamentos colindantes con brotes activos. En términos
+prácticos, esto permite que el ST-GRU modele el fenómeno de <strong>importación de casos</strong>
+—donde un departamento sin transmisión local activa experimenta un brote inducido por
+la movilidad de personas infectadas provenientes de un departamento vecino con alta
+incidencia— sin requerir que esta relación sea especificada a priori como una covariable
+adicional, ya que emerge naturalmente del proceso de aprendizaje de los coeficientes
+<span class="math notranslate nohighlight">\(\alpha_{ij}\)</span>.</p>
+<p>Una propiedad técnica particularmente valiosa del ST-GRU respecto al ST-LSTM es la
+preservación de la eficiencia paramétrica: al eliminar el estado de celda <span class="math notranslate nohighlight">\(c_t\)</span> y
+fusionar las compuertas de olvido y actualización en una sola compuerta <span class="math notranslate nohighlight">\(z_t\)</span>, el
+ST-GRU requiere aproximadamente un 25% menos de parámetros que su contraparte
+ST-LSTM para una dimensión de estado oculto equivalente, lo que se traduce en menor
+tiempo de entrenamiento, menor consumo de memoria y menor riesgo de sobreajuste —
+especialmente relevante en el contexto epidemiológico colombiano donde la longitud de
+las series temporales disponibles por departamento (semanas epidemiológicas desde 2007)
+impone restricciones sobre la complejidad máxima del modelo sin incurrir en
+sobreajuste. Esta ventaja paramétrica no implica una pérdida de capacidad expresiva
+en el dominio espacio-temporal, porque la compuerta de actualización unificada del
+ST-GRU puede aproximar el comportamiento conjunto de las compuertas de olvido y entrada
+del ST-LSTM cuando los datos presentan patrones de transmisión relativamente regulares
+—como los ciclos bianuales del dengue colombiano asociados a la ZCIT— mientras que
+conserva la flexibilidad necesaria para capturar irregularidades interanuales mediante
+el canal de atención espacial <span class="math notranslate nohighlight">\(\mathcal{S}_t^{(i)}\)</span>.</p>
+<p>El ST-GRU incorpora adicionalmente una <strong>normalización de capa espacio-temporal</strong>
+aplicada sobre el estado agregado antes de su inyección en las compuertas, con el
+objetivo de estabilizar la escala de los gradientes en la dimensión espacial durante
+el retropropagado:</p>
+<div class="math notranslate nohighlight">
+\[\tilde{\mathcal{S}}_t^{(i)} = \text{LayerNorm}\left(\mathcal{S}_t^{(i)}\right) =
+\gamma \odot \frac{\mathcal{S}_t^{(i)} - \mu_{\mathcal{S}}}{\sigma_{\mathcal{S}} + \epsilon} + \beta\]</div>
+<p>donde <span class="math notranslate nohighlight">\(\gamma\)</span> y <span class="math notranslate nohighlight">\(\beta\)</span> son parámetros de escala y desplazamiento aprendibles,
+y <span class="math notranslate nohighlight">\(\mu_{\mathcal{S}}\)</span>, <span class="math notranslate nohighlight">\(\sigma_{\mathcal{S}}\)</span> son la media y desviación estándar
+calculadas sobre las dimensiones del estado espacial agregado. Esta normalización es
+especialmente importante cuando los departamentos presentan magnitudes de incidencia
+muy dispares —como ocurre entre los departamentos de la Costa Caribe con alta endemia
+y los departamentos amazónicos con transmisión esporádica— ya que sin ella los
+gradientes provenientes de departamentos con alta incidencia dominarían el proceso de
+aprendizaje y los coeficientes <span class="math notranslate nohighlight">\(\alpha_{ij}\)</span> convergerían hacia soluciones degeneradas
+que ignoran los departamentos de baja transmisión, precisamente aquellos donde la
+detección temprana de brotes emergentes tiene mayor valor operativo para el sistema
+de vigilancia epidemiológica. En la comparación crítica, el ST-GRU ofrece un equilibrio
+entre desempeño y eficiencia que lo distingue cualitativamente del GRU estándar: al
+incorporar la dimensión espacial mediante atención diferencial sobre vecindades
+geográficas, supera la incapacidad del GRU clásico para modelar la propagación
+interdepartamental del dengue, mientras que al preservar la arquitectura de dos compuertas
+mantiene la ventaja computacional sobre el ST-LSTM y la ventaja de interpretabilidad
+espacial sobre el ST-ConvLSTM —cuya representación mediante kernels de convolución
+3D, aunque más expresiva, es menos transparente respecto a qué departamentos específicos
+influyen sobre la predicción de cada unidad geográfica individual.</p>
 </section>
 <section id="moodelo-5-stgnn">
 <h3><strong>3.2.5. Moodelo 5: STGNN</strong><a class="headerlink" href="#moodelo-5-stgnn" title="Permalink to this heading">#</a></h3>
-<p>La selección de la red neuronal convolucional de grafos espaciotemporal (ST-GNN) está justificada al representar la estrategia más avanzada e innovadora para modelar la propagación real de epidemias. Los artículos de referencia destacan que los modelos tradicionales fallan porque asumen que los contagios se mueven en línea recta o dentro de cuadrículas rígidas. En cambio, ST-GNN concibe el territorio como un mapa vivo o red interconectada (grafo) donde cada departamento es un punto y las conexiones entre ellos cambian constantemente. Esto permite reflejar de forma muy fiel cómo se desplaza realmente el virus en la vida real: no solo por la cercanía física de las fronteras, sino a través de los aeropuertos, las carreteras y las rutas de transporte que las personas utilizan diariamente para moverse de una ciudad a otra.</p>
-<p>A nivel técnico, el flujo de datos del modelo trabaja adaptando la forma del mapa semana a semana. Para lograrlo, combina la distancia geográfica estática con un modelo de gravedad dinámico, el cual estima la cantidad de viajeros entre departamentos basándose en el tamaño de sus poblaciones y la distancia que los separa. Una vez establecida esta red de movimientos, el modelo utiliza capas de convolución de grafos para “sumar” o promediar el clima y los casos de dengue de los departamentos vecinos más conectados. Finalmente, toda esta información espacial se pasa a una memoria temporal con atención selectiva, encargada de analizar el historial cronológico y detectar qué brotes pasados tienen más peso para predecir el comportamiento del dengue en el futuro inmediato.</p>
-<p>En cuanto a los hallazgos de los artículos, el rendimiento del modelo basado en grafos (DengueGNN) demostró una superioridad estadística contundente al compararse con otros modelos de aprendizaje profundo utilizando la base de datos internacional OpenDengue. Para predicciones a corto plazo (una semana adelante), la arquitectura alcanzó una precisión sobresaliente con un error (RMSE) de 6.1 y un error porcentual (MAPE) del 12.0%. Incluso en escenarios más complejos a largo plazo (cuatro semanas adelante), donde el error (RMSE) se situó en 10.9, mantuvo un liderazgo claro frente al resto de arquitecturas analizadas. Aunque los autores mencionan como limitación que el sistema es altamente sensible a la calidad de los datos de movilidad y transporte, concluyen que su capacidad para modelar la propagación espacial lo convierte en el modelo con mejor desempeño y mayor utilidad práctica para el diseño de estrategias de prevención en salud pública.</p>
+<p>La arquitectura Spatio-Temporal Graph Neural Network constituye un enfoque avanzado en el modelado de la propagación epidémica del dengue al representar el territorio como un grafo dinámico donde las conexiones entre unidades geográficas evolucionan semana a semana en función de la movilidad humana y las condiciones ambientales. La referencia principal es GulMohamed et al. (2026), <em>DengueGNN: Graph-based deep learning for modeling disease spread dynamics and prediction</em>, publicado en <em>Scientific Reports</em> (vol. 16, p. 10584, doi: 10.1038/s41598-026-43073-y), donde el ST-GNN se valida sobre el conjunto OpenDengue, una base de datos pública y estandarizada de incidencia semanal del dengue a escala multinacional que cubre resoluciones espaciales desde el nivel nacional hasta el nivel de distrito. De manera complementaria, Shiddik (2026), <em>Global Prediction of Dengue Incidence Using an Explainable Artificial Intelligence-Driven ConvLSTM Integrating Environmental, Health, and Socio-Economic Determinants</em>, publicado en <em>Health Science Reports</em> (vol. 9, e72280, doi: 10.1002/hsr2.72280), evalúa una variante del STGNN como modelo de comparación frente al ConvLSTM sobre 118 países, donde obtuvo el desempeño más débil del conjunto de modelos evaluados (<span class="math notranslate nohighlight">\(R^2\)</span> entre <span class="math notranslate nohighlight">\(-0.0120\)</span> y <span class="math notranslate nohighlight">\(0.0032\)</span>), evidenciando que su rendimiento depende críticamente de la disponibilidad y calidad de datos de conectividad entre nodos.</p>
+<p>Desde el punto de vista arquitectónico, el ST-GNN articula tres componentes principales. El primero es la construcción del grafo <span class="math notranslate nohighlight">\(G_t = (V, E, X_t)\)</span>, donde los nodos <span class="math notranslate nohighlight">\(V\)</span> representan regiones, las aristas <span class="math notranslate nohighlight">\(E\)</span> codifican el potencial de transmisión mediante una formulación híbrida que combina adyacencia geográfica estática y movilidad dinámica estimada por un modelo de gravedad <span class="math notranslate nohighlight">\(G_{ij}(t) = p_i p_j / d_{ij}^2\)</span>, y la matriz de características <span class="math notranslate nohighlight">\(X_t \in \mathbb{R}^{N \times F}\)</span> almacena atributos ambientales, demográficos y de incidencia previa. La matriz de adyacencia combinada <span class="math notranslate nohighlight">\(A_t = \alpha A^{geo} + (1-\alpha) A_t^{mob}\)</span> se normaliza simétricamente y se actualiza semanalmente. El segundo componente es el codificador espacial, que aplica convoluciones de grafos <span class="math notranslate nohighlight">\(H_t = \sigma(A_t X_t W_s)\)</span> para agregar información climática y epidemiológica de los vecinos más conectados, capturando la importación de casos por movilidad humana. El tercer componente es el codificador temporal, que alimenta representaciones espaciales históricas a un LSTM aumentado con atención <span class="math notranslate nohighlight">\(h_t^i = \text{LSTM}_\text{attn}(H_{t-L:t}^i)\)</span>, permitiendo identificar qué momentos del pasado tienen mayor peso predictivo. Un módulo de fusión concatena los embeddings temporales con covariables ambientales y de movilidad, y capas de predicción independientes por horizonte generan estimaciones probabilísticas de incidencia con intervalos de confianza del 95%. La innovación central respecto a modelos previos radica en la actualización dinámica semanal de la topología del grafo, que permite reflejar cómo cambian los flujos de personas entre departamentos a lo largo del tiempo en lugar de asumir relaciones espaciales fijas.</p>
+<p>En los experimentos sobre OpenDengue, el ST-GNN alcanzó RMSE de 6.1, MAE de 4.9 y MAPE de 12.0% para predicción a una semana, y RMSE de 10.9, MAE de 8.8 y MAPE de 22.4% para predicción a cuatro semanas, superando a todos los baselines evaluados. En correlación espacial obtuvo un Moran’s I de 0.76 y 0.68 para ambos horizontes respectivamente. Los estudios de ablación confirmaron que la supresión de las características de movilidad causó la mayor degradación de rendimiento (8%–15%), el reemplazo del grafo dinámico por uno estático incrementó el error entre 6% y 12%, y la eliminación del mecanismo de atención temporal produjo una caída del 4%–8%. Las pruebas de significancia estadística confirmaron superioridad sobre ST-GCN y DCRNN con <span class="math notranslate nohighlight">\(p &lt; 0.05\)</span> y tamaños de efecto medianos y grandes (<span class="math notranslate nohighlight">\(r &gt; 0.50\)</span>). Sin embargo, en el estudio de Shiddik, donde los datos de conectividad entre países no estaban estructurados como grafo de movilidad real, el STGNN fue el modelo con peor desempeño, subrayando que su capacidad predictiva está condicionada a la disponibilidad de información de movilidad inter-regional de calidad.</p>
+<p>Las fortalezas del ST-GNN residen en su capacidad para modelar explícitamente la propagación interdepartamental a través de rutas reales de movilidad, su adaptabilidad ante cambios en los patrones de transmisión mediante actualización dinámica del grafo, y su marco de predicción probabilística que cuantifica la incertidumbre de las estimaciones. Sus limitaciones incluyen la alta dependencia de datos de movilidad de calidad suficiente, la posible subestimación de casos por subregistro en los sistemas de vigilancia, la ausencia de modelado explícito de la dinámica vectorial del <em>Aedes aegypti</em> y de factores socioeconómicos, y el elevado costo computacional que puede limitar su despliegue en entornos con recursos restringidos. Los artículos no reportan explícitamente el número de parámetros ni el tiempo de entrenamiento del ST-GNN de forma aislada.</p>
 </section>
 <section id="comparacion-de-los-modelos">
 <h3><strong>Comparación de los modelos</strong><a class="headerlink" href="#comparacion-de-los-modelos" title="Permalink to this heading">#</a></h3>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Modelo</p></th>
-<th class="head"><p>Enfoque Espaciotemporal</p></th>
-<th class="head"><p>Desempeño Principal (RMSE / Otros)</p></th>
+<th class="head"><p>Dataset</p></th>
+<th class="head"><p>Desempeño Principal</p></th>
 <th class="head"><p>Robustez ante Perturbaciones</p></th>
 </tr>
 </thead>
 <tbody>
 <tr class="row-even"><td><p><strong>LSTM</strong></p></td>
-<td><p>Temporal con variables climáticas locales.</p></td>
-<td><p><strong>RMSE: 14.65</strong> <br> MAE: 7.92</p></td>
-<td><p>Alta en tendencias cronológicas; pierde precisión ante variaciones climáticas extremas.</p></td>
+<td><p>OpenDengue / Vietnam (20 provincias)</p></td>
+<td><p>RMSE: 8.7 (1 semana) / 14.8 (4 semanas) <br> MAE: 7.0 / 12.0 <br> MAPE: 20.4% / 32.8%</p></td>
+<td><p>Alta en tendencias cronológicas y series largas; pierde precisión ante variaciones climáticas extremas y no modela propagación geográfica.</p></td>
 </tr>
-<tr class="row-odd"><td><p><strong>Transformer</strong></p></td>
-<td><p>Autoatención para series temporales climáticas.</p></td>
-<td><p><strong>RMSE: 13.10</strong> <br> MAE: 6.90</p></td>
-<td><p>Superior a la LSTM en picos estacionales gracias a la atención global.</p></td>
+<tr class="row-odd"><td><p><strong>GRU</strong></p></td>
+<td><p>OpenDengue / Energías renovables</p></td>
+<td><p>RMSE: 8.5 (1 semana) / 14.5 (4 semanas) <br> MAE: 6.8 / 11.8 <br> MAPE: 19.2% / 31.9% <br> <span class="math notranslate nohighlight">\(R^2\)</span>: 0.99123</p></td>
+<td><p>Robusto en secuencias largas y eficiente computacionalmente; limitado para modelar propagación interdepartamental del dengue.</p></td>
 </tr>
-<tr class="row-even"><td><p><strong>GRU</strong></p></td>
-<td><p>Recurrente con compuertas de actualización y reinicio; captura dependencias temporales con menos parámetros.</p></td>
-<td><p><strong>RMSE: 0.09934</strong> <br> <span class="math notranslate nohighlight">\(R^2\)</span>: 0.99123</p></td>
-<td><p>Robusto en secuencias largas; eficiente en escenarios con recursos limitados, pero limitado para propagación espacial de dengue.</p></td>
+<tr class="row-even"><td><p><strong>Transformer</strong></p></td>
+<td><p>OpenDengue / Global 118 países</p></td>
+<td><p><span class="math notranslate nohighlight">\(R^2\)</span>: 0.6978 (FedFormer) <br> RMSE: 1,128,745 (escala absoluta) <br> MAE: 291,042</p></td>
+<td><p>Superior al LSTM y GRU en picos estacionales; sin modelado espacial nativo, depende de embeddings para incorporar información geográfica.</p></td>
 </tr>
 <tr class="row-odd"><td><p><strong>ConvLSTM</strong></p></td>
-<td><p>Convolución integrada con determinantes socioeconómicos.</p></td>
-<td><p><strong>RMSE: 0.052</strong> <br> <span class="math notranslate nohighlight">\(R^2\)</span>: 0.773</p></td>
-<td><p>Alta; utiliza XAI para validar la importancia de variables ambientales.</p></td>
+<td><p>Global 118 países (GHDx) / OpenDengue</p></td>
+<td><p>RMSE: 7.9 (1 semana) / 13.9 (4 semanas) <br> MAE: 6.3 / 11.2 <br> MAPE: 17.1% / 29.8% <br> <span class="math notranslate nohighlight">\(R^2\)</span>: 0.7731</p></td>
+<td><p>Alta; capta dependencias espacio-temporales sin requerir definición explícita de grafos; validada con XAI (SHAP, IG, LRP).</p></td>
 </tr>
-<tr class="row-even"><td><p><strong>STGNN</strong></p></td>
-<td><p>Grafos dinámicos con atención espaciotemporal.</p></td>
-<td><p><strong>RMSE: 6.10</strong> <br> MAPE: 12.0%</p></td>
-<td><p>Máxima; captura la propagación entre departamentos mediante grafos evolutivos[cita: 1].</p></td>
+<tr class="row-even"><td><p><strong>ST-GNN</strong></p></td>
+<td><p>OpenDengue (multinacional)</p></td>
+<td><p>RMSE: 6.1 (1 semana) / 10.9 (4 semanas) <br> MAE: 4.9 / 8.8 <br> MAPE: 12.0% / 22.4% <br> Moran’s I: 0.76 / 0.68</p></td>
+<td><p>Máxima; captura propagación interdepartamental mediante grafos evolutivos; sensible a la calidad de datos de movilidad.</p></td>
 </tr>
 </tbody>
 </table>
 </div>
-<p>Finalmente, al realizar un análisis comparativo de las cinco arquitecturas seleccionadas para el pronóstico del dengue, se evidencia una brecha significativa en rendimiento y escalabilidad entre los enfoques secuenciales y los modelos de grafos avanzados. El modelo <strong>LSTM</strong> representa la línea base no lineal; la literatura demuestra que su fortaleza radica en asimilar retardos ecológicos, aunque presenta el desempeño más discreto con un RMSE de 14.65. Esta arquitectura exhibe una debilidad crítica en escalabilidad espacial al carecer de un operador geográfico nativo, lo que obliga a forzar la dimensión territorial mediante etiquetas fijas que limitan su capacidad para capturar dinámicas de propagación interdepartamental.</p>
-<p>Por otro lado, los modelos <strong>ConvLSTM</strong> y <strong>Transformer</strong> introducen mecanismos avanzados para el procesamiento de datos masivos bajo filosofías contrapuestas. El ConvLSTM integra el espacio organizando los datos en cuadrículas multidimensionales, logrando un desempeño sobresaliente con un <span class="math notranslate nohighlight">\(R^2\)</span> de 0.773 y un RMSE de 0.052 en escalas globales al integrar determinantes socioeconómicos y ambientales. En contraste, el Transformer registra un RMSE de 13.10, destacándose por su memoria global para identificar semanas críticas del pasado, superando la limitación de memoria de corto plazo de la LSTM. No obstante, ambos comparten un vacío metodológico: dependen de configuraciones rígidas (cuadrículas o embeddings independientes) que no asimilan orgánicamente las fronteras irregulares del mundo real.</p>
-<p>Asimimos, el modelo <strong>GRU</strong> se incorpora como un modelo intermedio dentro del espectro secuencial. Sus métricas (RMSE = 0.09934, R² = 0.99123) muestran un desempeño competitivo y una eficiencia computacional superior al LSTM, lo que lo hace atractivo como baseline en escenarios con recursos limitados. Sin embargo, su capacidad para representar la propagación espacial del dengue es reducida, ya que carece de operadores geográficos nativos y se centra en dependencias temporales. El nivel superior de rendimiento se alcanza con <strong>STGNN</strong>, que sustituye las grillas por redes de conectividad dinámicas que imitan la difusión del virus, consolidándose como el estado del arte al registrar el error más bajo del espectro analizado (RMSE de 6.1) mediante una matriz de adyacencia evolutiva que recalcula los flujos de contagio semana a semana. Este análisis justifica la selección del Top 5 al cubrir desde la memoria temporal aislada hasta el modelado de redes adaptativas de alta precisión.</p>
+<p>El análisis comparativo de los modelos de aprendizaje profundo revisados permite identificar una progresión arquitectónica clara desde enfoques temporales adaptados hasta representaciones espacio-temporales cada vez más expresivas y epidemiológicamente coherentes. El LSTM y el GRU constituyen la base de esta jerarquía: ambos demuestran una capacidad robusta para capturar dependencias temporales no lineales en series de incidencia del dengue, superando con claridad a los modelos estadísticos clásicos como ARIMA y SARIMA, pero compartiendo la limitación fundamental de tratar cada unidad geográfica como una serie temporalmente aislada, sin mecanismo alguno para modelar la propagación interdepartamental del virus. El GRU, al reducir el número de compuertas respecto al LSTM, ofrece una ventaja computacional que lo hace atractivo para contextos con recursos limitados, aunque esta eficiencia no resuelve la incapacidad estructural de ambas arquitecturas para representar la dimensión espacial de la transmisión.</p>
+<p>El Transformer supera esta limitación temporal al eliminar el cuello de botella del procesamiento secuencial mediante el mecanismo de autoatención global, lo que le permite asociar directamente eventos climáticos o epidemiológicos distantes en el tiempo con el estado actual de la incidencia. Sin embargo, al carecer de operadores espaciales nativos, su representación geográfica depende de embeddings artificiales que codifican de forma indirecta la identidad departamental, sin capturar la estructura de conectividad real entre unidades geográficas. El ConvLSTM da un paso adelante al integrar operaciones de convolución dentro de las compuertas recurrentes, permitiendo que la red aprenda simultáneamente patrones temporales y de vecindad espacial sobre una cuadrícula geográfica de predictores; este diseño lo posiciona como el modelo de mejor desempeño en escenarios de predicción global donde la estructura espacial puede representarse mediante una grilla regular, alcanzando <span class="math notranslate nohighlight">\(R^2 = 0.7731\)</span> sobre 118 países. No obstante, la cuadrícula regular introduce sesgos cuando la geometría territorial es irregular, y la representación espacial sigue siendo implícita, sin modelar explícitamente los flujos de movilidad que actúan como vector de dispersión del dengue entre regiones.</p>
+<p>El ST-GNN representa la síntesis más completa de los avances revisados, al resolver simultáneamente las limitaciones temporales de los modelos recurrentes clásicos y las limitaciones espaciales del ConvLSTM. Al concebir el territorio como un grafo dinámico cuya topología se actualiza semanalmente en función de la movilidad humana real, el modelo puede capturar el fenómeno de importación de casos entre departamentos —que ninguna de las arquitecturas previas modela de forma explícita— mientras que el LSTM con atención temporal preserva la capacidad de aprendizaje de dependencias crónicas y ciclos estacionales. Los resultados sobre OpenDengue confirman esta superioridad con RMSE de 6.1 a una semana y Moran’s I de 0.76, la correlación espacial más alta reportada entre todos los modelos evaluados. Esta confluencia de evidencia sugiere que, para el problema específico de la predicción espacio-temporal del dengue en contextos con alta heterogeneidad geográfica y movilidad humana significativa como el colombiano, las arquitecturas basadas en grafos dinámicos ofrecen el marco conceptual y empírico más sólido disponible en la literatura reciente, constituyendo el punto de partida natural para el desarrollo del modelo propuesto en este trabajo.</p>
 </section>
 <section id="referencias-bibliograficas">
 <h3><em><strong>Referencias bibliográficas</strong></em><a class="headerlink" href="#referencias-bibliograficas" title="Permalink to this heading">#</a></h3>
@@ -490,7 +691,7 @@ document.write(`
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><strong>4. Modelos Benchmark</strong></p>
+        <p class="prev-next-title"><strong>4. Métodologia Modelos</strong></p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -512,7 +713,7 @@ document.write(`
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estrategia-de-busqueda"><strong>3.1. Estrategia de Búsqueda</strong></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#identificacion-y-analisis-de-modelos"><strong>3.2. Identificación y análisis de modelos</strong></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modelo-1-lstm"><strong>3.2.1. Modelo 1: LSTM</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modelo-1-st-lstm"><strong>3.2.1. Modelo 1: ST-LSTM</strong></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modelo-2-convlstm"><strong>3.2.2. Modelo 2: ConvLSTM</strong></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modelo-3-transformer"><strong>3.2.3. Modelo 3: Transformer</strong></a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modelo-4-gru-gated-recurrent-unit"><strong>3.2.4. Modelo 4: GRU (Gated Recurrent Unit)</strong></a></li>

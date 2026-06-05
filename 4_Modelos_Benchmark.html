@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>4. Modelos Benchmark &#8212; Predicción Espacio-Temporal de la Incidencia de Dengue en los Departamentos de Colombia Mediante Técnicas de Deep Learning</title>
+    <title>4. Métodologia Modelos &#8212; Predicción Espacio-Temporal de la Incidencia de Dengue en los Departamentos de Colombia Mediante Técnicas de Deep Learning</title>
   
   
   
@@ -62,6 +62,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = '4_Modelos_Benchmark';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -171,7 +173,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="1_Cargue_Datos.html"><strong>1. ETL</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="2_EDA.html"><strong>2. Análisis Exploratorio de Datos</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="3_ESTADO_DEL_ARTE.html"><strong>3. Revisión del Estado del Arte</strong></a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#"><strong>4. Modelos Benchmark</strong></a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#"><strong>4. Métodologia Modelos</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="5_LSTM_DengueColombia.html"><strong>5. Spatio-Temporal Long Short-Term Memory (ST-LSTM)</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="6_ST_GRU_CV.html"><strong>6. ST-GRU — Spatio-Temporal Gated Recurrent Unit</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="7_ConvLSTM_DengueColombia.html"><strong>7. Convolutional LSTM Network (ConvLSTM)</strong></a></li>
@@ -180,7 +182,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="10_Comparando_Modelos_Benchmark.html"><strong>10. Comparando Modelos Benchmark</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="11_PF_PAPER_GUIA.html"><strong>11. Paper guía</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="12_ECT_SpaceTime_CV_Interpretado.html"><strong>12. ECT — EpiClimate-Transformer</strong></a></li>
-<li class="toctree-l1"><a class="reference internal" href="13_Comparaci%C3%B3n_Final.html"><strong>12. Comparación Final</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="13_Comparaci%C3%B3n_Final.html"><strong>13. Comparación Final</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="14_Discusi%C3%B3n_Cr%C3%ADtica.html"><strong>14. Discusión Crítica</strong></a></li>
 </ul>
 
@@ -307,7 +309,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -318,11 +322,24 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>4. Modelos Benchmark</h1>
+    <h1>4. Métodologia Modelos</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pipeline-metodologico-general"><strong>4.1. Pipeline Metodológico General</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metricas-usadas"><strong>4.2. Métricas Usadas</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metrica-principal"><strong>4.2.1. Métrica Principal</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#otras-metricas-usadas"><strong>4.2.2. Otras Métricas Usadas</strong></a></li>
+</ul>
+</li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -332,8 +349,117 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="modelos-benchmark">
-<h1><strong>4. Modelos Benchmark</strong><a class="headerlink" href="#modelos-benchmark" title="Permalink to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="metodologia-modelos">
+<h1><strong>4. Métodologia Modelos</strong><a class="headerlink" href="#metodologia-modelos" title="Permalink to this heading">#</a></h1>
+<section id="pipeline-metodologico-general">
+<h2><strong>4.1. Pipeline Metodológico General</strong><a class="headerlink" href="#pipeline-metodologico-general" title="Permalink to this heading">#</a></h2>
+<p>Mediante el flujograma se describe la estructura metodológica común que comparten los modelos benchmark, estableciendo un marco uniforme que garantiza su comparabilidad.</p>
+<p><img alt="pipeline_metodologia_general.png" src="attachment:pipeline_metodologia_general.png" /></p>
+<p><strong>1. Carga de datos (Ingestión)</strong>
+Se leen archivos CSV principales, se parsean fechas y se ordenan temporalmente por departamento. Los inputs son <code class="docutils literal notranslate"><span class="pre">df_full.csv</span></code> y <code class="docutils literal notranslate"><span class="pre">centroides_departamentos.csv</span></code>, usando pandas, pathlib y os.</p>
+<p><strong>2. Feature Engineering (Transformación)</strong>
+Se generan 29 features y 1 target mediante codificación cíclica de tiempo (seno/coseno), variables epidemiológicas con rezagos de 11 variables, 18 variables climáticas (temperatura, humedad, precipitación) y transformación logarítmica de la incidencia como target.</p>
+<p><strong>3. Folds Espaciales (Partición espacial)</strong>
+Se crean 5 particiones geográficas mediante centroides UTM con <code class="docutils literal notranslate"><span class="pre">estimate_utm_crs()</span></code>, clustering K-Means geográfico (EPSG:4326 → UTM) y mapeo de folds al dataframe principal usando <code class="docutils literal notranslate"><span class="pre">spatialkfold</span></code> y <code class="docutils literal notranslate"><span class="pre">geopandas</span></code>.</p>
+<p><strong>4. Esquema de Validación (Estrategia CV)</strong>
+Se implementa Nested Temporal Cross-Validation con outer test en 2022/23/24, inner folds temporales en 2019/2020/2021, Spatial-KFold interno de 5 pliegues × 3 temporal y LeaveOneGroupOut por fold retenido. Se ejecutan 15 iteraciones por trial de Optuna.</p>
+<p><strong>5. Ventanas y Escalamiento (Preprocesamiento)</strong>
+Se usan ventanas deslizantes con <code class="docutils literal notranslate"><span class="pre">create_windows()</span></code>, tensores de forma (B, T, N, F) pivoteados por departamento, <code class="docutils literal notranslate"><span class="pre">RobustScaler</span></code> ajustado solo en train y DataLoaders con <code class="docutils literal notranslate"><span class="pre">STTDataset</span></code> y pin_memory. El window_size y horizon se fijan en 4.</p>
+<p><strong>6. Arquitectura del Modelo</strong>
+Especificada por modelo, contempla encoders de entrada, módulos de atención, fusión multimodal y capa de predicción, con parámetros <code class="docutils literal notranslate"><span class="pre">d_model</span></code>, <code class="docutils literal notranslate"><span class="pre">n_heads</span></code> y <code class="docutils literal notranslate"><span class="pre">n_layers</span></code>, implementados en <code class="docutils literal notranslate"><span class="pre">torch.nn</span></code> / PyTorch.</p>
+<p><strong>7. Optimización de Hiperparámetros (HPO)</strong>
+Se usa Optuna con TPESampler (20 trials/seed), función objetivo de RMSE promedio CV, poda de trials inválidos con TrialPruned, múltiples seeds [42, 123, 2024] y espacio de búsqueda sobre lr, batch, dropout, window, d_model y max_lag, con EarlyStopping.</p>
+<p><strong>8. Evaluación e Interpretabilidad</strong>
+Se reportan métricas globales (RMSE, MAE, NSE, KGE, sMAPE), RMSE_top10 y SkillScore, Pearson_r y Bias, análisis de residuos (ACF, PACF, Ljung-Box) y mapas de interpretabilidad con SHAP + Attention maps vía GradientExplainer. Los outputs guardados incluyen predictions, residuals, losses, shap y visualizaciones con statsmodels y matplotlib.</p>
+</section>
+<section id="metricas-usadas">
+<h2><strong>4.2. Métricas Usadas</strong><a class="headerlink" href="#metricas-usadas" title="Permalink to this heading">#</a></h2>
+<section id="metrica-principal">
+<h3><strong>4.2.1. Métrica Principal</strong><a class="headerlink" href="#metrica-principal" title="Permalink to this heading">#</a></h3>
+<p>El <strong>Root Mean Square Error (RMSE)</strong> se define como la raíz cuadrada del promedio de los errores al cuadrado entre los valores observados y los valores predichos:</p>
+<p>[
+<span class="math notranslate nohighlight">\(RMSE = \sqrt{\frac{1}{n}\sum_{i=1}^{n}(y_i-\hat{y}_i)^2}\)</span>
+]</p>
+<p>Esta métrica expresa la magnitud típica del error en las mismas unidades de la variable analizada. Su principal característica es que penaliza de manera más fuerte los errores grandes, lo que la hace especialmente útil cuando se desea evaluar la precisión de un modelo bajo supuestos de normalidad en la distribución de los errores.</p>
+<p>El <strong>Root Mean Square Error (RMSE)</strong> fue adoptado como la métrica principal para la evaluación del desempeño predictivo debido a sus propiedades teóricas y a su pertinencia para el problema de predicción de incidencia de dengue. Esta métrica cuantifica la magnitud promedio de los errores de predicción en las mismas unidades de la variable analizada y, al elevar las diferencias al cuadrado antes de promediarlas, asigna una penalización mayor a los errores de gran magnitud.</p>
+<p>Esta característica resulta especialmente relevante en el contexto epidemiológico, donde las desviaciones importantes entre los valores observados y los predichos pueden tener consecuencias significativas para la planificación y la toma de decisiones en salud pública. En particular, la subestimación de periodos de alta incidencia o de eventos epidémicos puede afectar la asignación de recursos, la capacidad de respuesta hospitalaria y la implementación oportuna de estrategias de vigilancia y control.</p>
+<p>Adicionalmente, el RMSE mantiene coherencia con el proceso de optimización empleado durante el entrenamiento de los modelos de deep learning. Dado que la mayoría de estos modelos son entrenados mediante la minimización del Error Cuadrático Medio (MSE), el RMSE constituye una medida de evaluación directamente relacionada con la función objetivo utilizada durante el aprendizaje, favoreciendo la consistencia entre la fase de entrenamiento y la fase de validación.</p>
+<p>Finalmente, considerando la marcada heterogeneidad espacial de la incidencia de dengue entre los departamentos de Colombia, la evaluación sobre la escala logarítmica de la variable objetivo permite reducir el efecto de las diferencias extremas en magnitud entre regiones de alta y baja endemicidad. En este contexto, el RMSE calculado sobre los valores transformados proporciona una medida más equilibrada del desempeño global, facilitando comparaciones robustas entre departamentos con patrones epidemiológicos significativamente distintos.</p>
+</section>
+<section id="otras-metricas-usadas">
+<h3><strong>4.2.2. Otras Métricas Usadas</strong><a class="headerlink" href="#otras-metricas-usadas" title="Permalink to this heading">#</a></h3>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Métrica</p></th>
+<th class="head"><p>Definición</p></th>
+<th class="head"><p>Fórmula</p></th>
+<th class="head"><p>Interpretación</p></th>
+<th class="head"><p>Relevancia epidemiológica</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>MAE</strong></p></td>
+<td><p>Error absoluto medio. Promedia las desviaciones absolutas entre predicción y valor real, sin penalización adicional a los errores grandes.</p></td>
+<td><p><span class="math notranslate nohighlight">\( (1/n) Σ |ŷᵢ − yᵢ|\)</span></p></td>
+<td><p>Valores menores son mejores. Más robusto que el RMSE ante outliers. Interpretación directa en unidades de la variable.</p></td>
+<td><p>Indica el error promedio en número de casos. Útil para comunicar la exactitud del modelo a tomadores de decisión en salud pública, al ser de fácil interpretación clínica.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>MAPE</strong></p></td>
+<td><p>Error porcentual absoluto medio. Expresa el error como porcentaje del valor real observado.</p></td>
+<td><p><span class="math notranslate nohighlight">\((100/n) Σ |ŷᵢ − yᵢ| / |yᵢ|\)</span></p></td>
+<td><p>Valores menores son mejores. Indefinido cuando yᵢ = 0. Sesgado hacia la sobreestimación del error en valores bajos.</p></td>
+<td><p>Permite comparar el error relativo entre departamentos con cargas endémicas muy distintas. Problemático en períodos sin casos reportados.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>sMAPE</strong></p></td>
+<td><p>MAPE simétrico. Corrige el sesgo del MAPE usando el promedio del valor real y predicho en el denominador.</p></td>
+<td><p><span class="math notranslate nohighlight">\((200/n) Σ |ŷᵢ − yᵢ| / (|yᵢ| + |ŷᵢ|)\)</span></p></td>
+<td><p>Rango [0%, 200%]. Valores menores son mejores. Más estable que el MAPE cuando los valores reales son cercanos a cero.</p></td>
+<td><p>Adecuado para enfermedades con temporadas de baja transmisión. Trata simétricamente la sobreestimación y la subestimación.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>NSE</strong></p></td>
+<td><p>Eficiencia de Nash-Sutcliffe. Compara el error del modelo contra el error de usar la media observada como predictor de referencia.</p></td>
+<td><p><span class="math notranslate nohighlight">\(1 − [ Σ(ŷᵢ − yᵢ)² / Σ(yᵢ − ȳ)² ]\)</span></p></td>
+<td><p>Rango (−∞, 1]. NSE = 1: perfecto. NSE = 0: igual que la media. NSE &lt; 0: peor que la media.</p></td>
+<td><p>Evalúa si el modelo captura la dinámica temporal de la transmisión y reproduce la forma de los ciclos epidémicos.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>KGE</strong></p></td>
+<td><p>Eficiencia de Kling-Gupta. Descompone el error en tres componentes: correlación, sesgo relativo y variabilidad relativa.</p></td>
+<td><p><span class="math notranslate nohighlight">\( 1 − √[ (r−1)² + (α−1)² + (β−1)² ]\)</span> donde α = σŷ/σy, β = μŷ/μy</p></td>
+<td><p>Rango (−∞, 1]. Valor óptimo = 1. Penaliza de forma balanceada errores en correlación, bias y varianza.</p></td>
+<td><p>Diagnóstico multidimensional. Identifica si las fallas provienen de subestimar picos, de sesgo sistemático o de desfase temporal en la curva epidémica.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Skill Score</strong></p></td>
+<td><p>Ganancia relativa de un modelo sobre un predictor de referencia (media histórica u otro benchmark).</p></td>
+<td><p>SS = 1 − RMSEmodelo / RMSEref</p></td>
+<td><p>SS = 1: perfecto. SS = 0: igual al benchmark. SS &lt; 0: peor que el benchmark.</p></td>
+<td><p>Mide la utilidad operativa del modelo frente a la práctica epidemiológica habitual. Un SS positivo justifica su adopción en sistemas de vigilancia y alerta temprana.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>RMSE top10</strong></p></td>
+<td><p>RMSE calculado exclusivamente sobre el 10% de semanas o departamentos con mayor incidencia observada.</p></td>
+<td><p><span class="math notranslate nohighlight">\(√( (1/k) Σᵢ∈top10% (ŷᵢ − yᵢ)² )\)</span></p></td>
+<td><p>Misma escala que el RMSE global. Valores menores indican mejor desempeño en los períodos de mayor carga.</p></td>
+<td><p>La respuesta sanitaria se activa durante los picos. Un RMSE top10 bajo indica que el modelo es confiable precisamente cuando más se necesita.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Pearson r</strong></p></td>
+<td><p>Coeficiente de correlación lineal entre los valores predichos y observados.</p></td>
+<td><p><span class="math notranslate nohighlight">\( r = Σ(ŷᵢ − μŷ)(yᵢ − μy) / (n σŷ σy)\)</span></p></td>
+<td><p>Rango [−1, 1]. r = 1: correlación perfecta. r = 0: sin asociación lineal. No captura bias ni escala absoluta.</p></td>
+<td><p>Mide si el modelo reproduce el patrón temporal de la epidemia. Una r alta con RMSE elevado indica que el modelo sigue la tendencia pero con sesgo sistemático.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>Bias</strong></p></td>
+<td><p>Error sistemático medio. Diferencia promedio entre predicciones y valores observados, con signo.</p></td>
+<td><p><span class="math notranslate nohighlight">\( (1/n) Σ (ŷᵢ − yᵢ)\)</span></p></td>
+<td><p>Bias = 0: sin sesgo. Bias &gt; 0: sobreestimación. Bias &lt; 0: subestimación. No captura la magnitud del error absoluto.</p></td>
+<td><p>Un sesgo sostenido puede saturar innecesariamente los sistemas de respuesta o llevar a subreacciones ante brotes reales. Esencial para la calibración del modelo.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<blockquote>
+<div><p><strong>Notación:</strong> ŷ = valor predicho · y = valor observado · ȳ = media observada · n = número de observaciones · r = correlación · α = razón de desviaciones estándar · β = razón de medias</p>
+</div></blockquote>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -390,6 +516,26 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pipeline-metodologico-general"><strong>4.1. Pipeline Metodológico General</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metricas-usadas"><strong>4.2. Métricas Usadas</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metrica-principal"><strong>4.2.1. Métrica Principal</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#otras-metricas-usadas"><strong>4.2.2. Otras Métricas Usadas</strong></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
