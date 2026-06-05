@@ -1,4 +1,4 @@
-# **Predicción Espacio-Temporal de la Incidencia de Dengue en los Departamentos de Colombia Mediante Técnicas de Deep Learning**
+# **Introducción**
 
 ## **Enfoque del Proyecto**
 
