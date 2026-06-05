@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>1. Cargue Base de Datos &#8212; Predicción Espacio-Temporal de la Incidencia de Dengue en los Departamentos de Colombia Mediante Técnicas de Deep Learning</title>
+    <title>1. ETL &#8212; Predicción Espacio-Temporal de la Incidencia de Dengue en los Departamentos de Colombia Mediante Técnicas de Deep Learning</title>
   
   
   
@@ -168,19 +168,20 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#"><strong>1. Cargue Base de Datos</strong></a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#"><strong>1. ETL</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="2_EDA.html"><strong>2. Análisis Exploratorio de Datos</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="3_ESTADO_DEL_ARTE.html"><strong>3. Revisión del Estado del Arte</strong></a></li>
-<li class="toctree-l1"><a class="reference internal" href="4_Modelo_LSTM.html"><strong>4. LSTM</strong></a></li>
-<li class="toctree-l1"><a class="reference internal" href="5_Modelo_ConvLSTM.html"><strong>5. ConvLSTM</strong></a></li>
-<li class="toctree-l1"><a class="reference internal" href="6_Modelo_STGNN.html"><strong>6. STGNN</strong></a></li>
-<li class="toctree-l1"><a class="reference internal" href="7_Modelo_GRU.html"><strong>7. GRU</strong></a></li>
-<li class="toctree-l1"><a class="reference internal" href="8_Modelo_Transformer.html"><strong>8. Transformer</strong></a></li>
-<li class="toctree-l1"><a class="reference internal" href="9_Comparando_Modelos.html"><strong>9. Comparando Modelos Benchmark</strong></a></li>
-<li class="toctree-l1"><a class="reference internal" href="10_PF_PAPER_GUIA.html"><strong>10. Paper guía</strong></a></li>
-<li class="toctree-l1"><a class="reference internal" href="11_ECT_EpiClimate_Transformer.html"><strong>11. ECT — EpiClimate-Transformer</strong></a></li>
-<li class="toctree-l1"><a class="reference internal" href="12_Comparaci%C3%B3n_Final.html"><strong>12. Comparación Final</strong></a></li>
-<li class="toctree-l1"><a class="reference internal" href="13_Discusi%C3%B3n_Cr%C3%ADtica.html"><strong>13. Discusión Crítica</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="4_Modelos_Benchmark.html"><strong>4. Modelos Benchmark</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="5_LSTM_DengueColombia.html"><strong>5. Spatio-Temporal Long Short-Term Memory (ST-LSTM)</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="6_ST_GRU_CV.html"><strong>6. ST-GRU — Spatio-Temporal Gated Recurrent Unit</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="7_ConvLSTM_DengueColombia.html"><strong>7. Convolutional LSTM Network (ConvLSTM)</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="8_STT_SpaceTime_CV.html"><strong>8. STT — Spatio-Temporal Transformer</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="9_STGNN_SpaceTime_CV.html"><strong>9. Spatio-Temporal Graph Neural Network (STGNN)</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="10_Comparando_Modelos_Benchmark.html"><strong>10. Comparando Modelos Benchmark</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="11_PF_PAPER_GUIA.html"><strong>11. Paper guía</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="12_ECT_SpaceTime_CV_Interpretado.html"><strong>12. ECT — EpiClimate-Transformer</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="13_Comparaci%C3%B3n_Final.html"><strong>12. Comparación Final</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="14_Discusi%C3%B3n_Cr%C3%ADtica.html"><strong>14. Discusión Crítica</strong></a></li>
 </ul>
 
     </div>
@@ -319,7 +320,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>1. Cargue Base de Datos</h1>
+    <h1>1. ETL</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -392,8 +393,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="cargue-base-de-datos">
-<h1><strong>1. Cargue Base de Datos</strong><a class="headerlink" href="#cargue-base-de-datos" title="Permalink to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="etl">
+<h1><strong>1. ETL</strong><a class="headerlink" href="#etl" title="Permalink to this heading">#</a></h1>
 <section id="librerias">
 <h2><strong>1.1. Librerias</strong><a class="headerlink" href="#librerias" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
@@ -20194,6 +20195,20 @@ dtype: int64
   </tbody>
 </table>
 </div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gdf</span><span class="o">.</span><span class="n">columns</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Index([&#39;dpto_ccdgo&#39;, &#39;dpto_cnmbr&#39;, &#39;dpto_ano_c&#39;, &#39;dpto_act_a&#39;, &#39;dpto_narea&#39;,
+       &#39;dpto_nano&#39;, &#39;shape_Leng&#39;, &#39;shape_Area&#39;, &#39;geometry&#39;],
+      dtype=&#39;object&#39;)
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">

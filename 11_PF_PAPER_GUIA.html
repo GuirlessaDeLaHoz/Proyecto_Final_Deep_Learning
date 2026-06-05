@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Predicción Espacio-Temporal de la Incidencia de Dengue en los Departamentos de Colombia Mediante Técnicas de Deep Learning &#8212; Predicción Espacio-Temporal de la Incidencia de Dengue en los Departamentos de Colombia Mediante Técnicas de Deep Learning</title>
+    <title>11. Paper guía &#8212; Predicción Espacio-Temporal de la Incidencia de Dengue en los Departamentos de Colombia Mediante Técnicas de Deep Learning</title>
   
   
   
@@ -62,10 +62,11 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'intro';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '11_PF_PAPER_GUIA';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="1. ETL" href="1_Cargue_Datos.html" />
+    <link rel="next" title="12. ECT — EpiClimate-Transformer" href="12_ECT_SpaceTime_CV_Interpretado.html" />
+    <link rel="prev" title="10. Comparando Modelos Benchmark" href="10_Comparando_Modelos_Benchmark.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -128,8 +129,6 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-        
-      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -148,7 +147,7 @@ const thebe_selector_output = ".output, .cell_output"
     
   
 
-<a class="navbar-brand logo" href="#">
+<a class="navbar-brand logo" href="intro.html">
   
   
   
@@ -162,13 +161,13 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1 current active">
-                <a class="reference internal" href="#">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
                     Predicción Espacio-Temporal de la Incidencia de Dengue en los Departamentos de Colombia Mediante Técnicas de Deep Learning
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="1_Cargue_Datos.html"><strong>1. ETL</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="2_EDA.html"><strong>2. Análisis Exploratorio de Datos</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="3_ESTADO_DEL_ARTE.html"><strong>3. Revisión del Estado del Arte</strong></a></li>
@@ -179,7 +178,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="8_STT_SpaceTime_CV.html"><strong>8. STT — Spatio-Temporal Transformer</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="9_STGNN_SpaceTime_CV.html"><strong>9. Spatio-Temporal Graph Neural Network (STGNN)</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="10_Comparando_Modelos_Benchmark.html"><strong>10. Comparando Modelos Benchmark</strong></a></li>
-<li class="toctree-l1"><a class="reference internal" href="11_PF_PAPER_GUIA.html"><strong>11. Paper guía</strong></a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#"><strong>11. Paper guía</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="12_ECT_SpaceTime_CV_Interpretado.html"><strong>12. ECT — EpiClimate-Transformer</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="13_Comparaci%C3%B3n_Final.html"><strong>12. Comparación Final</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="14_Discusi%C3%B3n_Cr%C3%ADtica.html"><strong>14. Discusión Crítica</strong></a></li>
@@ -237,7 +236,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="_sources/intro.md" target="_blank"
+      <li><a href="_sources/11_PF_PAPER_GUIA.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -247,7 +246,7 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.md</span>
+<span class="btn__text-container">.ipynb</span>
 </a>
 </li>
       
@@ -308,9 +307,7 @@ document.write(`
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</label>
+
 </div></div>
       
     </div>
@@ -321,19 +318,11 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Predicción Espacio-Temporal de la Incidencia de Dengue en los Departamentos de Colombia Mediante Técnicas de Deep Learning</h1>
+    <h1>11. Paper guía</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#enfoque-del-proyecto"><strong>Enfoque del Proyecto</strong></a></li>
-</ul>
-            </nav>
         </div>
     </div>
 </div>
@@ -343,15 +332,11 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="prediccion-espacio-temporal-de-la-incidencia-de-dengue-en-los-departamentos-de-colombia-mediante-tecnicas-de-deep-learning">
-<h1><strong>Predicción Espacio-Temporal de la Incidencia de Dengue en los Departamentos de Colombia Mediante Técnicas de Deep Learning</strong><a class="headerlink" href="#prediccion-espacio-temporal-de-la-incidencia-de-dengue-en-los-departamentos-de-colombia-mediante-tecnicas-de-deep-learning" title="Permalink to this heading">#</a></h1>
-<section id="enfoque-del-proyecto">
-<h2><strong>Enfoque del Proyecto</strong><a class="headerlink" href="#enfoque-del-proyecto" title="Permalink to this heading">#</a></h2>
-<p>Este proyecto combina el análisis espacio-temporal de la incidencia del dengue en Colombia con la aplicación de modelos de deep learning para su predicción departamental, integrando variables climáticas y epidemiológicas orientadas a identificar patrones de propagación y fortalecer la salud pública.</p>
-<p>Adopta un enfoque metodológico y predictivo, orientado a transformar el análisis tradicional de la salud pública mediante el uso de analítica avanzada. En lugar de limitarse a un diagnóstico descriptivo de la situación del dengue, el proyecto se centra en estudiar el comportamiento histórico del virus en el territorio para, posteriormente, aplicar arquitecturas de deep learning capaces de anticipar su comportamiento. Este enfoque permite capturar las relaciones no lineales y los rezagos temporales entre las variaciones del clima y la velocidad de contagio, convirtiendo los datos en una herramienta científica activa para predecir brotes y optimizar las interventions en salud pública.</p>
-</section>
-<div class="toctree-wrapper compound">
-</div>
+  <section class="tex2jax_ignore mathjax_ignore" id="paper-guia">
+<h1><strong>11. Paper guía</strong><a class="headerlink" href="#paper-guia" title="Permalink to this heading">#</a></h1>
+<p>El artículo científico DengueGNN: Graph-based deep learning for modeling disease spread dynamics and prediction, desarrollado por GulMohamed et al. (2026), se consolida como la referencia principal y el pilar fundamental de esta propuesta de investigación debido a su estricta convergencia metodológica con el objetivo de modelar la dispersión del dengue en entornos geográficos complejos e irregulares. La justificación medular para seleccionar este trabajo como paper base radica en que resuelve con rigor matemático el desafío de integrar la naturaleza dinámica de los factores antrópicos y ambientales dentro de una estructura de grafos espacio-temporales, superando las limitaciones de los enfoques estáticos tradicionales. Para los propósitos de esta investigación, el artículo no solo actúa como un precedente teórico, sino como una guía operativa e instrumental explícita que valida el porqué y el para qué de la transición hacia una arquitectura avanzada como la Dynamic Diffusion Convolutional RNN (D-DCRNN). Al demostrar empíricamente sobre el repositorio global OpenDengue que los grafos variables en el tiempo reducen significativamente el error de pronóstico en horizontes críticos de mediano plazo (1 a 4 semanas), este texto provee el sustento analítico indispensable para legitimar la viabilidad y necesidad de desplegar un marco predictivo similar adaptado a la compleja realidad epidemiológica de los departamentos de Colombia.</p>
+<p>Bajo esta premisa, el modelo original de GulMohamed et al. (2026) aporta una arquitectura conceptualmente robusta dividida en cuatro componentes interconectados que sirven como base directa para la formulación del diseño D-DCRNN. El sistema original se compone de un módulo de construcción de grafos epidemiológicos dinámicos, un codificador espacial fundamentado en capas de convolución de grafos (GCN), un codificador temporal que emplea celdas LSTM potenciadas con mecanismos de atención adaptativa, y una capa de fusión de características climáticas y demográficas. El supuesto fundamental de esta arquitectura dictamina que la transmisión del dengue no responde a una estructura geográfica inmutable, sino que los patrones de contagio interregional mutan dinámicamente semana a semana, gobernados de forma no lineal por los flujos fluctuantes de la movilidad humana y las variaciones climáticas locales. Con base en este supuesto, los autores calculan y actualizan periódicamente una matriz de adyacencia híbrida que fusiona la contigüidad física con proyecciones de transporte derivadas de un modelo de gravedad poblacional. Esta formulación matemática exacta es el insumo principal que se requiere para heredar y refinar en la propuesta D-DCRNN, permitiendo transicionar de una convolución de grafos estándar a un proceso de difusión convolucional dinámico que capture con mayor precisión el flujo y la dirección de la propagación del vector en el territorio nacional.</p>
+<p>La adopción de este estudio como eje conductor se vuelve completamente persuasiva al analizar su relación analítica con los modelos de referencia o benchmarks de la literatura actual, tales como GRU, LSTM, ConvLSTM, Transformer y las variaciones clásicas de STGNN. En términos de similitudes, el modelo propuesto comparte con LSTM y GRU la capacidad intrínseca para codificar la memoria secuencial de los registros históricos de incidencia en el vector de tiempo, y se asemeja a ConvLSTM y a las redes espacio-temporales tradicionales en el intento conjunto de capturar simultáneamente las dimensiones espaciales y temporales en una sola estructura. Sin embargo, las diferencias marcan la superioridad del enfoque del paper base y justifican su elección: mientras que LSTM, GRU y las arquitecturas Transformer clásicas analizan cada unidad territorial de manera aislada o bajo dependencias puramente secuenciales que pierden las correlaciones geográficas explícitas, las redes ConvLSTM están severamente restringidas al procesamiento de datos estructurados en cuadrículas regulares bidimensionales, lo que las inhabilita para representar fielmente las divisiones administrativas asimétricas, heterogéneas e irregulares de los departamentos de Colombia. Finalmente, la diferencia crucial respecto a las STGNN convencionales de la literatura radica en que estas últimas dependen de una matriz de conectividad fija o basada únicamente en distancias euclidianas; en contraste, el modelo guía rompe este paradigma al reformular la matriz de adyacencia de manera dinámica y guiada por variables externas de movilidad y densidad. Esta última distinción es el argumento teórico maestro que se utilizará para fundamentar las ventajas operativas del diseño D-DCRNN, consolidando al artículo de GulMohamed et al. (2026) como el único antecedente capaz de ofrecer el andamiaje metodológico para integrar con éxito datos climáticos y flujos de transporte humano en un modelo predictivo de alta precisión para la salud pública colombiana.</p>
 </section>
 
     <script type="text/x-thebe-config">
@@ -384,12 +369,21 @@ document.write(`
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="10_Comparando_Modelos_Benchmark.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><strong>10. Comparando Modelos Benchmark</strong></p>
+      </div>
+    </a>
     <a class="right-next"
-       href="1_Cargue_Datos.html"
+       href="12_ECT_SpaceTime_CV_Interpretado.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><strong>1. ETL</strong></p>
+        <p class="prev-next-title"><strong>12. ECT — EpiClimate-Transformer</strong></p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -399,21 +393,6 @@ document.write(`
             </div>
             
             
-              
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#enfoque-del-proyecto"><strong>Enfoque del Proyecto</strong></a></li>
-</ul>
-  </nav></div>
-
-</div></div>
               
             
           </div>
